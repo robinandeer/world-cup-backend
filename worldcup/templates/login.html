@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Gulp Playground</title>
+    <link rel="stylesheet" href="bower_components/normalize-css/normalize.css">
+    <link rel="stylesheet" href="build/app.css" />
+  </head>
+
+  <body>
+    <div class="center__wrapper">
+      <form action="/login" method="Post">
+        <input type="email" name="email" class="a-form__input" placeholder="Your email">
+      </form>
+    </div>
+
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul class=flashes>
+        {% for message in messages %}
+          <li>{{ message }}</li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+  </body>
+</html>
