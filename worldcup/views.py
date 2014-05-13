@@ -87,7 +87,6 @@ def logout():
 
 @app.route('/api/v1/users', methods=all_methods)
 @app.route('/api/v1/users/<user_id>', methods=all_methods)
-@crossdomain(origin='*', methods=all_methods)
 def user(user_id=None):
   if request.method == 'PUT':
     print(request.json)
@@ -96,13 +95,11 @@ def user(user_id=None):
 
 
 @app.route('/api/v1/groups', methods=all_methods)
-@crossdomain(origin='*', methods=all_methods)
 def groups():
   return jsonify(groups=get_groups())
 
 
 @app.route('/api/v1/rounds/<int:round_id>', methods=all_methods)
-@crossdomain(origin='*', methods=all_methods)
 def rounds(round_id):
   winners = ['fra', 'bra', 'ita', 'spa', 'usa', 'por', 'dan', 'nor']
   runner_ups = ['swe', 'alg', 'arg', 'aus', 'kor', 'ecu', 'urg', 'pol']
