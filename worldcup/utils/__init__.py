@@ -37,7 +37,7 @@ def get_matchups(round_id, winners, runner_ups=None):
   be a simple list of the teams that has advanced to this round.
   """
   # Determine matchups for a round in the playoffs
-  match_count = round_id / 2
+  match_count = int(round_id / 2)
 
   combo = zip(winners[:match_count], runner_ups[:match_count])
   return [(winner, runner_up) for winner, runner_up in combo]
