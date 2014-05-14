@@ -86,6 +86,7 @@ def main():
     print(get_matchups(2, ['FRA','USA','SWE','BOS','AUS','AUT','MAK','KRO']))
     print(get_matchups(3, ['FRA','SWE','AUS','MAK']))
     print(get_matchups(4, ['SWE','AUS'],['FRA','MAK']))
+    print(resources_dir)
     # winners = ['Fra', 'USA']
     # runner_ups = ['GBR', 'SWE']
     # print(get_matchups(4,winners,runner_ups))
