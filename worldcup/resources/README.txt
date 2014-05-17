@@ -1,0 +1,1 @@
+Here we can collect the files with static info, such as country codes, groups, how the end games look etc
