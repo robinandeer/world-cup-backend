@@ -1,0 +1,33 @@
+<div class="a-layout--vertical">
+  <div class="a-layout__panel header-style is-fixed bb--listed text-center slim">
+    Group {{model.group_id}}
+  </div>
+
+  {{#each team in model.teams}}
+    <div {{bind-attr class=":team :a-layout__panel--full :center__wrapper :bb--listed :dotdotdot team.isWinner team.isRunnerUp"}}>
+      {{#if team.isWinner}}
+        <span class="a-icon">&#9733;</span> 1:
+      {{/if}}
+
+      {{#if team.isRunnerUp}}
+        <span class="a-icon">&#9734;</span> 2:
+      {{/if}}
+
+      {{team.name}}
+
+      {{#if team.rank}}
+        ({{team.rank}})
+      {{/if}}
+
+      <div class="team-actions a-button__group center__wrapper">
+        <div {{action "setPosition" team.id 1}} class="team-action a-button">
+          Winner
+        </div>
+
+        <div {{action "setPosition" team.id 2}} class="team-action a-button">
+          Runner up
+        </div>
+      </div>
+    </div>
+  {{/each}}
+</div>

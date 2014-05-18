@@ -1,4 +1,9 @@
 Flask
+Flask-Assets
 Flask-Login
 Flask-PyMongo
 PyMongo
+pyscss
+github3.py
+Flask-OAuthlib
+webassets

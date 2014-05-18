@@ -1,0 +1,31 @@
+{
+  "name": "scout-backend",
+  "version": "0.0.0",
+  "authors": [
+    "Robin Andeer <robin.andeer@gmail.com>"
+  ],
+  "description": "Clinical sequencing variant browser",
+  "main": "manage.py",
+  "keywords": [
+    "dna",
+    "sequencing",
+    "scout"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/robinandeer/scout",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "scout/vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "ember": "~1.5.1",
+    "animate.css": "~3.1.1",
+    "ember-model": "~0.0.11",
+    "ember-data": "~1.0.0"
+  }
+}

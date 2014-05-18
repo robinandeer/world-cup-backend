@@ -1,0 +1,4201 @@
+/*!
+Animate.css - http://daneden.me/animate
+Licensed under the MIT license
+
+Copyright (c) 2013 Daniel Eden
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+*/
+/* line 16, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+.animated, .team-actions:hover .team-action {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+/* line 23, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+.animated.infinite, .team-actions:hover .infinite.team-action {
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+/* line 28, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+.animated.hinge, .team-actions:hover .hinge.team-action {
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+}
+
+@-webkit-keyframes bounce {
+  /* line 34, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0%, 20%, 50%, 80%, 100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  /* line 39, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  40% {
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+
+  /* line 44, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  60% {
+    -webkit-transform: translateY(-15px);
+    transform: translateY(-15px);
+  }
+}
+@keyframes bounce {
+  /* line 51, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0%, 20%, 50%, 80%, 100% {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  /* line 57, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  40% {
+    -webkit-transform: translateY(-30px);
+    -ms-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+
+  /* line 63, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  60% {
+    -webkit-transform: translateY(-15px);
+    -ms-transform: translateY(-15px);
+    transform: translateY(-15px);
+  }
+}
+/* line 70, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+.bounce {
+  -webkit-animation-name: bounce;
+  animation-name: bounce;
+}
+
+@-webkit-keyframes flash {
+  /* line 76, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0%, 50%, 100% {
+    opacity: 1;
+  }
+
+  /* line 80, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  25%, 75% {
+    opacity: 0;
+  }
+}
+@keyframes flash {
+  /* line 86, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0%, 50%, 100% {
+    opacity: 1;
+  }
+
+  /* line 90, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  25%, 75% {
+    opacity: 0;
+  }
+}
+/* line 95, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+.flash {
+  -webkit-animation-name: flash;
+  animation-name: flash;
+}
+
+/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
+@-webkit-keyframes pulse {
+  /* line 103, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
+  /* line 108, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  50% {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+
+  /* line 113, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@keyframes pulse {
+  /* line 120, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  /* line 126, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  50% {
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+
+  /* line 132, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+}
+/* line 139, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+.pulse {
+  -webkit-animation-name: pulse;
+  animation-name: pulse;
+}
+
+@-webkit-keyframes rubberBand {
+  /* line 145, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
+  /* line 150, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  30% {
+    -webkit-transform: scaleX(1.25) scaleY(0.75);
+    transform: scaleX(1.25) scaleY(0.75);
+  }
+
+  /* line 155, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  40% {
+    -webkit-transform: scaleX(0.75) scaleY(1.25);
+    transform: scaleX(0.75) scaleY(1.25);
+  }
+
+  /* line 160, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  60% {
+    -webkit-transform: scaleX(1.15) scaleY(0.85);
+    transform: scaleX(1.15) scaleY(0.85);
+  }
+
+  /* line 165, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@keyframes rubberBand {
+  /* line 172, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  /* line 178, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  30% {
+    -webkit-transform: scaleX(1.25) scaleY(0.75);
+    -ms-transform: scaleX(1.25) scaleY(0.75);
+    transform: scaleX(1.25) scaleY(0.75);
+  }
+
+  /* line 184, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  40% {
+    -webkit-transform: scaleX(0.75) scaleY(1.25);
+    -ms-transform: scaleX(0.75) scaleY(1.25);
+    transform: scaleX(0.75) scaleY(1.25);
+  }
+
+  /* line 190, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  60% {
+    -webkit-transform: scaleX(1.15) scaleY(0.85);
+    -ms-transform: scaleX(1.15) scaleY(0.85);
+    transform: scaleX(1.15) scaleY(0.85);
+  }
+
+  /* line 196, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+}
+/* line 203, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+.rubberBand {
+  -webkit-animation-name: rubberBand;
+  animation-name: rubberBand;
+}
+
+@-webkit-keyframes shake {
+  /* line 209, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0%, 100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  /* line 214, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  10%, 30%, 50%, 70%, 90% {
+    -webkit-transform: translateX(-10px);
+    transform: translateX(-10px);
+  }
+
+  /* line 219, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  20%, 40%, 60%, 80% {
+    -webkit-transform: translateX(10px);
+    transform: translateX(10px);
+  }
+}
+@keyframes shake {
+  /* line 226, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0%, 100% {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  /* line 232, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  10%, 30%, 50%, 70%, 90% {
+    -webkit-transform: translateX(-10px);
+    -ms-transform: translateX(-10px);
+    transform: translateX(-10px);
+  }
+
+  /* line 238, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  20%, 40%, 60%, 80% {
+    -webkit-transform: translateX(10px);
+    -ms-transform: translateX(10px);
+    transform: translateX(10px);
+  }
+}
+/* line 245, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+.shake {
+  -webkit-animation-name: shake;
+  animation-name: shake;
+}
+
+@-webkit-keyframes swing {
+  /* line 251, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  20% {
+    -webkit-transform: rotate(15deg);
+    transform: rotate(15deg);
+  }
+
+  /* line 256, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  40% {
+    -webkit-transform: rotate(-10deg);
+    transform: rotate(-10deg);
+  }
+
+  /* line 261, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  60% {
+    -webkit-transform: rotate(5deg);
+    transform: rotate(5deg);
+  }
+
+  /* line 266, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  80% {
+    -webkit-transform: rotate(-5deg);
+    transform: rotate(-5deg);
+  }
+
+  /* line 271, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
+@keyframes swing {
+  /* line 278, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  20% {
+    -webkit-transform: rotate(15deg);
+    -ms-transform: rotate(15deg);
+    transform: rotate(15deg);
+  }
+
+  /* line 284, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  40% {
+    -webkit-transform: rotate(-10deg);
+    -ms-transform: rotate(-10deg);
+    transform: rotate(-10deg);
+  }
+
+  /* line 290, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  60% {
+    -webkit-transform: rotate(5deg);
+    -ms-transform: rotate(5deg);
+    transform: rotate(5deg);
+  }
+
+  /* line 296, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  80% {
+    -webkit-transform: rotate(-5deg);
+    -ms-transform: rotate(-5deg);
+    transform: rotate(-5deg);
+  }
+
+  /* line 302, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
+/* line 309, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+.swing {
+  -webkit-transform-origin: top center;
+  -ms-transform-origin: top center;
+  transform-origin: top center;
+  -webkit-animation-name: swing;
+  animation-name: swing;
+}
+
+@-webkit-keyframes tada {
+  /* line 318, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
+  /* line 323, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  10%, 20% {
+    -webkit-transform: scale(0.9) rotate(-3deg);
+    transform: scale(0.9) rotate(-3deg);
+  }
+
+  /* line 328, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  30%, 50%, 70%, 90% {
+    -webkit-transform: scale(1.1) rotate(3deg);
+    transform: scale(1.1) rotate(3deg);
+  }
+
+  /* line 333, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  40%, 60%, 80% {
+    -webkit-transform: scale(1.1) rotate(-3deg);
+    transform: scale(1.1) rotate(-3deg);
+  }
+
+  /* line 338, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    -webkit-transform: scale(1) rotate(0);
+    transform: scale(1) rotate(0);
+  }
+}
+@keyframes tada {
+  /* line 345, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  /* line 351, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  10%, 20% {
+    -webkit-transform: scale(0.9) rotate(-3deg);
+    -ms-transform: scale(0.9) rotate(-3deg);
+    transform: scale(0.9) rotate(-3deg);
+  }
+
+  /* line 357, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  30%, 50%, 70%, 90% {
+    -webkit-transform: scale(1.1) rotate(3deg);
+    -ms-transform: scale(1.1) rotate(3deg);
+    transform: scale(1.1) rotate(3deg);
+  }
+
+  /* line 363, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  40%, 60%, 80% {
+    -webkit-transform: scale(1.1) rotate(-3deg);
+    -ms-transform: scale(1.1) rotate(-3deg);
+    transform: scale(1.1) rotate(-3deg);
+  }
+
+  /* line 369, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    -webkit-transform: scale(1) rotate(0);
+    -ms-transform: scale(1) rotate(0);
+    transform: scale(1) rotate(0);
+  }
+}
+/* line 376, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+.tada {
+  -webkit-animation-name: tada;
+  animation-name: tada;
+}
+
+/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
+@-webkit-keyframes wobble {
+  /* line 384, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);
+  }
+
+  /* line 389, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  15% {
+    -webkit-transform: translateX(-25%) rotate(-5deg);
+    transform: translateX(-25%) rotate(-5deg);
+  }
+
+  /* line 394, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  30% {
+    -webkit-transform: translateX(20%) rotate(3deg);
+    transform: translateX(20%) rotate(3deg);
+  }
+
+  /* line 399, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  45% {
+    -webkit-transform: translateX(-15%) rotate(-3deg);
+    transform: translateX(-15%) rotate(-3deg);
+  }
+
+  /* line 404, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  60% {
+    -webkit-transform: translateX(10%) rotate(2deg);
+    transform: translateX(10%) rotate(2deg);
+  }
+
+  /* line 409, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  75% {
+    -webkit-transform: translateX(-5%) rotate(-1deg);
+    transform: translateX(-5%) rotate(-1deg);
+  }
+
+  /* line 414, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);
+  }
+}
+@keyframes wobble {
+  /* line 421, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    -webkit-transform: translateX(0%);
+    -ms-transform: translateX(0%);
+    transform: translateX(0%);
+  }
+
+  /* line 427, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  15% {
+    -webkit-transform: translateX(-25%) rotate(-5deg);
+    -ms-transform: translateX(-25%) rotate(-5deg);
+    transform: translateX(-25%) rotate(-5deg);
+  }
+
+  /* line 433, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  30% {
+    -webkit-transform: translateX(20%) rotate(3deg);
+    -ms-transform: translateX(20%) rotate(3deg);
+    transform: translateX(20%) rotate(3deg);
+  }
+
+  /* line 439, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  45% {
+    -webkit-transform: translateX(-15%) rotate(-3deg);
+    -ms-transform: translateX(-15%) rotate(-3deg);
+    transform: translateX(-15%) rotate(-3deg);
+  }
+
+  /* line 445, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  60% {
+    -webkit-transform: translateX(10%) rotate(2deg);
+    -ms-transform: translateX(10%) rotate(2deg);
+    transform: translateX(10%) rotate(2deg);
+  }
+
+  /* line 451, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  75% {
+    -webkit-transform: translateX(-5%) rotate(-1deg);
+    -ms-transform: translateX(-5%) rotate(-1deg);
+    transform: translateX(-5%) rotate(-1deg);
+  }
+
+  /* line 457, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    -webkit-transform: translateX(0%);
+    -ms-transform: translateX(0%);
+    transform: translateX(0%);
+  }
+}
+/* line 464, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+.wobble {
+  -webkit-animation-name: wobble;
+  animation-name: wobble;
+}
+
+@-webkit-keyframes bounceIn {
+  /* line 470, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.3);
+    transform: scale(0.3);
+  }
+
+  /* line 476, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+  }
+
+  /* line 482, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  70% {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+
+  /* line 487, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@keyframes bounceIn {
+  /* line 495, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.3);
+    -ms-transform: scale(0.3);
+    transform: scale(0.3);
+  }
+
+  /* line 502, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    transform: scale(1.05);
+  }
+
+  /* line 509, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  70% {
+    -webkit-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+
+  /* line 515, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+}
+/* line 523, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+.bounceIn {
+  -webkit-animation-name: bounceIn;
+  animation-name: bounceIn;
+}
+
+@-webkit-keyframes bounceInDown {
+  /* line 529, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px);
+    transform: translateY(-2000px);
+  }
+
+  /* line 535, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  60% {
+    opacity: 1;
+    -webkit-transform: translateY(30px);
+    transform: translateY(30px);
+  }
+
+  /* line 541, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  80% {
+    -webkit-transform: translateY(-10px);
+    transform: translateY(-10px);
+  }
+
+  /* line 546, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+@keyframes bounceInDown {
+  /* line 553, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px);
+    -ms-transform: translateY(-2000px);
+    transform: translateY(-2000px);
+  }
+
+  /* line 560, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  60% {
+    opacity: 1;
+    -webkit-transform: translateY(30px);
+    -ms-transform: translateY(30px);
+    transform: translateY(30px);
+  }
+
+  /* line 567, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  80% {
+    -webkit-transform: translateY(-10px);
+    -ms-transform: translateY(-10px);
+    transform: translateY(-10px);
+  }
+
+  /* line 573, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+/* line 580, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+.bounceInDown {
+  -webkit-animation-name: bounceInDown;
+  animation-name: bounceInDown;
+}
+
+@-webkit-keyframes bounceInLeft {
+  /* line 586, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px);
+    transform: translateX(-2000px);
+  }
+
+  /* line 592, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  60% {
+    opacity: 1;
+    -webkit-transform: translateX(30px);
+    transform: translateX(30px);
+  }
+
+  /* line 598, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  80% {
+    -webkit-transform: translateX(-10px);
+    transform: translateX(-10px);
+  }
+
+  /* line 603, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+@keyframes bounceInLeft {
+  /* line 610, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px);
+    -ms-transform: translateX(-2000px);
+    transform: translateX(-2000px);
+  }
+
+  /* line 617, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  60% {
+    opacity: 1;
+    -webkit-transform: translateX(30px);
+    -ms-transform: translateX(30px);
+    transform: translateX(30px);
+  }
+
+  /* line 624, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  80% {
+    -webkit-transform: translateX(-10px);
+    -ms-transform: translateX(-10px);
+    transform: translateX(-10px);
+  }
+
+  /* line 630, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+/* line 637, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+.bounceInLeft {
+  -webkit-animation-name: bounceInLeft;
+  animation-name: bounceInLeft;
+}
+
+@-webkit-keyframes bounceInRight {
+  /* line 643, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px);
+    transform: translateX(2000px);
+  }
+
+  /* line 649, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  60% {
+    opacity: 1;
+    -webkit-transform: translateX(-30px);
+    transform: translateX(-30px);
+  }
+
+  /* line 655, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  80% {
+    -webkit-transform: translateX(10px);
+    transform: translateX(10px);
+  }
+
+  /* line 660, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+@keyframes bounceInRight {
+  /* line 667, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px);
+    -ms-transform: translateX(2000px);
+    transform: translateX(2000px);
+  }
+
+  /* line 674, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  60% {
+    opacity: 1;
+    -webkit-transform: translateX(-30px);
+    -ms-transform: translateX(-30px);
+    transform: translateX(-30px);
+  }
+
+  /* line 681, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  80% {
+    -webkit-transform: translateX(10px);
+    -ms-transform: translateX(10px);
+    transform: translateX(10px);
+  }
+
+  /* line 687, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+/* line 694, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+.bounceInRight {
+  -webkit-animation-name: bounceInRight;
+  animation-name: bounceInRight;
+}
+
+@-webkit-keyframes bounceInUp {
+  /* line 700, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px);
+    transform: translateY(2000px);
+  }
+
+  /* line 706, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  60% {
+    opacity: 1;
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+
+  /* line 712, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  80% {
+    -webkit-transform: translateY(10px);
+    transform: translateY(10px);
+  }
+
+  /* line 717, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+@keyframes bounceInUp {
+  /* line 724, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px);
+    -ms-transform: translateY(2000px);
+    transform: translateY(2000px);
+  }
+
+  /* line 731, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  60% {
+    opacity: 1;
+    -webkit-transform: translateY(-30px);
+    -ms-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+
+  /* line 738, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  80% {
+    -webkit-transform: translateY(10px);
+    -ms-transform: translateY(10px);
+    transform: translateY(10px);
+  }
+
+  /* line 744, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+/* line 751, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+.bounceInUp {
+  -webkit-animation-name: bounceInUp;
+  animation-name: bounceInUp;
+}
+
+@-webkit-keyframes bounceOut {
+  /* line 757, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
+  /* line 762, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  25% {
+    -webkit-transform: scale(0.95);
+    transform: scale(0.95);
+  }
+
+  /* line 767, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+
+  /* line 773, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(0.3);
+    transform: scale(0.3);
+  }
+}
+@keyframes bounceOut {
+  /* line 781, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  /* line 787, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  25% {
+    -webkit-transform: scale(0.95);
+    -ms-transform: scale(0.95);
+    transform: scale(0.95);
+  }
+
+  /* line 793, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+
+  /* line 800, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(0.3);
+    -ms-transform: scale(0.3);
+    transform: scale(0.3);
+  }
+}
+/* line 808, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+.bounceOut {
+  -webkit-animation-name: bounceOut;
+  animation-name: bounceOut;
+}
+
+@-webkit-keyframes bounceOutDown {
+  /* line 814, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  /* line 819, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  20% {
+    opacity: 1;
+    -webkit-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+
+  /* line 825, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px);
+    transform: translateY(2000px);
+  }
+}
+@keyframes bounceOutDown {
+  /* line 833, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  /* line 839, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  20% {
+    opacity: 1;
+    -webkit-transform: translateY(-20px);
+    -ms-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+
+  /* line 846, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px);
+    -ms-transform: translateY(2000px);
+    transform: translateY(2000px);
+  }
+}
+/* line 854, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+.bounceOutDown {
+  -webkit-animation-name: bounceOutDown;
+  animation-name: bounceOutDown;
+}
+
+@-webkit-keyframes bounceOutLeft {
+  /* line 860, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  /* line 865, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  20% {
+    opacity: 1;
+    -webkit-transform: translateX(20px);
+    transform: translateX(20px);
+  }
+
+  /* line 871, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px);
+    transform: translateX(-2000px);
+  }
+}
+@keyframes bounceOutLeft {
+  /* line 879, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  /* line 885, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  20% {
+    opacity: 1;
+    -webkit-transform: translateX(20px);
+    -ms-transform: translateX(20px);
+    transform: translateX(20px);
+  }
+
+  /* line 892, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px);
+    -ms-transform: translateX(-2000px);
+    transform: translateX(-2000px);
+  }
+}
+/* line 900, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+.bounceOutLeft {
+  -webkit-animation-name: bounceOutLeft;
+  animation-name: bounceOutLeft;
+}
+
+@-webkit-keyframes bounceOutRight {
+  /* line 906, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  /* line 911, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  20% {
+    opacity: 1;
+    -webkit-transform: translateX(-20px);
+    transform: translateX(-20px);
+  }
+
+  /* line 917, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px);
+    transform: translateX(2000px);
+  }
+}
+@keyframes bounceOutRight {
+  /* line 925, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  /* line 931, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  20% {
+    opacity: 1;
+    -webkit-transform: translateX(-20px);
+    -ms-transform: translateX(-20px);
+    transform: translateX(-20px);
+  }
+
+  /* line 938, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px);
+    -ms-transform: translateX(2000px);
+    transform: translateX(2000px);
+  }
+}
+/* line 946, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+.bounceOutRight {
+  -webkit-animation-name: bounceOutRight;
+  animation-name: bounceOutRight;
+}
+
+@-webkit-keyframes bounceOutUp {
+  /* line 952, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  /* line 957, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  20% {
+    opacity: 1;
+    -webkit-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+
+  /* line 963, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px);
+    transform: translateY(-2000px);
+  }
+}
+@keyframes bounceOutUp {
+  /* line 971, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  /* line 977, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  20% {
+    opacity: 1;
+    -webkit-transform: translateY(20px);
+    -ms-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+
+  /* line 984, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px);
+    -ms-transform: translateY(-2000px);
+    transform: translateY(-2000px);
+  }
+}
+/* line 992, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+.bounceOutUp {
+  -webkit-animation-name: bounceOutUp;
+  animation-name: bounceOutUp;
+}
+
+@-webkit-keyframes fadeIn {
+  /* line 998, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    opacity: 0;
+  }
+
+  /* line 1002, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  /* line 1008, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    opacity: 0;
+  }
+
+  /* line 1012, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    opacity: 1;
+  }
+}
+/* line 1017, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
+
+@-webkit-keyframes fadeInDown {
+  /* line 1023, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+
+  /* line 1029, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+@keyframes fadeInDown {
+  /* line 1037, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-20px);
+    -ms-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+
+  /* line 1044, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+/* line 1052, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+.fadeInDown {
+  -webkit-animation-name: fadeInDown;
+  animation-name: fadeInDown;
+}
+
+@-webkit-keyframes fadeInDownBig {
+  /* line 1058, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px);
+    transform: translateY(-2000px);
+  }
+
+  /* line 1064, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+@keyframes fadeInDownBig {
+  /* line 1072, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px);
+    -ms-transform: translateY(-2000px);
+    transform: translateY(-2000px);
+  }
+
+  /* line 1079, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+/* line 1087, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+.fadeInDownBig {
+  -webkit-animation-name: fadeInDownBig;
+  animation-name: fadeInDownBig;
+}
+
+@-webkit-keyframes fadeInLeft {
+  /* line 1093, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-20px);
+    transform: translateX(-20px);
+  }
+
+  /* line 1099, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+@keyframes fadeInLeft {
+  /* line 1107, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-20px);
+    -ms-transform: translateX(-20px);
+    transform: translateX(-20px);
+  }
+
+  /* line 1114, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+/* line 1122, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+.fadeInLeft {
+  -webkit-animation-name: fadeInLeft;
+  animation-name: fadeInLeft;
+}
+
+@-webkit-keyframes fadeInLeftBig {
+  /* line 1128, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px);
+    transform: translateX(-2000px);
+  }
+
+  /* line 1134, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+@keyframes fadeInLeftBig {
+  /* line 1142, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px);
+    -ms-transform: translateX(-2000px);
+    transform: translateX(-2000px);
+  }
+
+  /* line 1149, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+/* line 1157, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+.fadeInLeftBig {
+  -webkit-animation-name: fadeInLeftBig;
+  animation-name: fadeInLeftBig;
+}
+
+@-webkit-keyframes fadeInRight {
+  /* line 1163, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(20px);
+    transform: translateX(20px);
+  }
+
+  /* line 1169, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+@keyframes fadeInRight {
+  /* line 1177, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(20px);
+    -ms-transform: translateX(20px);
+    transform: translateX(20px);
+  }
+
+  /* line 1184, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+/* line 1192, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+.fadeInRight {
+  -webkit-animation-name: fadeInRight;
+  animation-name: fadeInRight;
+}
+
+@-webkit-keyframes fadeInRightBig {
+  /* line 1198, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px);
+    transform: translateX(2000px);
+  }
+
+  /* line 1204, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+@keyframes fadeInRightBig {
+  /* line 1212, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px);
+    -ms-transform: translateX(2000px);
+    transform: translateX(2000px);
+  }
+
+  /* line 1219, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+/* line 1227, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+.fadeInRightBig {
+  -webkit-animation-name: fadeInRightBig;
+  animation-name: fadeInRightBig;
+}
+
+@-webkit-keyframes fadeInUp {
+  /* line 1233, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+
+  /* line 1239, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+@keyframes fadeInUp {
+  /* line 1247, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+    -ms-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+
+  /* line 1254, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+/* line 1262, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+.fadeInUp, .team-actions:hover .team-action {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+}
+
+@-webkit-keyframes fadeInUpBig {
+  /* line 1268, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px);
+    transform: translateY(2000px);
+  }
+
+  /* line 1274, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+@keyframes fadeInUpBig {
+  /* line 1282, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px);
+    -ms-transform: translateY(2000px);
+    transform: translateY(2000px);
+  }
+
+  /* line 1289, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+/* line 1297, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+.fadeInUpBig {
+  -webkit-animation-name: fadeInUpBig;
+  animation-name: fadeInUpBig;
+}
+
+@-webkit-keyframes fadeOut {
+  /* line 1303, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    opacity: 1;
+  }
+
+  /* line 1307, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes fadeOut {
+  /* line 1313, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    opacity: 1;
+  }
+
+  /* line 1317, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    opacity: 0;
+  }
+}
+/* line 1322, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+.fadeOut {
+  -webkit-animation-name: fadeOut;
+  animation-name: fadeOut;
+}
+
+@-webkit-keyframes fadeOutDown {
+  /* line 1328, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  /* line 1334, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+}
+@keyframes fadeOutDown {
+  /* line 1342, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  /* line 1349, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+    -ms-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+}
+/* line 1357, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+.fadeOutDown {
+  -webkit-animation-name: fadeOutDown;
+  animation-name: fadeOutDown;
+}
+
+@-webkit-keyframes fadeOutDownBig {
+  /* line 1363, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  /* line 1369, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px);
+    transform: translateY(2000px);
+  }
+}
+@keyframes fadeOutDownBig {
+  /* line 1377, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  /* line 1384, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px);
+    -ms-transform: translateY(2000px);
+    transform: translateY(2000px);
+  }
+}
+/* line 1392, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+.fadeOutDownBig {
+  -webkit-animation-name: fadeOutDownBig;
+  animation-name: fadeOutDownBig;
+}
+
+@-webkit-keyframes fadeOutLeft {
+  /* line 1398, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  /* line 1404, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(-20px);
+    transform: translateX(-20px);
+  }
+}
+@keyframes fadeOutLeft {
+  /* line 1412, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  /* line 1419, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(-20px);
+    -ms-transform: translateX(-20px);
+    transform: translateX(-20px);
+  }
+}
+/* line 1427, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+.fadeOutLeft {
+  -webkit-animation-name: fadeOutLeft;
+  animation-name: fadeOutLeft;
+}
+
+@-webkit-keyframes fadeOutLeftBig {
+  /* line 1433, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  /* line 1439, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px);
+    transform: translateX(-2000px);
+  }
+}
+@keyframes fadeOutLeftBig {
+  /* line 1447, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  /* line 1454, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px);
+    -ms-transform: translateX(-2000px);
+    transform: translateX(-2000px);
+  }
+}
+/* line 1462, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+.fadeOutLeftBig {
+  -webkit-animation-name: fadeOutLeftBig;
+  animation-name: fadeOutLeftBig;
+}
+
+@-webkit-keyframes fadeOutRight {
+  /* line 1468, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  /* line 1474, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(20px);
+    transform: translateX(20px);
+  }
+}
+@keyframes fadeOutRight {
+  /* line 1482, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  /* line 1489, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(20px);
+    -ms-transform: translateX(20px);
+    transform: translateX(20px);
+  }
+}
+/* line 1497, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+.fadeOutRight {
+  -webkit-animation-name: fadeOutRight;
+  animation-name: fadeOutRight;
+}
+
+@-webkit-keyframes fadeOutRightBig {
+  /* line 1503, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  /* line 1509, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px);
+    transform: translateX(2000px);
+  }
+}
+@keyframes fadeOutRightBig {
+  /* line 1517, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  /* line 1524, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px);
+    -ms-transform: translateX(2000px);
+    transform: translateX(2000px);
+  }
+}
+/* line 1532, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+.fadeOutRightBig {
+  -webkit-animation-name: fadeOutRightBig;
+  animation-name: fadeOutRightBig;
+}
+
+@-webkit-keyframes fadeOutUp {
+  /* line 1538, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  /* line 1544, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+}
+@keyframes fadeOutUp {
+  /* line 1552, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  /* line 1559, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-20px);
+    -ms-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+}
+/* line 1567, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+.fadeOutUp {
+  -webkit-animation-name: fadeOutUp;
+  animation-name: fadeOutUp;
+}
+
+@-webkit-keyframes fadeOutUpBig {
+  /* line 1573, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  /* line 1579, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px);
+    transform: translateY(-2000px);
+  }
+}
+@keyframes fadeOutUpBig {
+  /* line 1587, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  /* line 1594, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px);
+    -ms-transform: translateY(-2000px);
+    transform: translateY(-2000px);
+  }
+}
+/* line 1602, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+.fadeOutUpBig {
+  -webkit-animation-name: fadeOutUpBig;
+  animation-name: fadeOutUpBig;
+}
+
+@-webkit-keyframes flip {
+  /* line 1608, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    -webkit-transform: perspective(400px) translateZ(0) rotateY(0) scale(1);
+    transform: perspective(400px) translateZ(0) rotateY(0) scale(1);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+
+  /* line 1615, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  40% {
+    -webkit-transform: perspective(400px) translateZ(150px) rotateY(170deg) scale(1);
+    transform: perspective(400px) translateZ(150px) rotateY(170deg) scale(1);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+
+  /* line 1622, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  50% {
+    -webkit-transform: perspective(400px) translateZ(150px) rotateY(190deg) scale(1);
+    transform: perspective(400px) translateZ(150px) rotateY(190deg) scale(1);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+
+  /* line 1629, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  80% {
+    -webkit-transform: perspective(400px) translateZ(0) rotateY(360deg) scale(0.95);
+    transform: perspective(400px) translateZ(0) rotateY(360deg) scale(0.95);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+
+  /* line 1636, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    -webkit-transform: perspective(400px) translateZ(0) rotateY(360deg) scale(1);
+    transform: perspective(400px) translateZ(0) rotateY(360deg) scale(1);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+}
+@keyframes flip {
+  /* line 1645, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    -webkit-transform: perspective(400px) translateZ(0) rotateY(0) scale(1);
+    -ms-transform: perspective(400px) translateZ(0) rotateY(0) scale(1);
+    transform: perspective(400px) translateZ(0) rotateY(0) scale(1);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+
+  /* line 1653, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  40% {
+    -webkit-transform: perspective(400px) translateZ(150px) rotateY(170deg) scale(1);
+    -ms-transform: perspective(400px) translateZ(150px) rotateY(170deg) scale(1);
+    transform: perspective(400px) translateZ(150px) rotateY(170deg) scale(1);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+
+  /* line 1661, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  50% {
+    -webkit-transform: perspective(400px) translateZ(150px) rotateY(190deg) scale(1);
+    -ms-transform: perspective(400px) translateZ(150px) rotateY(190deg) scale(1);
+    transform: perspective(400px) translateZ(150px) rotateY(190deg) scale(1);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+
+  /* line 1669, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  80% {
+    -webkit-transform: perspective(400px) translateZ(0) rotateY(360deg) scale(0.95);
+    -ms-transform: perspective(400px) translateZ(0) rotateY(360deg) scale(0.95);
+    transform: perspective(400px) translateZ(0) rotateY(360deg) scale(0.95);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+
+  /* line 1677, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    -webkit-transform: perspective(400px) translateZ(0) rotateY(360deg) scale(1);
+    -ms-transform: perspective(400px) translateZ(0) rotateY(360deg) scale(1);
+    transform: perspective(400px) translateZ(0) rotateY(360deg) scale(1);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+}
+/* line 1686, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+.animated.flip, .team-actions:hover .flip.team-action {
+  -webkit-backface-visibility: visible;
+  -ms-backface-visibility: visible;
+  backface-visibility: visible;
+  -webkit-animation-name: flip;
+  animation-name: flip;
+}
+
+@-webkit-keyframes flipInX {
+  /* line 1695, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    -webkit-transform: perspective(400px) rotateX(90deg);
+    transform: perspective(400px) rotateX(90deg);
+    opacity: 0;
+  }
+
+  /* line 1701, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  40% {
+    -webkit-transform: perspective(400px) rotateX(-10deg);
+    transform: perspective(400px) rotateX(-10deg);
+  }
+
+  /* line 1706, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  70% {
+    -webkit-transform: perspective(400px) rotateX(10deg);
+    transform: perspective(400px) rotateX(10deg);
+  }
+
+  /* line 1711, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    -webkit-transform: perspective(400px) rotateX(0deg);
+    transform: perspective(400px) rotateX(0deg);
+    opacity: 1;
+  }
+}
+@keyframes flipInX {
+  /* line 1719, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    -webkit-transform: perspective(400px) rotateX(90deg);
+    -ms-transform: perspective(400px) rotateX(90deg);
+    transform: perspective(400px) rotateX(90deg);
+    opacity: 0;
+  }
+
+  /* line 1726, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  40% {
+    -webkit-transform: perspective(400px) rotateX(-10deg);
+    -ms-transform: perspective(400px) rotateX(-10deg);
+    transform: perspective(400px) rotateX(-10deg);
+  }
+
+  /* line 1732, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  70% {
+    -webkit-transform: perspective(400px) rotateX(10deg);
+    -ms-transform: perspective(400px) rotateX(10deg);
+    transform: perspective(400px) rotateX(10deg);
+  }
+
+  /* line 1738, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    -webkit-transform: perspective(400px) rotateX(0deg);
+    -ms-transform: perspective(400px) rotateX(0deg);
+    transform: perspective(400px) rotateX(0deg);
+    opacity: 1;
+  }
+}
+/* line 1746, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+.flipInX {
+  -webkit-backface-visibility: visible !important;
+  -ms-backface-visibility: visible !important;
+  backface-visibility: visible !important;
+  -webkit-animation-name: flipInX;
+  animation-name: flipInX;
+}
+
+@-webkit-keyframes flipInY {
+  /* line 1755, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    -webkit-transform: perspective(400px) rotateY(90deg);
+    transform: perspective(400px) rotateY(90deg);
+    opacity: 0;
+  }
+
+  /* line 1761, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  40% {
+    -webkit-transform: perspective(400px) rotateY(-10deg);
+    transform: perspective(400px) rotateY(-10deg);
+  }
+
+  /* line 1766, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  70% {
+    -webkit-transform: perspective(400px) rotateY(10deg);
+    transform: perspective(400px) rotateY(10deg);
+  }
+
+  /* line 1771, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    -webkit-transform: perspective(400px) rotateY(0deg);
+    transform: perspective(400px) rotateY(0deg);
+    opacity: 1;
+  }
+}
+@keyframes flipInY {
+  /* line 1779, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    -webkit-transform: perspective(400px) rotateY(90deg);
+    -ms-transform: perspective(400px) rotateY(90deg);
+    transform: perspective(400px) rotateY(90deg);
+    opacity: 0;
+  }
+
+  /* line 1786, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  40% {
+    -webkit-transform: perspective(400px) rotateY(-10deg);
+    -ms-transform: perspective(400px) rotateY(-10deg);
+    transform: perspective(400px) rotateY(-10deg);
+  }
+
+  /* line 1792, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  70% {
+    -webkit-transform: perspective(400px) rotateY(10deg);
+    -ms-transform: perspective(400px) rotateY(10deg);
+    transform: perspective(400px) rotateY(10deg);
+  }
+
+  /* line 1798, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    -webkit-transform: perspective(400px) rotateY(0deg);
+    -ms-transform: perspective(400px) rotateY(0deg);
+    transform: perspective(400px) rotateY(0deg);
+    opacity: 1;
+  }
+}
+/* line 1806, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+.flipInY {
+  -webkit-backface-visibility: visible !important;
+  -ms-backface-visibility: visible !important;
+  backface-visibility: visible !important;
+  -webkit-animation-name: flipInY;
+  animation-name: flipInY;
+}
+
+@-webkit-keyframes flipOutX {
+  /* line 1815, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    -webkit-transform: perspective(400px) rotateX(0deg);
+    transform: perspective(400px) rotateX(0deg);
+    opacity: 1;
+  }
+
+  /* line 1821, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    -webkit-transform: perspective(400px) rotateX(90deg);
+    transform: perspective(400px) rotateX(90deg);
+    opacity: 0;
+  }
+}
+@keyframes flipOutX {
+  /* line 1829, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    -webkit-transform: perspective(400px) rotateX(0deg);
+    -ms-transform: perspective(400px) rotateX(0deg);
+    transform: perspective(400px) rotateX(0deg);
+    opacity: 1;
+  }
+
+  /* line 1836, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    -webkit-transform: perspective(400px) rotateX(90deg);
+    -ms-transform: perspective(400px) rotateX(90deg);
+    transform: perspective(400px) rotateX(90deg);
+    opacity: 0;
+  }
+}
+/* line 1844, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+.flipOutX {
+  -webkit-animation-name: flipOutX;
+  animation-name: flipOutX;
+  -webkit-backface-visibility: visible !important;
+  -ms-backface-visibility: visible !important;
+  backface-visibility: visible !important;
+}
+
+@-webkit-keyframes flipOutY {
+  /* line 1853, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    -webkit-transform: perspective(400px) rotateY(0deg);
+    transform: perspective(400px) rotateY(0deg);
+    opacity: 1;
+  }
+
+  /* line 1859, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    -webkit-transform: perspective(400px) rotateY(90deg);
+    transform: perspective(400px) rotateY(90deg);
+    opacity: 0;
+  }
+}
+@keyframes flipOutY {
+  /* line 1867, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    -webkit-transform: perspective(400px) rotateY(0deg);
+    -ms-transform: perspective(400px) rotateY(0deg);
+    transform: perspective(400px) rotateY(0deg);
+    opacity: 1;
+  }
+
+  /* line 1874, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    -webkit-transform: perspective(400px) rotateY(90deg);
+    -ms-transform: perspective(400px) rotateY(90deg);
+    transform: perspective(400px) rotateY(90deg);
+    opacity: 0;
+  }
+}
+/* line 1882, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+.flipOutY {
+  -webkit-backface-visibility: visible !important;
+  -ms-backface-visibility: visible !important;
+  backface-visibility: visible !important;
+  -webkit-animation-name: flipOutY;
+  animation-name: flipOutY;
+}
+
+@-webkit-keyframes lightSpeedIn {
+  /* line 1891, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    -webkit-transform: translateX(100%) skewX(-30deg);
+    transform: translateX(100%) skewX(-30deg);
+    opacity: 0;
+  }
+
+  /* line 1897, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  60% {
+    -webkit-transform: translateX(-20%) skewX(30deg);
+    transform: translateX(-20%) skewX(30deg);
+    opacity: 1;
+  }
+
+  /* line 1903, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  80% {
+    -webkit-transform: translateX(0%) skewX(-15deg);
+    transform: translateX(0%) skewX(-15deg);
+    opacity: 1;
+  }
+
+  /* line 1909, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    -webkit-transform: translateX(0%) skewX(0deg);
+    transform: translateX(0%) skewX(0deg);
+    opacity: 1;
+  }
+}
+@keyframes lightSpeedIn {
+  /* line 1917, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    -webkit-transform: translateX(100%) skewX(-30deg);
+    -ms-transform: translateX(100%) skewX(-30deg);
+    transform: translateX(100%) skewX(-30deg);
+    opacity: 0;
+  }
+
+  /* line 1924, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  60% {
+    -webkit-transform: translateX(-20%) skewX(30deg);
+    -ms-transform: translateX(-20%) skewX(30deg);
+    transform: translateX(-20%) skewX(30deg);
+    opacity: 1;
+  }
+
+  /* line 1931, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  80% {
+    -webkit-transform: translateX(0%) skewX(-15deg);
+    -ms-transform: translateX(0%) skewX(-15deg);
+    transform: translateX(0%) skewX(-15deg);
+    opacity: 1;
+  }
+
+  /* line 1938, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    -webkit-transform: translateX(0%) skewX(0deg);
+    -ms-transform: translateX(0%) skewX(0deg);
+    transform: translateX(0%) skewX(0deg);
+    opacity: 1;
+  }
+}
+/* line 1946, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+.lightSpeedIn {
+  -webkit-animation-name: lightSpeedIn;
+  animation-name: lightSpeedIn;
+  -webkit-animation-timing-function: ease-out;
+  animation-timing-function: ease-out;
+}
+
+@-webkit-keyframes lightSpeedOut {
+  /* line 1954, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    -webkit-transform: translateX(0%) skewX(0deg);
+    transform: translateX(0%) skewX(0deg);
+    opacity: 1;
+  }
+
+  /* line 1960, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    -webkit-transform: translateX(100%) skewX(-30deg);
+    transform: translateX(100%) skewX(-30deg);
+    opacity: 0;
+  }
+}
+@keyframes lightSpeedOut {
+  /* line 1968, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    -webkit-transform: translateX(0%) skewX(0deg);
+    -ms-transform: translateX(0%) skewX(0deg);
+    transform: translateX(0%) skewX(0deg);
+    opacity: 1;
+  }
+
+  /* line 1975, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    -webkit-transform: translateX(100%) skewX(-30deg);
+    -ms-transform: translateX(100%) skewX(-30deg);
+    transform: translateX(100%) skewX(-30deg);
+    opacity: 0;
+  }
+}
+/* line 1983, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+.lightSpeedOut {
+  -webkit-animation-name: lightSpeedOut;
+  animation-name: lightSpeedOut;
+  -webkit-animation-timing-function: ease-in;
+  animation-timing-function: ease-in;
+}
+
+@-webkit-keyframes rotateIn {
+  /* line 1991, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    -webkit-transform-origin: center center;
+    transform-origin: center center;
+    -webkit-transform: rotate(-200deg);
+    transform: rotate(-200deg);
+    opacity: 0;
+  }
+
+  /* line 1999, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    -webkit-transform-origin: center center;
+    transform-origin: center center;
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+}
+@keyframes rotateIn {
+  /* line 2009, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    -webkit-transform-origin: center center;
+    -ms-transform-origin: center center;
+    transform-origin: center center;
+    -webkit-transform: rotate(-200deg);
+    -ms-transform: rotate(-200deg);
+    transform: rotate(-200deg);
+    opacity: 0;
+  }
+
+  /* line 2019, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    -webkit-transform-origin: center center;
+    -ms-transform-origin: center center;
+    transform-origin: center center;
+    -webkit-transform: rotate(0);
+    -ms-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+}
+/* line 2030, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+.rotateIn {
+  -webkit-animation-name: rotateIn;
+  animation-name: rotateIn;
+}
+
+@-webkit-keyframes rotateInDownLeft {
+  /* line 2036, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    -webkit-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    opacity: 0;
+  }
+
+  /* line 2044, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    -webkit-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+}
+@keyframes rotateInDownLeft {
+  /* line 2054, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    -webkit-transform-origin: left bottom;
+    -ms-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    opacity: 0;
+  }
+
+  /* line 2064, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    -webkit-transform-origin: left bottom;
+    -ms-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform: rotate(0);
+    -ms-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+}
+/* line 2075, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+.rotateInDownLeft {
+  -webkit-animation-name: rotateInDownLeft;
+  animation-name: rotateInDownLeft;
+}
+
+@-webkit-keyframes rotateInDownRight {
+  /* line 2081, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    -webkit-transform-origin: right bottom;
+    transform-origin: right bottom;
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    opacity: 0;
+  }
+
+  /* line 2089, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    -webkit-transform-origin: right bottom;
+    transform-origin: right bottom;
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+}
+@keyframes rotateInDownRight {
+  /* line 2099, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    -webkit-transform-origin: right bottom;
+    -ms-transform-origin: right bottom;
+    transform-origin: right bottom;
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    opacity: 0;
+  }
+
+  /* line 2109, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    -webkit-transform-origin: right bottom;
+    -ms-transform-origin: right bottom;
+    transform-origin: right bottom;
+    -webkit-transform: rotate(0);
+    -ms-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+}
+/* line 2120, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+.rotateInDownRight {
+  -webkit-animation-name: rotateInDownRight;
+  animation-name: rotateInDownRight;
+}
+
+@-webkit-keyframes rotateInUpLeft {
+  /* line 2126, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    -webkit-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    opacity: 0;
+  }
+
+  /* line 2134, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    -webkit-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+}
+@keyframes rotateInUpLeft {
+  /* line 2144, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    -webkit-transform-origin: left bottom;
+    -ms-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    opacity: 0;
+  }
+
+  /* line 2154, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    -webkit-transform-origin: left bottom;
+    -ms-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform: rotate(0);
+    -ms-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+}
+/* line 2165, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+.rotateInUpLeft {
+  -webkit-animation-name: rotateInUpLeft;
+  animation-name: rotateInUpLeft;
+}
+
+@-webkit-keyframes rotateInUpRight {
+  /* line 2171, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    -webkit-transform-origin: right bottom;
+    transform-origin: right bottom;
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    opacity: 0;
+  }
+
+  /* line 2179, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    -webkit-transform-origin: right bottom;
+    transform-origin: right bottom;
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+}
+@keyframes rotateInUpRight {
+  /* line 2189, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    -webkit-transform-origin: right bottom;
+    -ms-transform-origin: right bottom;
+    transform-origin: right bottom;
+    -webkit-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    opacity: 0;
+  }
+
+  /* line 2199, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    -webkit-transform-origin: right bottom;
+    -ms-transform-origin: right bottom;
+    transform-origin: right bottom;
+    -webkit-transform: rotate(0);
+    -ms-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+}
+/* line 2210, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+.rotateInUpRight {
+  -webkit-animation-name: rotateInUpRight;
+  animation-name: rotateInUpRight;
+}
+
+@-webkit-keyframes rotateOut {
+  /* line 2216, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    -webkit-transform-origin: center center;
+    transform-origin: center center;
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+
+  /* line 2224, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    -webkit-transform-origin: center center;
+    transform-origin: center center;
+    -webkit-transform: rotate(200deg);
+    transform: rotate(200deg);
+    opacity: 0;
+  }
+}
+@keyframes rotateOut {
+  /* line 2234, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    -webkit-transform-origin: center center;
+    -ms-transform-origin: center center;
+    transform-origin: center center;
+    -webkit-transform: rotate(0);
+    -ms-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+
+  /* line 2244, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    -webkit-transform-origin: center center;
+    -ms-transform-origin: center center;
+    transform-origin: center center;
+    -webkit-transform: rotate(200deg);
+    -ms-transform: rotate(200deg);
+    transform: rotate(200deg);
+    opacity: 0;
+  }
+}
+/* line 2255, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+.rotateOut {
+  -webkit-animation-name: rotateOut;
+  animation-name: rotateOut;
+}
+
+@-webkit-keyframes rotateOutDownLeft {
+  /* line 2261, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    -webkit-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+
+  /* line 2269, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    -webkit-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    opacity: 0;
+  }
+}
+@keyframes rotateOutDownLeft {
+  /* line 2279, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    -webkit-transform-origin: left bottom;
+    -ms-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform: rotate(0);
+    -ms-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+
+  /* line 2289, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    -webkit-transform-origin: left bottom;
+    -ms-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    opacity: 0;
+  }
+}
+/* line 2300, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+.rotateOutDownLeft {
+  -webkit-animation-name: rotateOutDownLeft;
+  animation-name: rotateOutDownLeft;
+}
+
+@-webkit-keyframes rotateOutDownRight {
+  /* line 2306, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    -webkit-transform-origin: right bottom;
+    transform-origin: right bottom;
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+
+  /* line 2314, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    -webkit-transform-origin: right bottom;
+    transform-origin: right bottom;
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    opacity: 0;
+  }
+}
+@keyframes rotateOutDownRight {
+  /* line 2324, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    -webkit-transform-origin: right bottom;
+    -ms-transform-origin: right bottom;
+    transform-origin: right bottom;
+    -webkit-transform: rotate(0);
+    -ms-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+
+  /* line 2334, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    -webkit-transform-origin: right bottom;
+    -ms-transform-origin: right bottom;
+    transform-origin: right bottom;
+    -webkit-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    opacity: 0;
+  }
+}
+/* line 2345, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+.rotateOutDownRight {
+  -webkit-animation-name: rotateOutDownRight;
+  animation-name: rotateOutDownRight;
+}
+
+@-webkit-keyframes rotateOutUpLeft {
+  /* line 2351, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    -webkit-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+
+  /* line 2359, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    -webkit-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    opacity: 0;
+  }
+}
+@keyframes rotateOutUpLeft {
+  /* line 2369, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    -webkit-transform-origin: left bottom;
+    -ms-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform: rotate(0);
+    -ms-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+
+  /* line 2379, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    -webkit-transform-origin: left bottom;
+    -ms-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    opacity: 0;
+  }
+}
+/* line 2390, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+.rotateOutUpLeft {
+  -webkit-animation-name: rotateOutUpLeft;
+  animation-name: rotateOutUpLeft;
+}
+
+@-webkit-keyframes rotateOutUpRight {
+  /* line 2396, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    -webkit-transform-origin: right bottom;
+    transform-origin: right bottom;
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+
+  /* line 2404, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    -webkit-transform-origin: right bottom;
+    transform-origin: right bottom;
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    opacity: 0;
+  }
+}
+@keyframes rotateOutUpRight {
+  /* line 2414, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    -webkit-transform-origin: right bottom;
+    -ms-transform-origin: right bottom;
+    transform-origin: right bottom;
+    -webkit-transform: rotate(0);
+    -ms-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+
+  /* line 2424, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    -webkit-transform-origin: right bottom;
+    -ms-transform-origin: right bottom;
+    transform-origin: right bottom;
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    opacity: 0;
+  }
+}
+/* line 2435, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+.rotateOutUpRight {
+  -webkit-animation-name: rotateOutUpRight;
+  animation-name: rotateOutUpRight;
+}
+
+@-webkit-keyframes slideInDown {
+  /* line 2441, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px);
+    transform: translateY(-2000px);
+  }
+
+  /* line 2447, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+@keyframes slideInDown {
+  /* line 2454, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px);
+    -ms-transform: translateY(-2000px);
+    transform: translateY(-2000px);
+  }
+
+  /* line 2461, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+/* line 2468, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+.slideInDown {
+  -webkit-animation-name: slideInDown;
+  animation-name: slideInDown;
+}
+
+@-webkit-keyframes slideInLeft {
+  /* line 2474, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px);
+    transform: translateX(-2000px);
+  }
+
+  /* line 2480, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+@keyframes slideInLeft {
+  /* line 2487, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px);
+    -ms-transform: translateX(-2000px);
+    transform: translateX(-2000px);
+  }
+
+  /* line 2494, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+/* line 2501, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+.slideInLeft {
+  -webkit-animation-name: slideInLeft;
+  animation-name: slideInLeft;
+}
+
+@-webkit-keyframes slideInRight {
+  /* line 2507, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px);
+    transform: translateX(2000px);
+  }
+
+  /* line 2513, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+@keyframes slideInRight {
+  /* line 2520, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px);
+    -ms-transform: translateX(2000px);
+    transform: translateX(2000px);
+  }
+
+  /* line 2527, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+/* line 2534, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+.slideInRight {
+  -webkit-animation-name: slideInRight;
+  animation-name: slideInRight;
+}
+
+@-webkit-keyframes slideOutLeft {
+  /* line 2540, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  /* line 2545, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px);
+    transform: translateX(-2000px);
+  }
+}
+@keyframes slideOutLeft {
+  /* line 2553, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  /* line 2559, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px);
+    -ms-transform: translateX(-2000px);
+    transform: translateX(-2000px);
+  }
+}
+/* line 2567, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+.slideOutLeft {
+  -webkit-animation-name: slideOutLeft;
+  animation-name: slideOutLeft;
+}
+
+@-webkit-keyframes slideOutRight {
+  /* line 2573, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  /* line 2578, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px);
+    transform: translateX(2000px);
+  }
+}
+@keyframes slideOutRight {
+  /* line 2586, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  /* line 2592, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px);
+    -ms-transform: translateX(2000px);
+    transform: translateX(2000px);
+  }
+}
+/* line 2600, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+.slideOutRight {
+  -webkit-animation-name: slideOutRight;
+  animation-name: slideOutRight;
+}
+
+@-webkit-keyframes slideOutUp {
+  /* line 2606, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  /* line 2611, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px);
+    transform: translateY(-2000px);
+  }
+}
+@keyframes slideOutUp {
+  /* line 2619, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  /* line 2625, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px);
+    -ms-transform: translateY(-2000px);
+    transform: translateY(-2000px);
+  }
+}
+/* line 2633, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+.slideOutUp {
+  -webkit-animation-name: slideOutUp;
+  animation-name: slideOutUp;
+}
+
+@-webkit-keyframes slideInUp {
+  /* line 2639, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    -webkit-transform: translateY(2000px);
+    transform: translateY(2000px);
+  }
+
+  /* line 2644, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+@keyframes slideInUp {
+  /* line 2652, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    -webkit-transform: translateY(2000px);
+    -ms-transform: translateY(2000px);
+    transform: translateY(2000px);
+  }
+
+  /* line 2658, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+/* line 2666, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+.slideInUp {
+  -webkit-animation-name: slideInUp;
+  animation-name: slideInUp;
+}
+
+@-webkit-keyframes slideOutDown {
+  /* line 2672, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  /* line 2677, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px);
+    transform: translateY(2000px);
+  }
+}
+@keyframes slideOutDown {
+  /* line 2685, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  /* line 2691, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px);
+    -ms-transform: translateY(2000px);
+    transform: translateY(2000px);
+  }
+}
+/* line 2699, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+.slideOutDown {
+  -webkit-animation-name: slideOutDown;
+  animation-name: slideOutDown;
+}
+
+@-webkit-keyframes hinge {
+  /* line 2705, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+    -webkit-transform-origin: top left;
+    transform-origin: top left;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+  }
+
+  /* line 2714, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  20%, 60% {
+    -webkit-transform: rotate(80deg);
+    transform: rotate(80deg);
+    -webkit-transform-origin: top left;
+    transform-origin: top left;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+  }
+
+  /* line 2723, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  40% {
+    -webkit-transform: rotate(60deg);
+    transform: rotate(60deg);
+    -webkit-transform-origin: top left;
+    transform-origin: top left;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+  }
+
+  /* line 2732, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  80% {
+    -webkit-transform: rotate(60deg) translateY(0);
+    transform: rotate(60deg) translateY(0);
+    -webkit-transform-origin: top left;
+    transform-origin: top left;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+    opacity: 1;
+  }
+
+  /* line 2742, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    -webkit-transform: translateY(700px);
+    transform: translateY(700px);
+    opacity: 0;
+  }
+}
+@keyframes hinge {
+  /* line 2750, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    -webkit-transform: rotate(0);
+    -ms-transform: rotate(0);
+    transform: rotate(0);
+    -webkit-transform-origin: top left;
+    -ms-transform-origin: top left;
+    transform-origin: top left;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+  }
+
+  /* line 2761, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  20%, 60% {
+    -webkit-transform: rotate(80deg);
+    -ms-transform: rotate(80deg);
+    transform: rotate(80deg);
+    -webkit-transform-origin: top left;
+    -ms-transform-origin: top left;
+    transform-origin: top left;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+  }
+
+  /* line 2772, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  40% {
+    -webkit-transform: rotate(60deg);
+    -ms-transform: rotate(60deg);
+    transform: rotate(60deg);
+    -webkit-transform-origin: top left;
+    -ms-transform-origin: top left;
+    transform-origin: top left;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+  }
+
+  /* line 2783, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  80% {
+    -webkit-transform: rotate(60deg) translateY(0);
+    -ms-transform: rotate(60deg) translateY(0);
+    transform: rotate(60deg) translateY(0);
+    -webkit-transform-origin: top left;
+    -ms-transform-origin: top left;
+    transform-origin: top left;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+    opacity: 1;
+  }
+
+  /* line 2795, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    -webkit-transform: translateY(700px);
+    -ms-transform: translateY(700px);
+    transform: translateY(700px);
+    opacity: 0;
+  }
+}
+/* line 2803, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+.hinge {
+  -webkit-animation-name: hinge;
+  animation-name: hinge;
+}
+
+/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
+@-webkit-keyframes rollIn {
+  /* line 2811, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-100%) rotate(-120deg);
+    transform: translateX(-100%) rotate(-120deg);
+  }
+
+  /* line 2817, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0px) rotate(0deg);
+    transform: translateX(0px) rotate(0deg);
+  }
+}
+@keyframes rollIn {
+  /* line 2825, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-100%) rotate(-120deg);
+    -ms-transform: translateX(-100%) rotate(-120deg);
+    transform: translateX(-100%) rotate(-120deg);
+  }
+
+  /* line 2832, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0px) rotate(0deg);
+    -ms-transform: translateX(0px) rotate(0deg);
+    transform: translateX(0px) rotate(0deg);
+  }
+}
+/* line 2840, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+.rollIn {
+  -webkit-animation-name: rollIn;
+  animation-name: rollIn;
+}
+
+/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
+@-webkit-keyframes rollOut {
+  /* line 2848, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0px) rotate(0deg);
+    transform: translateX(0px) rotate(0deg);
+  }
+
+  /* line 2854, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(100%) rotate(120deg);
+    transform: translateX(100%) rotate(120deg);
+  }
+}
+@keyframes rollOut {
+  /* line 2862, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0px) rotate(0deg);
+    -ms-transform: translateX(0px) rotate(0deg);
+    transform: translateX(0px) rotate(0deg);
+  }
+
+  /* line 2869, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(100%) rotate(120deg);
+    -ms-transform: translateX(100%) rotate(120deg);
+    transform: translateX(100%) rotate(120deg);
+  }
+}
+/* line 2877, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/utils/_animate.scss */
+.rollOut {
+  -webkit-animation-name: rollOut;
+  animation-name: rollOut;
+}
+
+/* line 6 */
+a {
+  text-decoration: none;
+}
+
+/* line 54 */
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 60 */
+.fill-up, .a-layout, .a-layout--vertical, html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+/* line 66 */
+.is-clickable, .a-button, .a-button--stretched, .a-button--naked, .a-dropdown__item, .a-dropdown__footer {
+  cursor: pointer;
+}
+
+/* line 70 */
+.is-scrollable, .a-list, .a-list--horizontal {
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* line 75 */
+.is-non-selectable, .a-button, .a-button--stretched, .a-button--naked {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* line 79 */
+.is-fixed-size {
+  -webkit-flex-shrink: 0;
+  -moz-flex-shrink: 0;
+  flex-shrink: 0;
+}
+
+/* line 83 */
+.is-highlighted {
+  background: rgba(237, 187, 15, 0.1) !important;
+}
+
+/* line 90 */
+.slim, .slim--stretched {
+  padding: 5px;
+}
+
+/* line 94 */
+.slim--stretched {
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
+/* line 100 */
+.slim--right {
+  padding-right: 5px;
+}
+
+/* line 104 */
+.slim--squashed {
+  padding: 0 5px;
+}
+
+/* line 108 */
+.regular {
+  padding: 10px;
+}
+
+/* line 112 */
+.loose {
+  padding: 15px;
+}
+
+/* line 116 */
+.mb {
+  margin-bottom: 15px;
+}
+
+/* line 121 */
+.mb--listed:not(:last-of-type) {
+  margin-bottom: 15px;
+}
+
+/* line 126 */
+.mb--big {
+  margin-bottom: 35px;
+}
+
+/* line 130 */
+.mr {
+  margin-right: 15px;
+}
+
+/* line 134 */
+.mr--big {
+  margin-right: 35px;
+}
+
+/* line 138 */
+.mr--slim {
+  margin-right: 5px;
+}
+
+/* line 143 */
+.mr--listed:not(:last-of-type) {
+  margin-right: 15px;
+}
+
+/* line 151 */
+.b {
+  border: 1px solid #d8dae3;
+}
+
+/* line 155 */
+.bb {
+  border-bottom: 1px solid #d8dae3;
+}
+
+/* line 160 */
+.bb--listed:not(:last-of-type) {
+  border-bottom: 1px solid #d8dae3;
+}
+
+/* line 165 */
+.bt {
+  border-top: 1px solid #d8dae3;
+}
+
+/* line 169 */
+.br {
+  border-right: 1px solid #d8dae3;
+}
+
+/* line 174 */
+.br--listed:not(:last-of-type) {
+  border-right: 1px solid #d8dae3;
+}
+
+/* line 179 */
+.bl {
+  border-left: 1px solid #d8dae3;
+}
+
+/* line 186 */
+.text-center {
+  text-align: center;
+}
+
+/* line 190 */
+.text-right {
+  text-align: right;
+}
+
+/* line 194 */
+.dotdotdot {
+  white-space: nowrap;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* line 198 */
+h2 {
+  font-weight: normal;
+}
+
+/* line 204 */
+.small,
+.small-font {
+  font-size: 80%;
+}
+
+/* line 209 */
+.big-font {
+  font-size: 120%;
+}
+
+/* line 214 */
+.center__wrapper {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: flex;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  align-items: center;
+}
+
+/* line 220 */
+.full-width {
+  width: 100%;
+}
+
+/* line 224 */
+.full-height {
+  height: 100%;
+}
+
+/* line 2, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-list.scss */
+.a-list {
+  overflow-x: visible;
+}
+
+/* line 7, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-list.scss */
+.a-list__item, .a-list__item--header {
+  display: block;
+}
+/* line 11, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-list.scss */
+.a-list__item:not(:last-of-type), .a-list__item--header:not(:last-of-type) {
+  border-bottom: 1px solid #d8dae3;
+}
+
+/* line 16, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-list.scss */
+.a-list__item--header {
+  background: #f6f6f8;
+}
+
+/* line 22, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-list.scss */
+.a-list--horizontal {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: flex;
+  overflow-x: scroll;
+  overflow-y: visible;
+}
+/* line 28, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-list.scss */
+.a-list--horizontal > .a-list__item, .a-list--horizontal > .a-list__item--header {
+  -webkit-flex-shrink: 0;
+  -moz-flex-shrink: 0;
+  flex-shrink: 0;
+  border-bottom: 0;
+}
+
+/* line 1, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-bar.scss */
+.a-bar, .a-bar--end, .a-bar--center, .a-activity__divider, .a-notify, .a-notify--fake, .a-notify--bubble, .a-bar--space-between, .a-bar--space-between--with-borders, .a-toolbar, .a-toolbar--standalone, .a-toolbar--right, .a-progress__bar, .a-progress__bar--complete, .a-choice__wrapper, .a-bar--space-around, .a-checkbox__wrapper, .a-choice,
+.a-bar--start {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: flex;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  align-items: center;
+}
+
+/* line 8, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-bar.scss */
+.is-vertical {
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  flex-direction: column;
+}
+
+/* line 12, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-bar.scss */
+.a-bar--end {
+  -webkit-justify-content: flex-end;
+  -moz-justify-content: flex-end;
+  justify-content: flex-end;
+}
+
+/* line 19, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-bar.scss */
+.a-bar--center, .a-activity__divider, .a-notify, .a-notify--fake, .a-notify--bubble {
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  justify-content: center;
+}
+
+/* line 26, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-bar.scss */
+.a-bar--space-between, .a-bar--space-between--with-borders, .a-toolbar, .a-toolbar--standalone, .a-toolbar--right, .a-progress__bar, .a-progress__bar--complete, .a-choice__wrapper {
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  justify-content: space-between;
+}
+
+/* line 33, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-bar.scss */
+.a-bar--space-around {
+  -webkit-justify-content: space-around;
+  -moz-justify-content: space-around;
+  justify-content: space-around;
+}
+
+/* line 40, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-bar.scss */
+.a-bar__item, .a-bar__item--double, .a-bar__item--half {
+  -webkit-flex-basis: 100%;
+  -moz-flex-basis: 100%;
+  flex-basis: 100%;
+}
+
+/* line 44, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-bar.scss */
+.a-bar__item--double {
+  -webkit-flex-basis: 200%;
+  -moz-flex-basis: 200%;
+  flex-basis: 200%;
+}
+
+/* line 49, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-bar.scss */
+.a-bar__item--half {
+  -webkit-flex-basis: 50%;
+  -moz-flex-basis: 50%;
+  flex-basis: 50%;
+}
+
+/* line 58, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-bar.scss */
+.a-bar--space-between--with-borders .a-bar__item:not(:last-of-type), .a-bar--space-between--with-borders .a-bar__item--double:not(:last-of-type), .a-bar--space-between--with-borders .a-bar__item--half:not(:last-of-type) {
+  border-right: 1px solid #d8dae3;
+}
+
+/* line 1, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-layout.scss */
+.a-layout__wrapper {
+  position: relative;
+}
+
+/* line 7, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-layout.scss */
+.a-layout, .a-layout--vertical {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: flex;
+  position: absolute;
+}
+
+/* line 15, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-layout.scss */
+.a-layout--vertical {
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  flex-direction: column;
+}
+
+/* line 21, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-layout.scss */
+.a-layout__panel, .a-layout__panel--full, .a-layout__panel--double, .a-layout__panel--half, .a-layout__panel--quarter, .a-layout__panel--limited, .a-layout__panel--minimal {
+  position: relative;
+}
+
+/* line 25, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-layout.scss */
+.a-layout__panel--full {
+  -webkit-flex-basis: 100%;
+  -moz-flex-basis: 100%;
+  flex-basis: 100%;
+}
+
+/* line 31, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-layout.scss */
+.a-layout__panel--double {
+  -webkit-flex-basis: 200%;
+  -moz-flex-basis: 200%;
+  flex-basis: 200%;
+}
+
+/* line 37, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-layout.scss */
+.a-layout__panel--half {
+  -webkit-flex-basis: 50%;
+  -moz-flex-basis: 50%;
+  flex-basis: 50%;
+}
+
+/* line 43, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-layout.scss */
+.a-layout__panel--quarter {
+  -webkit-flex-basis: 25%;
+  -moz-flex-basis: 25%;
+  flex-basis: 25%;
+}
+
+/* line 49, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-layout.scss */
+.a-layout__panel--limited {
+  -webkit-flex-basis: 200px;
+  -moz-flex-basis: 200px;
+  flex-basis: 200px;
+  min-width: 200px;
+}
+
+/* line 56, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-layout.scss */
+.a-layout__panel--minimal {
+  -webkit-flex-basis: 100px;
+  -moz-flex-basis: 100px;
+  flex-basis: 100px;
+  min-width: 100px;
+}
+
+/* line 1, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-toolbar.scss */
+.a-toolbar, .a-toolbar--standalone, .a-toolbar--right {
+  border-bottom: 1px solid #d8dae3;
+}
+
+/* line 7, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-toolbar.scss */
+.a-toolbar--standalone {
+  border-radius: 5px;
+  border: 1px solid #d8dae3;
+}
+
+/* line 14, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-toolbar.scss */
+.a-toolbar--right {
+  -webkit-justify-content: flex-end;
+  -moz-justify-content: flex-end;
+  justify-content: flex-end;
+}
+
+/* line 21, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-toolbar.scss */
+.a-toolbar__group {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: flex;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  align-items: center;
+}
+
+/* line 28, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-toolbar.scss */
+.a-toolbar__group__item:not(:last-of-type) {
+  margin-right: 5px;
+}
+
+/* line 33, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-toolbar.scss */
+.a-toolbar__divider {
+  -webkit-align-self: stretch;
+  -moz-align-self: stretch;
+  align-self: stretch;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: flex;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  justify-content: center;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  flex-direction: column;
+  border-right: 1px solid #cfd3da;
+  margin: 0 5px;
+}
+
+/* line 1, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-button.scss */
+.a-button, .a-button--stretched, .a-button--naked {
+  display: inline-block;
+  background: transparent;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: flex;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  align-items: center;
+  border: 1px solid #d8dae3;
+  padding: .3em .6em;
+  border-radius: 3px;
+  zoom: 1;
+  line-height: normal;
+  white-space: nowrap;
+  vertical-align: baseline;
+  background: #fff;
+}
+/* line 24, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-button.scss */
+.a-button:hover, .a-button--stretched:hover, .a-button--naked:hover {
+  background: #f2f2f2;
+  box-shadow: 0 1px 3px -1px #c9ccd8;
+}
+/* line 30, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-button.scss */
+.a-button:active, .a-button--stretched:active, .a-button--naked:active, .a-button.active, .active.a-button--stretched, .active.a-button--naked, .a-button.is-active, .is-active.a-button--stretched, .is-active.a-button--naked {
+  background: rgba(0, 0, 0, 0.03);
+  box-shadow: 0 0 0 #000;
+}
+/* line 37, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-button.scss */
+.a-button[disabled], [disabled].a-button--stretched, [disabled].a-button--naked {
+  background: #d8dae3;
+  cursor: not-allowed;
+}
+/* line 41, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-button.scss */
+.a-button[disabled]:hover, [disabled].a-button--stretched:hover, [disabled].a-button--naked:hover {
+  box-shadow: 0 0 0 #000;
+}
+
+/* line 47, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-button.scss */
+.a-button--stretched {
+  -webkit-align-self: stretch;
+  -moz-align-self: stretch;
+  align-self: stretch;
+}
+
+/* line 54, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-button.scss */
+.a-button--naked {
+  border-color: transparent;
+  padding: 3px 0;
+}
+/* line 62, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-button.scss */
+.a-button--naked:hover {
+  background: inherit;
+  box-shadow: 0 0 0 #000;
+}
+/* line 67, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-button.scss */
+.a-button--naked:hover > .a-icon, .a-button--naked:hover > .a-icon--small, .a-button--naked:hover > .a-icon--big {
+  color: #b3b8c3;
+}
+
+/* line 73, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-button.scss */
+.a-button__icon {
+  -webkit-align-self: center;
+  -moz-align-self: center;
+  align-self: center;
+  margin-right: 8px;
+}
+
+/* line 82, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-button.scss */
+.a-button__group {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: flex;
+}
+/* line 86, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-button.scss */
+.a-button__group > .a-button, .a-button__group > .a-button--stretched, .a-button__group > .a-button--naked {
+  border-radius: 0;
+}
+/* line 91, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-button.scss */
+.a-button__group > .a-button:not(:first-of-type), .a-button__group > .a-button--stretched:not(:first-of-type), .a-button__group > .a-button--naked:not(:first-of-type) {
+  border-left: none;
+  border-radius: 0;
+}
+/* line 96, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-button.scss */
+.a-button__group > .a-button:first-of-type, .a-button__group > .a-button--stretched:first-of-type, .a-button__group > .a-button--naked:first-of-type {
+  border-radius: 3px 0 0 3px;
+}
+/* line 100, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-button.scss */
+.a-button__group > .a-button:last-of-type, .a-button__group > .a-button--stretched:last-of-type, .a-button__group > .a-button--naked:last-of-type {
+  border-radius: 0 3px 3px 0;
+}
+
+/* line 1, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-icon.scss */
+.a-icon, .a-icon--small, .a-icon--big {
+  -webkit-font-smoothing: antialiased;
+  font-family: Entypo;
+  font-size: 35px;
+  line-height: 0;
+  color: #525f6b;
+}
+
+/* line 14, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-icon.scss */
+.a-icon--small {
+  font-size: 32px;
+}
+
+/* line 20, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-icon.scss */
+.a-icon--big {
+  font-size: 40px;
+}
+
+/* line 1, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-card.scss */
+.a-card {
+  border-radius: 0 0 5px 5px;
+  border: 1px solid #d8dae3;
+  background: #fff;
+}
+/* line 8, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-card.scss */
+.a-card.is-clickable:hover, .a-card.a-button:hover, .a-card.a-button--stretched:hover, .a-card.a-button--naked:hover, .a-card.a-dropdown__item:hover, .a-card.a-dropdown__footer:hover {
+  background: rgba(0, 0, 0, 0.03);
+}
+/* line 12, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-card.scss */
+.a-card.is-clickable:active, .a-card.a-button:active, .a-card.a-button--stretched:active, .a-card.a-button--naked:active, .a-card.a-dropdown__item:active, .a-card.a-dropdown__footer:active, .a-card.is-clickable.active, .a-card.active.a-button, .a-card.active.a-button--stretched, .a-card.active.a-button--naked, .a-card.active.a-dropdown__item, .a-card.active.a-dropdown__footer {
+  -webkit-transform: scale(0.993);
+  -moz-transform: scale(0.993);
+  -ms-transform: scale(0.993);
+  -o-transform: scale(0.993);
+  transform: scale(0.993);
+}
+
+/* line 3, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-activity.scss */
+.a-activity__feed {
+  position: relative;
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* line 10, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-activity.scss */
+.a-activity__header {
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  color: #979dac;
+}
+
+/* line 16, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-activity.scss */
+.a-activity__wrapper {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: flex;
+}
+
+/* line 28, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-activity.scss */
+.a-activity, .a-activity--collapsed {
+  -webkit-flex-basis: 100%;
+  -moz-flex-basis: 100%;
+  flex-basis: 100%;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: flex;
+  -webkit-align-items: flex-start;
+  -moz-align-items: flex-start;
+  align-items: flex-start;
+  position: relative;
+  padding: 10px 0;
+  border-top: 1px solid rgba(216, 218, 227, 0);
+  border-bottom: 1px solid rgba(216, 218, 227, 0);
+}
+@media screen and (min-width: 650px) {
+  /* line 28, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-activity.scss */
+  .a-activity, .a-activity--collapsed {
+    border-radius: 5px;
+    border: 1px solid rgba(216, 218, 227, 0);
+  }
+}
+
+/* line 43, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-activity.scss */
+.a-activity--collapsed {
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  align-items: center;
+}
+@media screen and (min-width: 650px) {
+  /* line 43, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-activity.scss */
+  .a-activity--collapsed {
+    border-radius: 5px;
+    border: 1px solid rgba(216, 218, 227, 0);
+  }
+}
+/* line 52, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-activity.scss */
+.a-activity--collapsed.is-highlighted {
+  border-color: rgba(0, 0, 0, 0.1);
+  background: #fff9e0;
+  color: #f88f08;
+}
+/* line 57, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-activity.scss */
+.a-activity--collapsed.is-highlighted > .a-activity__icon {
+  box-shadow: 0 0 0 #000;
+  background: #f88f08;
+}
+
+/* line 64, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-activity.scss */
+.a-activity__icon {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: flex;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  justify-content: center;
+  min-width: 30px;
+  min-height: 30px;
+  margin-right: 15px;
+  border-radius: 30px;
+  box-shadow: 0 0 0 3px #fff;
+  color: #fff;
+  background: #1eb18a;
+}
+
+/* line 77, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-activity.scss */
+.a-activity__divider {
+  position: relative;
+  border-bottom: 1px solid #d8dae3;
+  margin: 10px 0 15px;
+}
+
+/* line 84, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-activity.scss */
+.a-activity__caption {
+  font-size: 90%;
+  color: rgba(0, 0, 0, 0.6);
+}
+/* line 88, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-activity.scss */
+.a-activity__caption ~ .a-activity__body {
+  line-height: 1.5em;
+}
+
+/* line 93, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-activity.scss */
+.a-activity__divider__time {
+  font-size: 80%;
+  color: #979dac;
+  background: #fff;
+  padding: 0 10px;
+  margin-bottom: -8px;
+}
+
+/* line 1, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-progress.scss */
+.a-progress {
+  background: #fff;
+  border: 1px solid #babece;
+  min-width: 250px;
+  width: 100%;
+}
+
+/* line 10, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-progress.scss */
+.a-progress__bar, .a-progress__bar--complete {
+  background: #d7f9d5;
+  text-align: right;
+  padding: 5px;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* line 19, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-progress.scss */
+.a-progress__bar--complete {
+  border: 0;
+  background: #b9f5b6;
+  color: rgba(0, 0, 0, 0.3);
+}
+
+/* line 1, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-dropdown.scss */
+.a-dropdown__wrapper {
+  position: relative;
+  outline: none;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+/* line 9, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-dropdown.scss */
+.a-dropdown__wrapper:hover {
+  box-shadow: 0 0 0 #000;
+}
+
+/* line 14, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-dropdown.scss */
+.a-dropdown {
+  position: absolute;
+  top: 24px;
+  left: 0px;
+  width: 150px;
+  z-index: 10;
+  padding: 5px 0;
+  border-radius: 0 5px 5px 5px;
+  border: 1px solid #babece;
+  background-clip: padding-box;
+  box-shadow: 0 1px 3px -1px #c9ccd8;
+}
+
+/* line 28, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-dropdown.scss */
+.expand-right {
+  right: 0px;
+  left: auto;
+  border-radius: 5px 0 5px 5px;
+}
+
+/* line 34, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-dropdown.scss */
+.a-dropdown__item, .a-dropdown__footer {
+  padding: 5px 10px;
+}
+/* line 38, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-dropdown.scss */
+.a-dropdown__item:hover, .a-dropdown__footer:hover {
+  color: #fff;
+  background: #2b84d3;
+}
+
+/* line 44, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-dropdown.scss */
+.a-dropdown__footer {
+  text-align: center;
+  padding: 10px;
+}
+/* line 50, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-dropdown.scss */
+.a-dropdown__footer:hover {
+  background: none;
+  color: #979dac;
+}
+
+/* line 56, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-dropdown.scss */
+.a-dropdown__divider {
+  margin: 5px auto;
+  border-bottom: 1px solid #c9ccd8;
+}
+
+/* line 4, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-notify.scss */
+.a-notify, .a-notify--fake, .a-notify--bubble {
+  background: #abb0c3;
+  color: #fff;
+  border-radius: 20px;
+  font-size: 75%;
+  padding: 1px 5px 1px 4px;
+  text-decoration: none;
+  width: 20px;
+}
+
+/* line 15, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-notify.scss */
+.a-notify--fake {
+  background: none;
+}
+
+/* line 20, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-notify.scss */
+.a-notify--bubble {
+  color: transparent;
+  width: 10px;
+  height: 10px;
+  cursor: pointer;
+}
+/* line 29, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-notify.scss */
+.a-notify--bubble.is-positive {
+  background-color: #1eb18a;
+  box-shadow: 0px 0px 5px #1eb18a;
+}
+/* line 34, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-notify.scss */
+.a-notify--bubble.is-negative {
+  background-color: #e0332d;
+  box-shadow: 0px 0px 5px #e0332d;
+}
+/* line 39, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-notify.scss */
+.a-notify--bubble.is-passive {
+  box-shadow: inset 0 0 0 2px #babece;
+  background-color: transparent;
+}
+
+/* line 2, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-table.scss */
+.a-table {
+  width: 100%;
+  border: 1px solid #d8dae3;
+}
+
+/* line 13, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-table.scss */
+.a-table__body > .a-table__row:nth-of-type(even) {
+  background: #f9f9fa;
+}
+/* line 17, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-table.scss */
+.a-table__body > .a-table__row:hover {
+  background: #e7e8ee;
+}
+
+/* line 23, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-table.scss */
+.a-table__row {
+  border: 1px solid #d8dae3;
+}
+
+/* line 27, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-table.scss */
+.a-table__cell, .a-table__cell--header {
+  padding: 3px 6px;
+  border: 1px solid #d8dae3;
+}
+
+/* line 32, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-table.scss */
+.a-table__cell--header {
+  padding: 5px;
+  font-weight: normal;
+  vertical-align: middle;
+  text-align: left;
+}
+
+/* line 1, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-form.scss */
+.a-input, .a-form__input, .a-textarea {
+  background: transparent;
+  border: 2px solid #d8dae3;
+  border-radius: 5px;
+  padding: 10px 15px;
+  width: 100%;
+}
+/* line 8, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-form.scss */
+.a-input:focus, .a-form__input:focus, .a-textarea:focus {
+  border-color: #2b9de7;
+}
+/* line 12, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-form.scss */
+.a-input:focus, .a-form__input:focus, .a-textarea:focus, .a-input:valid, .a-form__input:valid, .a-textarea:valid {
+  outline: none;
+}
+
+/* line 22, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-form.scss */
+.a-form__input::-webkit-input-placeholder {
+  -webkit-transition: all 0.2s cubic-bezier(0.55, -0.55, 1, 1.55);
+  -moz-transition: all 0.2s cubic-bezier(0.55, -0.55, 1, 1.55);
+  transition: all 0.2s cubic-bezier(0.55, -0.55, 1, 1.55);
+  -webkit-transform-origin: left;
+  -moz-transform-origin: left;
+  -ms-transform-origin: left;
+  -o-transform-origin: left;
+  transform-origin: left;
+}
+/* line 28, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-form.scss */
+.a-form__input:focus::-webkit-input-placeholder {
+  color: #1b9cec;
+}
+/* line 33, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-form.scss */
+.a-form__input:focus, .a-form__input:valid {
+  color: #212121;
+}
+/* line 37, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-form.scss */
+.a-form__input:focus::-webkit-input-placeholder, .a-form__input:valid::-webkit-input-placeholder {
+  -webkit-transform: translate(0, -105%) scale(0.9, 0.9);
+  -moz-transform: translate(0, -105%) scale(0.9, 0.9);
+  -ms-transform: translate(0, -105%) scale(0.9, 0.9);
+  -o-transform: translate(0, -105%) scale(0.9, 0.9);
+  transform: translate(0, -105%) scale(0.9, 0.9);
+  visibility: visible !important;
+  overflow: visible;
+  text-transform: uppercase;
+  font-size: 80%;
+  text-shadow: -1px  0   white, -2px  0   white, -3px  0   white, -4px  0   white, -5px  0   white, 1px  0   white, 2px  0   white, 3px  0   white, 4px  0   white, 5px  0   white, -1px -1px white, -2px -2px white, -3px -3px white, -4px -4px white, -5px -5px white;
+}
+
+/* line 65, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-form.scss */
+.a-checkbox__wrapper {
+  border: 1px solid #babece;
+  border-radius: 3px;
+}
+
+/* line 71, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-form.scss */
+.a-checkbox__box {
+  background: #d8dae3;
+  padding: 3px 5px;
+  border-radius: 3px 0 0 3px;
+  border-right: 1px solid #babece;
+}
+
+/* line 78, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-form.scss */
+.a-checkbox__caption {
+  padding: 0 5px;
+}
+
+/* line 89, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-form.scss */
+.a-choice > *:first-child {
+  margin-right: 5px;
+}
+
+/* line 94, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-form.scss */
+.a-textarea {
+  max-width: 100%;
+}
+/* line 99, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-form.scss */
+.a-textarea.is-failing {
+  border-color: rgba(224, 51, 45, 0.6);
+}
+/* line 102, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-form.scss */
+.a-textarea.is-failing:focus {
+  border-color: #e0332d;
+}
+
+/* line 2, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-popover.scss */
+.a-popover {
+  position: absolute;
+  top: 0;
+  background: white;
+  z-index: 9999;
+  border: 1px solid #babece;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+
+/* line 12, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-popover.scss */
+.a-popover__wrapper {
+  position: relative;
+  overflow: visible;
+}
+
+/* line 243 */
+.is-notifying {
+  color: #2b84d3;
+}
+
+/* line 247 */
+html,
+body {
+  overflow: hidden;
+}
+
+/* line 253 */
+.a-well {
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid #c9ccd8;
+  box-shadow: inset 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+/* line 261 */
+.header-style, .a-table__head {
+  background: #f6f6f8;
+}
+
+/* line 265 */
+.stretch-self {
+  -webkit-align-self: stretch;
+  -moz-align-self: stretch;
+  align-self: stretch;
+}
+
+/* line 270 */
+.group:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+/* line 275 */
+.is-fixed {
+  -webkit-flex-shrink: 0;
+  -moz-flex-shrink: 0;
+  flex-shrink: 0;
+}
+
+/* line 279 */
+.team {
+  position: relative;
+  color: black;
+}
+/* line 283 */
+.team:hover {
+  color: transparent;
+  -webkit-transition-property: color;
+  -moz-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.2s;
+  -moz-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+}
+/* line 289 */
+.team.is-winner {
+  background: rgba(255, 255, 0, 0.05);
+}
+/* line 293 */
+.team.is-runner-up {
+  background: rgba(255, 165, 0, 0.05);
+}
+
+/* line 298 */
+.team-actions {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+/* line 306 */
+.team-actions:hover .team-action {
+  -webkit-animation-duration: 0.3s;
+  -moz-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+  -webkit-animation-delay: 0.1s;
+  -moz-animation-delay: 0.1s;
+  animation-delay: 0.1s;
+  opacity: 1;
+  color: #000;
+}
+
+/* line 317 */
+.team-action {
+  opacity: 0;
+}
+
+/* line 321 */
+.stage-header {
+  font-size: 50px;
+  color: #1eb18a;
+}
