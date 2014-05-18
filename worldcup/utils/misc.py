@@ -16,6 +16,8 @@ from flask import Response
 # Instance folder path, make it independent.
 INSTANCE_FOLDER_PATH = os.path.join('/tmp', 'instance')
 
+resources_dir = os.path.join(os.path.dirname(__file__), 'resources')
+
 HTTP_METHODS = ['OPTIONS', 'GET', 'POST', 'PUT', 'DELETE']
 
 

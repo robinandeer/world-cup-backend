@@ -30,7 +30,7 @@ import yaml
 from codecs import open, getreader
 from pprint import pprint as pp
 
-from worldcup import resources_dir
+from .misc import resources_dir
 
 
 def get_matchups(round_id, winners, runner_ups=None):

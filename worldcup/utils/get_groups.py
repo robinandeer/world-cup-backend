@@ -16,7 +16,8 @@ import yaml
 from codecs import open, getreader
 from pprint import pprint as pp
 
-from worldcup import resources_dir
+from .misc import resources_dir
+
 
 def get_groups():
   """Return each group with a list of the teams.
@@ -34,6 +35,7 @@ def get_groups():
   # } for group_id in group_ids]
   # 
   # return groups
+
 
 def main():
     # parser = argparse.ArgumentParser(description="Parse different kind of ped files.")

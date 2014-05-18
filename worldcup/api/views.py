@@ -8,9 +8,8 @@ from flask import Blueprint, Response, request, jsonify
 from flask.ext.login import current_user, login_required
 from pymongo.errors import DuplicateKeyError
 
-from .utils import get_groups, get_matchups
 from ..extensions import mongo
-from ..utils import HTTP_METHODS, get_current_time, jsonify_mongo
+from ..utils import HTTP_METHODS, get_current_time, jsonify_mongo, get_matchups
 
 
 api = Blueprint('api', __name__, url_prefix='/api/v1')
@@ -62,7 +61,10 @@ def teams(document_id=None):
 
   if document_id:
     # Well, at least we know we should try to fetch a document
-    document = mongo.db.team.find_one({'_id': ObjectId(document_id)})
+    if len(document_id) == 3:
+      document = mongo.db.team.find_one({'code': document_id.upper()})
+    else:
+      document = mongo.db.team.find_one({'_id': ObjectId(document_id)})
 
   if request.method == 'POST':
     return Response('Adding teams not supported'), 404
