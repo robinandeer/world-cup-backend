@@ -15,12 +15,6 @@ App.Team = DS.Model.extend
     return @get('position') is 2
   ).property 'position'
 
-App.TeamAdapter = DS.RESTAdapter.extend
-  namespace: 'api/v1'
-
 App.Group = DS.Model.extend
   group_id: DS.attr('string')
   teams: DS.hasMany('team')
-
-App.GroupAdapter = DS.RESTAdapter.extend
-  namespace: 'api/v1'

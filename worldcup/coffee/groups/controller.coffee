@@ -6,7 +6,7 @@ App.GroupsController = Ember.ArrayController.extend
     goToPlayoffs: (group) ->
       if @get('readyToMoveOn')
         @get('user').save()
-        @transitionToRoute 'playoffs', 16
+        @transitionToRoute 'playoffs', 1
 
     setProperty: (model, key, value) ->
       model.set key, value
@@ -27,15 +27,15 @@ App.GroupsController = Ember.ArrayController.extend
   winnersObserver: (->
     teams = @get('model').getEach('winner')
     teams.clean()
-    userTeams = @get('user.groupWinners')
-    userTeams.clear()
-    userTeams.pushObjects teams
+    @get('user.groupWinners').then (userTeams) ->
+      userTeams.clear()
+      userTeams.pushObjects teams
   ).observes 'model.@each.winner'
 
   runnerUpsObserver: (->
     teams = @get('model').getEach('runnerUp')
     teams.clean()
-    userTeams = @get('user.groupRunnerUps')
-    userTeams.clear()
-    userTeams.pushObjects teams
+    @get('user.groupRunnerUps').then (userTeams) ->
+      userTeams.clear()
+      userTeams.pushObjects teams
   ).observes 'model.@each.runnerUp'

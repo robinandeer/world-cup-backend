@@ -6,6 +6,10 @@ App.ApplicationSerializer = DS.RESTSerializer.extend({
   primaryKey: '_id'
 });
 
+DS.RESTAdapter.reopen({
+  namespace: 'api/v1'
+});
+
 
 Array.prototype.clean = function(deleteValue) {
   for (var i = 0; i < this.length; i++) {
@@ -28,9 +32,26 @@ App.Router.map(function() {
 App.ApplicationController = Ember.ObjectController.extend({
   theContent: 'Say no more...',
   isEditing: true,
-  init: function() {
-    return console.log('H!!!');
-  }
+  playoffs: [
+    {
+      id: 1,
+      teamCount: 16,
+      name: 'Round of 16'
+    }, {
+      id: 2,
+      teamCount: 8,
+      name: 'Quarter Finals'
+    }, {
+      id: 3,
+      teamCount: 4,
+      name: 'Semi Finals'
+    }, {
+      id: 4,
+      teamCount: 2,
+      bonusCount: 2,
+      name: 'Finals'
+    }
+  ]
 });
 
 App.ApplicationView = Ember.View.extend({
@@ -44,11 +65,12 @@ App.User = DS.Model.extend({
   active: DS.attr('boolean'),
   email: DS.attr('string'),
   groupWinners: DS.hasMany('team'),
-  groupRunnerUps: DS.hasMany('team')
-});
-
-App.UserAdapter = DS.RESTAdapter.extend({
-  namespace: 'api/v1'
+  groupRunnerUps: DS.hasMany('team'),
+  round1Winners: DS.hasMany('team'),
+  round2Winners: DS.hasMany('team'),
+  round3Winners: DS.hasMany('team'),
+  round4Winners: DS.hasMany('team'),
+  round4RunnerUps: DS.hasMany('team')
 });
 
 App.ApplicationRoute = Ember.Route.extend({
@@ -83,7 +105,7 @@ App.GroupsController = Ember.ArrayController.extend({
     goToPlayoffs: function(group) {
       if (this.get('readyToMoveOn')) {
         this.get('user').save();
-        return this.transitionToRoute('playoffs', 16);
+        return this.transitionToRoute('playoffs', 1);
       }
     },
     setProperty: function(model, key, value) {
@@ -104,20 +126,22 @@ App.GroupsController = Ember.ArrayController.extend({
     }
   }).property('user.groupWinners.length', 'user.groupRunnerUps.length'),
   winnersObserver: (function() {
-    var teams, userTeams;
+    var teams;
     teams = this.get('model').getEach('winner');
     teams.clean();
-    userTeams = this.get('user.groupWinners');
-    userTeams.clear();
-    return userTeams.pushObjects(teams);
+    return this.get('user.groupWinners').then(function(userTeams) {
+      userTeams.clear();
+      return userTeams.pushObjects(teams);
+    });
   }).observes('model.@each.winner'),
   runnerUpsObserver: (function() {
-    var teams, userTeams;
+    var teams;
     teams = this.get('model').getEach('runnerUp');
     teams.clean();
-    userTeams = this.get('user.groupRunnerUps');
-    userTeams.clear();
-    return userTeams.pushObjects(teams);
+    return this.get('user.groupRunnerUps').then(function(userTeams) {
+      userTeams.clear();
+      return userTeams.pushObjects(teams);
+    });
   }).observes('model.@each.runnerUp')
 });
 
@@ -136,17 +160,9 @@ App.Team = DS.Model.extend({
   }).property('position')
 });
 
-App.TeamAdapter = DS.RESTAdapter.extend({
-  namespace: 'api/v1'
-});
-
 App.Group = DS.Model.extend({
   group_id: DS.attr('string'),
   teams: DS.hasMany('team')
-});
-
-App.GroupAdapter = DS.RESTAdapter.extend({
-  namespace: 'api/v1'
 });
 
 App.GroupsRoute = Ember.Route.extend({
@@ -155,23 +171,111 @@ App.GroupsRoute = Ember.Route.extend({
   }
 });
 
-App.Round = DS.Model.extend({
-  name: DS.attr('string'),
-  matchups: DS.attr('string'),
+App.PlayoffsController = Ember.ArrayController.extend({
+  needs: ['application'],
+  userBinding: 'controllers.application.model',
+  playoffsBinding: 'controllers.application.playoffs',
+  init: function() {
+    return this.get('teams').setEach('isWinner', false);
+  },
+  currentPlayoff: (function() {
+    var teamCount;
+    teamCount = this.get('model.length') * 2;
+    return this.get('playoffs').filterBy('teamCount', teamCount).get('firstObject');
+  }).property('model.length', 'playoffs'),
+  roundWinnersId: (function() {
+    return "round" + (this.get('currentPlayoff.id')) + "Winners";
+  }).property('currentPlayoff.id'),
+  roundRunnerUpsId: (function() {
+    return "round" + (this.get('currentPlayoff.id')) + "RunnerUps";
+  }).property('currentPlayoff.id'),
+  nextPlayoff: (function() {
+    var current, nextIndex, playoffs;
+    playoffs = this.get('playoffs');
+    current = this.get('currentPlayoff');
+    nextIndex = playoffs.indexOf(current) + 1;
+    return playoffs[nextIndex];
+  }).property('currentPlayoff'),
   matchupParts: (function() {
     var matchups;
-    matchups = this.get('matchups') || [];
+    matchups = this.get('model');
     return [matchups.slice(0, matchups.get('length') / 2), matchups.slice(matchups.get('length') / 2)];
-  }).property('matchups.@each')
+  }).property('model.@each'),
+  isReadyToMoveOn: (function() {
+    return this.get('winners.length') === this.get('model.length');
+  }).property('winners.length', 'model.length'),
+  winners: (function() {
+    return this.get('teams').filterBy('isWinner', true);
+  }).property('teams.@each.isWinner'),
+  winnersObserver: (function() {
+    var roundWinners, user;
+    user = this.get('user');
+    roundWinners = user.get(this.get('roundWinnersId'));
+    roundWinners.clear();
+    return roundWinners.pushObjects(this.get('winners'));
+  }).observes('winners.@each', 'roundWinnersId'),
+  runnerUps: (function() {
+    return this.get('teams').filterBy('isWinner', false);
+  }).property('teams.@each.isWinner'),
+  runnerUpsObserver: (function() {
+    var roundRunnerUps, user;
+    user = this.get('user');
+    roundRunnerUps = user.get(this.get('roundRunnerUpsId'));
+    roundRunnerUps.clear();
+    return roundRunnerUps.pushObjects(this.get('runnerUps'));
+  }).observes('runnerUps.@each', 'roundRunnerUpsId'),
+  teams: (function() {
+    var teams;
+    teams = Em.A();
+    this.get('model').forEach(function(matchup) {
+      return teams.pushObjects(matchup.get('teams'));
+    });
+    return teams;
+  }).property('model.@each.teams.@each'),
+  currentPlayoffObserver: (function() {
+    return this.get('winners').setEach('isWinner', false);
+  }).observes('currentPlayoff'),
+  actions: {
+    pickWinner: function(match, team) {
+      match.get('teams').setEach('isWinner', false);
+      return team.set('isWinner', true);
+    },
+    moveOn: function() {
+      if (this.get('isReadyToMoveOn')) {
+        this.get('user').save();
+        return this.transitionToRoute('playoffs', this.get('nextPlayoff.id'));
+      }
+    }
+  }
 });
 
-App.RoundAdapter = DS.RESTAdapter.extend({
-  namespace: 'api/v1'
+App.Matchup = DS.Model.extend({
+  homeTeam: DS.belongsTo('team'),
+  awayTeam: DS.belongsTo('team'),
+  teams: (function() {
+    return Em.A([this.get('homeTeam'), this.get('awayTeam')]);
+  }).property('homeTeam', 'awayTeam')
 });
 
 App.PlayoffsRoute = Ember.Route.extend({
   model: function(params) {
-    return this.store.find('round', params.round_id);
+    var controller, prevRoundLosersId, prevRoundWinnersId, runnerUps, user, winners;
+    user = this.modelFor('application');
+    if (params.round_id === '1') {
+      winners = user.get('groupWinners').getEach('code').join(',');
+      runnerUps = user.get('groupRunnerUps').getEach('code').join(',');
+    } else {
+      controller = this.controllerFor('playoffs');
+      prevRoundWinnersId = "round" + (params.round_id - 1) + "Winners";
+      prevRoundLosersId = "round" + (params.round_id - 1) + "Losers";
+      winners = user.get(prevRoundWinnersId).getEach('code').join(',');
+      runnerUps = (user.get(prevRoundLosersId) || Em.A()).getEach('code').join(',');
+    }
+    return this.store.find('matchup', {
+      round: params.round_id,
+      winners: winners,
+      runner_ups: runnerUps
+    });
   }
 });
 

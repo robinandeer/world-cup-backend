@@ -1,11 +1,20 @@
 <div class="a-layout--vertical">
   <div class="a-layout__panel--half a-bar--space-around bb">
-    <div class="a-button">Home</div>
-    <div class="stage-header">{{name}}</div>
-    {{#link-to "playoffs" 8 classNames="a-button"}}
-      <div class="a-button__icon a-icon">&#9873;</div>
-      <div class="a-button__body">Quarter Finals</div>
+    {{#link-to "index" classNames="a-button"}}
+      <div class="a-button__icon a-icon">&#8962;</div>
+      <div class="a-button__body">Home</div>
     {{/link-to}}
+
+    <div class="stage-header">{{currentPlayoff.name}}</div>
+
+    {{#if isReadyToMoveOn}}
+      <div {{action "moveOn"}} class="a-button">
+        <div class="a-button__icon a-icon">&#9873;</div>
+        <div class="a-button__body">{{nextPlayoff.name}}</div>
+      </div>
+    {{else}}
+      <div class="small">Place your bets</div>
+    {{/if}}
   </div>
 
   <div class="a-layout__panel--double a-layout__wrapper bb--listed">
@@ -16,9 +25,9 @@
             {{#each match in part}}
               <div class="a-layout__panel--full center__wrapper br--listed">
                 <div class="a-button__group">
-                  {{#each team in match}}
-                    <div class="a-button">
-                      <div class="a-button__body">{{team}}</div>
+                  {{#each team in match.teams}}
+                    <div {{action "pickWinner" match team}} {{bind-attr class=":a-button team.isWinner"}}>
+                      <div class="a-button__body">{{team.name}}</div>
                     </div>
                   {{/each}}
                 </div>

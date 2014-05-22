@@ -56,6 +56,12 @@
   {% endblock %}
 
   {% block body %}{% endblock %}
+
+  <script>
+    var ENV = { FEATURES: {
+      'query-params-new': true
+    } };
+  </script>
   
   {% assets "js_all" %}
     <script src="{{ ASSET_URL }}"></script>

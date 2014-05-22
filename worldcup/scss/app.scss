@@ -322,3 +322,9 @@ body {
   font-size: 50px;
   color: #1eb18a;
 }
+
+.a-button {
+  &.is-winner {
+    background: #1eb18a;
+  }
+}

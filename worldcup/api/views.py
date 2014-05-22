@@ -2,6 +2,7 @@
 
 from datetime import datetime
 from itertools import chain
+import urllib
 
 from bson import ObjectId
 from flask import Blueprint, Response, request, jsonify
@@ -20,7 +21,6 @@ api = Blueprint('api', __name__, url_prefix='/api/v1')
 @login_required
 def groups(document_id=None):
   # Store the submitted query options
-  query_args = request.args.to_dict()
   payload = {}
 
   if document_id:
@@ -70,8 +70,16 @@ def teams(document_id=None):
     return Response('Adding teams not supported'), 404
 
   elif request.method == 'GET':
+    query_string = str(request.query_string, 'utf-8')
+
+    if query_string.startswith('ids%5B%5D'):
+      team_ids = urllib.parse.parse_qs(query_string)['ids[]']
+      team_object_ids = [ObjectId(team_id) for team_id in team_ids]
+      teams = list(mongo.db.team.find({'_id': { '$in': team_object_ids }}))
+      return jsonify_mongo(teams=teams)
+
     if document_id is None:
-      return jsonify_mongo(teams=mongo.db.team.find())
+      return jsonify_mongo(teams=list(mongo.db.team.find(query_args)))
 
   elif request.method == 'PUT':
     return Response('Updating teams not supported'), 404
@@ -85,15 +93,50 @@ def teams(document_id=None):
   return jsonify_mongo(document)
 
 
-@api.route('/rounds/<int:round_id>', methods=HTTP_METHODS)
-def rounds(round_id):
-  winners = ['fra', 'bra', 'ita', 'spa', 'usa', 'por', 'dan', 'nor']
-  runner_ups = ['swe', 'alg', 'arg', 'aus', 'kor', 'ecu', 'urg', 'pol']
+@api.route('/rounds', methods=HTTP_METHODS)
+def rounds():
+  round_id = int(request.args.get('round', '-1'))
+  winners = request.args.get('winners', '').split(',')
+  runner_ups = request.args.get('runner_ups', '').split(',')
 
   return jsonify(
-    id=round_id,
-    name='Round of %d' % round_id,
-    matchups=get_matchups(round_id, winners, runner_ups)
+    round=dict(
+      id=round_id,
+      name='Round of %d' % round_id,
+      matchups=get_matchups(round_id, winners, runner_ups)
+    )
+  )
+
+
+@api.route('/matchups', methods=HTTP_METHODS)
+def matchups():
+  round_id = int(request.args.get('round', '-1'))
+  winners = request.args.get('winners', '').split(',')
+  runner_ups = request.args.get('runner_ups', '').split(',')
+
+  if len(winners) < 4:
+    winners = ['BRA', 'ESP', 'COL', 'URY', 'CHE', 'DEU', 'ARG', 'BEL']
+    runner_ups = ['HRV', 'NLD', 'GRC', 'CRI', 'ECU', 'PRT', 'NGA', 'DZA']
+
+  matchups = get_matchups(round_id, winners, runner_ups)
+
+  team_ids = chain.from_iterable(
+    [[home_team, away_team] for home_team, away_team in matchups])
+  teams = list(mongo.db.team.find({'code': { '$in': list(team_ids) } }))
+
+  mapper = {}
+  for team in teams:
+    mapper[team['code']] = team['_id']
+
+  payload = [{
+    '_id': '%s-%s' % (home_team, away_team),
+    'homeTeam': mapper[home_team],
+    'awayTeam': mapper[away_team]
+  } for home_team, away_team in matchups]
+
+  return jsonify_mongo(
+    matchups=payload,
+    teams=teams
   )
 
 
@@ -162,17 +205,27 @@ def users(user_id=None):
 
     document = mongo.db.user.find_one({'_id': ObjectId(user_id)})
 
+    team_categories = ['groupWinners', 'groupRunnerUps', 'round1Winners',
+                       'round2Winners', 'round3Winners', 'round4Winners',
+                       'round4RunnerUps']
+
+    team_ids = []
+    for category in team_categories:
+      for team_id in document.get(category, []):
+        team_ids.append(ObjectId(team_id))
+
+    teams = list(mongo.db.team.find({'_id': { '$in': team_ids }}))
+
   if request.method == 'PUT':
     # Update a specific document
     # Start by updating the changed fields
-    print(data)
     for key, value in data.items():
-      if key == 'group_winners':
+      if isinstance(value, list):
         value = [ObjectId(document_id) for document_id in value]
 
       document[key] = value
 
-      mongo.db.activity.save(document)
+      mongo.db.user.save(document)
 
   # Return json object for the logged in user
-  return jsonify_mongo({'user': document})
+  return jsonify_mongo(user=document, teams=teams)

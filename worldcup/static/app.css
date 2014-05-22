@@ -4199,3 +4199,8 @@ body {
   font-size: 50px;
   color: #1eb18a;
 }
+
+/* line 327 */
+.a-button.is-winner, .is-winner.a-button--stretched, .is-winner.a-button--naked {
+  background: #1eb18a;
+}
