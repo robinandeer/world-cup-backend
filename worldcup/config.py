@@ -20,7 +20,7 @@ class BaseConfig(object):
   SECRET_KEY = 'secret key'
 
   LOG_FOLDER = os.path.join(INSTANCE_FOLDER_PATH, 'logs')
-  make_dir(LOG_FOLDER)
+  #make_dir(LOG_FOLDER)
 
   ADMINS = ['robin.andeer@scilifelab.se']
 
