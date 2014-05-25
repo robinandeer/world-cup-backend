@@ -99,6 +99,7 @@ def configure_extensions(app):
   # Flask-Assets
   # Doing setup here to avoid RuntimeError: assets instance not bound...
   assets = Environment(app)
+  assets.auto_build = app.config.get('DEBUG')
   assets.load_path = [
     os.path.join(os.path.dirname(__file__), 'scss'),
     os.path.join(os.path.dirname(__file__), 'coffee'),

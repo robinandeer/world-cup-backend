@@ -27,7 +27,7 @@ class BaseConfig(object):
 
 class DefaultConfig(BaseConfig):
 
-  DEBUG = True
+  DEBUG = os.environ.get('DEBUG', True)
 
   GOOGLE = dict(
     consumer_key=os.environ.get('GOOGLE_CONSUMER_KEY'),
