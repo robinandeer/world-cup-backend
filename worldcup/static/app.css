@@ -4233,24 +4233,25 @@ body {
 /* line 335 */
 h1 {
   font-family: Lato;
+  -webkit-font-smoothing: antialiased;
   font-size: 50px;
   color: #fff;
   font-weight: 200;
 }
 
-/* line 342 */
+/* line 343 */
 .a-overlay {
   background: rgba(0, 0, 0, 0.5);
 }
 
-/* line 346 */
+/* line 347 */
 .signin-button {
   max-width: 300px;
   margin-left: auto;
   margin-right: auto;
 }
 
-/* line 352 */
+/* line 353 */
 .a-button--google {
   -webkit-font-smoothing: antialiased;
   font-weight: bold;
@@ -4258,27 +4259,27 @@ h1 {
   color: #fff;
   border: 0;
 }
-/* line 364 */
+/* line 365 */
 .a-button--google:hover {
   box-shadow: none;
   background: #d71b1a;
 }
 
-/* line 371 */
+/* line 372 */
 .a-toolbar__group__item.active, .active.a-toolbar__group__item--clickable {
   background: rgba(0, 0, 0, 0.03);
 }
 
-/* line 376 */
+/* line 377 */
 .a-toolbar__group__item--clickable {
   cursor: pointer;
 }
-/* line 380 */
+/* line 381 */
 .a-toolbar__group__item--clickable:hover {
   background: rgba(0, 0, 0, 0.03);
 }
 
-/* line 385 */
+/* line 386 */
 .flashes {
   position: fixed;
   bottom: 40px;
@@ -4288,7 +4289,7 @@ h1 {
   -webkit-font-smoothing: antialiased;
 }
 
-/* line 394 */
+/* line 395 */
 .wc-logo {
   width: 150px;
   margin-left: auto;
@@ -4296,12 +4297,12 @@ h1 {
   display: table-cell;
 }
 
-/* line 401 */
+/* line 402 */
 .a-icon, .a-icon--small, .a-icon--big {
   margin-right: 5px;
 }
 
-/* line 405 */
+/* line 406 */
 .a-property {
   font-size: 90%;
   display: -webkit-flex;
@@ -4312,51 +4313,72 @@ h1 {
   justify-content: space-between;
 }
 
-/* line 411 */
+/* line 412 */
 .a-property__title {
   color: rgba(0, 0, 0, 0.8);
 }
 
-/* line 415 */
+/* line 416 */
 .a-property__value {
   font-weight: bold;
 }
 
-/* line 419 */
+/* line 420 */
 .small-flag {
   width: 25px;
 }
 
-/* line 423 */
+/* line 424 */
+.big-flag {
+  width: 70px;
+}
+
+/* line 428 */
 .link-next {
   width: 250px;
 }
 
-/* line 429 */
+/* line 434 */
 .a-switch:hover .a-switch__default {
   display: none;
 }
-/* line 433 */
+/* line 438 */
 .a-switch:hover .a-switch__content {
   display: inherit;
 }
 
-/* line 439 */
+/* line 444 */
 .a-switch__default {
   display: inherit;
 }
 
-/* line 443 */
+/* line 448 */
 .a-switch__content {
   display: none;
 }
 
-/* line 447 */
+/* line 452 */
 .profile-wrapper {
-  background: #e8edee;
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* line 451 */
+/* line 458 */
 .world-cup-logo {
   width: 70px;
+}
+
+/* line 462 */
+.a-playoff-tree {
+  height: 200px;
+}
+
+/* line 466 */
+.form-inline {
+  display: inline-block;
+}
+/* line 469 */
+.form-inline > input {
+  width: 200px;
 }

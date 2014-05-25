@@ -5,7 +5,7 @@ from itertools import chain
 import urllib
 
 from bson import ObjectId
-from flask import Blueprint, Response, request, jsonify
+from flask import Blueprint, Response, request, jsonify, abort
 from flask.ext.login import current_user, login_required
 from pymongo.errors import DuplicateKeyError
 
@@ -114,10 +114,6 @@ def matchups():
   winners = request.args.get('winners', '').split(',')
   runner_ups = request.args.get('runner_ups', '').split(',')
 
-  if len(winners) < 4:
-    winners = ['BRA', 'ESP', 'COL', 'URY', 'CHE', 'DEU', 'ARG', 'BEL']
-    runner_ups = ['HRV', 'NLD', 'GRC', 'CRI', 'ECU', 'PRT', 'NGA', 'DZA']
-
   matchups = get_matchups(round_id, winners, runner_ups)
 
   team_ids = chain.from_iterable(
@@ -204,7 +200,14 @@ def users(user_id=None):
     if user_id == 'current':
       user_id = current_user['user_id']
 
-    doc = mongo.db.user.find_one({'_id': ObjectId(user_id)})
+    if '@' in user_id:
+      doc = mongo.db.user.find_one({'email': user_id})
+
+    else:
+      doc = mongo.db.user.find_one({'_id': ObjectId(user_id)})
+
+    if doc is None:
+      return abort(404)
 
     if request.method == 'GET':
       team_categories = ['groupWinners', 'groupRunnerUps', 'round1Winners',

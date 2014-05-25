@@ -4,6 +4,9 @@ App.User = DS.Model.extend
   accessToken: DS.attr('string')
   active: DS.attr('boolean')
   email: DS.attr('string')
+  family_name: DS.attr('string')
+  given_name: DS.attr('string')
+  nickname: DS.attr('string')
 
   groupWinners: DS.hasMany('team')
   groupRunnerUps: DS.hasMany('team')

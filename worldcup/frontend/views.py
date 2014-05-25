@@ -86,7 +86,7 @@ def authorized(oauth_response):
   google_user = google.get('userinfo')
   google_data = google_user.data
 
-  if google_data['hd'] != 'scilifelab.se':
+  if google_data.get('hd') != 'scilifelab.se':
     flash("You tried to login with %s." % google_data['email'])
     flash("You need to login with a '@scilifelab.se' account.")
     return abort(403)

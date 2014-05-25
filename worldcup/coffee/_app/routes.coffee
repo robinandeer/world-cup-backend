@@ -3,4 +3,5 @@ App.Router.map ->
   @resource 'playoffs', { path: '/playoffs/:round_id' }
   @resource 'finals'
   @resource 'consensus'
-  @resource 'profile', { path: '/profile/:user_id' }
+  @resource 'profiles', ->
+    @resource 'profile', { path: '/:user_id' }

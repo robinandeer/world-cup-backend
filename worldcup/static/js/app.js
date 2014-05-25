@@ -29,8 +29,10 @@ App.Router.map(function() {
   });
   this.resource('finals');
   this.resource('consensus');
-  return this.resource('profile', {
-    path: '/profile/:user_id'
+  return this.resource('profiles', function() {
+    return this.resource('profile', {
+      path: '/:user_id'
+    });
   });
 });
 
@@ -63,6 +65,9 @@ App.User = DS.Model.extend({
   accessToken: DS.attr('string'),
   active: DS.attr('boolean'),
   email: DS.attr('string'),
+  family_name: DS.attr('string'),
+  given_name: DS.attr('string'),
+  nickname: DS.attr('string'),
   groupWinners: DS.hasMany('team'),
   groupRunnerUps: DS.hasMany('team'),
   round1Winners: DS.hasMany('team'),
@@ -326,6 +331,14 @@ App.GroupsRoute = Ember.Route.extend({
   }
 });
 
+App.IndexController = Ember.Controller.extend({
+  actions: {
+    peekFriend: function() {
+      return this.transitionToRoute('profile', this.get('friendEmail'));
+    }
+  }
+});
+
 App.PlayoffsController = Ember.ArrayController.extend({
   needs: ['application'],
   userBinding: 'controllers.application.model',
@@ -419,6 +432,25 @@ App.PlayoffsRoute = Ember.Route.extend({
       runner_ups: runnerUps
     });
   }
+});
+
+App.ProfileController = Ember.ObjectController.extend({
+  needs: ['application'],
+  userBinding: 'controllers.application.model',
+  actions: {
+    setNickname: function() {
+      if (this.get('isYourProfile')) {
+        this.set('nickname', this.get('nicknameInput'));
+        return this.get('model').save();
+      }
+    },
+    unsetNickname: function() {
+      return this.set('nickname', null);
+    }
+  },
+  isYourProfile: (function() {
+    return this.get('user.email') === this.get('email');
+  }).property('user.email', 'email')
 });
 
 App.ProfileRoute = Ember.Route.extend({
