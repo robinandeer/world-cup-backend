@@ -25,9 +25,9 @@
 }
 
 .a-toolbar__group__item {
-	&:not(:last-of-type) {
-		margin-right: 5px;
-	}
+	margin: 0;
+	@include display(flex);
+	@include align-items(center);
 }
 
 .a-toolbar__divider {

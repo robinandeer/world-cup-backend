@@ -1,6 +1,7 @@
 App.ApplicationController = Ember.ObjectController.extend
-  theContent: 'Say no more...'
-  isEditing: yes
+  # Main task is to hold on to the User model object
+
+  # Playoff order, specific to World Cup 2014
   playoffs: [
     id: 1
     teamCount: 16
@@ -19,6 +20,3 @@ App.ApplicationController = Ember.ObjectController.extend
     bonusCount: 2
     name: 'Finals'
   ]
-
-App.ApplicationView = Ember.View.extend
-  classNames: ['fill-up']

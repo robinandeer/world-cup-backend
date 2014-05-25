@@ -198,23 +198,29 @@ def activities(document_id=None):
 @login_required
 def users(user_id=None):
   data = (request.json or {}).get('user', {})
+  teams = []
 
   if user_id:
     if user_id == 'current':
       user_id = current_user['user_id']
 
-    document = mongo.db.user.find_one({'_id': ObjectId(user_id)})
+    doc = mongo.db.user.find_one({'_id': ObjectId(user_id)})
 
-    team_categories = ['groupWinners', 'groupRunnerUps', 'round1Winners',
-                       'round2Winners', 'round3Winners', 'round4Winners',
-                       'round4RunnerUps']
+    if request.method == 'GET':
+      team_categories = ['groupWinners', 'groupRunnerUps', 'round1Winners',
+                         'round2Winners', 'round3Winners', 'round3Losers']
 
-    team_ids = []
-    for category in team_categories:
-      for team_id in document.get(category, []):
-        team_ids.append(ObjectId(team_id))
+      team_ids = []
+      for category in team_categories:
+        for team_id in doc.get(category, []):
+          team_ids.append(ObjectId(team_id))
 
-    teams = list(mongo.db.team.find({'_id': { '$in': team_ids }}))
+      finalTeams = (doc.get('finalWinner'), doc.get('thirdPlaceWinner'))
+      for team_id in finalTeams:
+        if team_id:
+          team_ids.append(ObjectId(team_id))
+
+      teams = list(mongo.db.team.find({'_id': { '$in': team_ids }}))
 
   if request.method == 'PUT':
     # Update a specific document
@@ -223,9 +229,9 @@ def users(user_id=None):
       if isinstance(value, list):
         value = [ObjectId(document_id) for document_id in value]
 
-      document[key] = value
+      doc[key] = value
 
-      mongo.db.user.save(document)
+    mongo.db.user.save(doc)
 
   # Return json object for the logged in user
-  return jsonify_mongo(user=document, teams=teams)
+  return jsonify_mongo(user=doc, teams=teams)

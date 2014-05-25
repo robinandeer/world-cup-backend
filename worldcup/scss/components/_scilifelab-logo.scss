@@ -1,0 +1,18 @@
+.scilifelab-logo {
+  font-family: Baskerville, Georgia, serif;
+  color: #fff;
+  font-size: 20px;
+  margin-top: 50px;
+
+  @media screen and (min-width: 400px) {
+    font-size: 30px;
+  }
+
+  @media screen and (min-width: 600px) {
+    font-size: 40px;
+  }
+}
+
+.scilifelab-logo__colored {
+  color: #86BE42;
+}

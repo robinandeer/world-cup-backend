@@ -26,7 +26,7 @@ $border-color: #d8dae3;
 // +--------------------------------------------------------------------
 // |  dotdotdot - Replaces ending of text with "..." when it
 // |  no longer fits in the container element.
-// | 
+// |
 // |  Usage:
 // |
 // |    .text__container {
@@ -68,7 +68,7 @@ $border-color: #d8dae3;
 }
 
 .is-scrollable {
-	overflow-y: scroll;  // Has to be scroll, not auto
+  overflow-y: scroll;  // Has to be scroll, not auto
   -webkit-overflow-scrolling: touch;  // Momentum scrolling on iOS
 }
 
@@ -113,6 +113,10 @@ $border-color: #d8dae3;
 	padding: 15px;
 }
 
+.mt {
+  margin-top: 15px;
+}
+
 .mb {
 	margin-bottom: 15px;
 }
@@ -124,7 +128,19 @@ $border-color: #d8dae3;
 }
 
 .mb--big {
-	margin-bottom: 35px;
+	margin-bottom: 50px;
+}
+
+.mb--big--listed {
+  &:not(:last-of-type) {
+    margin-bottom: 35px;
+  }
+}
+
+.mr--big--listed {
+  &:not(:last-of-type) {
+    margin-right: 35px;
+  }
 }
 
 .mr {
@@ -178,6 +194,12 @@ $border-color: #d8dae3;
 
 .bl {
 	border-left: 1px solid $border-color;
+}
+
+.bl--listed {
+  &:not(:first-of-type) {
+    border-left: 1px solid $border-color;
+  }
 }
 
 // +-------------------------------------------------------------------+
@@ -239,6 +261,7 @@ h2 {
 @import 'components/a-table';
 @import 'components/a-form';
 @import 'components/a-popover';
+@import 'components/scilifelab-logo';
 
 .is-notifying {
 	color: #2b84d3;
@@ -248,6 +271,7 @@ html,
 body {
 	@extend .fill-up;
 	overflow: hidden;
+  font-family: Lato;
 }
 
 .a-well {
@@ -266,56 +290,31 @@ body {
 	@include align-self(stretch);
 }
 
-.group {
-  &:hover {
-    background: rgba(#000, .05);
-  }
-}
-
 .is-fixed {
   @include flex-shrink(0);
+}
+
+.a-team {
+  &.expanded {
+    width: 250px;
+    padding: 15px;
+    z-index: 10;
+    background: #fff;
+    border: 1px solid rgba(#000, .2);
+  }
 }
 
 .team {
   position: relative;
   color: rgba(#000, 1);
 
-  &:hover {
-    color: rgba(#000, 0);
-    @include transition-property(color);
-    @include transition-duration(.2s);
-  }
-
-  &.is-winner {
+  &.is-winner, &.is-group-winner {
     background: rgba(yellow, .05);
   }
 
   &.is-runner-up {
     background: rgba(orange, .05);
   }
-}
-
-.team-actions {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-
-  &:hover {
-    .team-action {
-      @extend .animated;
-      @extend .fadeInUp;
-      @include animation-duration(.3s);
-      @include animation-delay(.1s);
-      opacity: 1;
-      color: #000;
-    }
-  }
-}
-
-.team-action {
-  opacity: 0;
 }
 
 .stage-header {
@@ -327,4 +326,128 @@ body {
   &.is-winner {
     background: #1eb18a;
   }
+}
+
+.a-backdrop {
+  background-size: cover;
+}
+
+h1 {
+  font-family: Lato;
+  font-size: 50px;
+  color: #fff;
+  font-weight: 200;
+}
+
+.a-overlay {
+  background: rgba(#000, .5);
+}
+
+.signin-button {
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.a-button--google {
+  $bg-color: #cb2726;
+
+  @extend .a-button;
+
+  @include font-smoothing();
+  font-weight: bold;
+
+  background: $bg-color;
+  color: #fff;
+  border: 0;
+  
+  &:hover {
+    box-shadow: none;
+    background: saturate($bg-color, 10%);
+  }
+}
+
+.a-toolbar__group__item {
+  &.active {
+    background: rgba(#000, .03);
+  }
+}
+
+.a-toolbar__group__item--clickable {
+  @extend .a-toolbar__group__item;
+  cursor: pointer;
+
+  &:hover {
+    background: rgba(#000, .03);
+  }
+}
+
+.flashes {
+  position: fixed;
+  bottom: 40px;
+  background: rgba(#000, 0.4);
+  padding: 5px;
+  color: #fff;
+  @include font-smoothing();
+}
+
+.wc-logo {
+  width: 150px;
+  margin-left: auto;
+  margin-right: auto;
+  display: table-cell;
+}
+
+.a-icon {
+  margin-right: 5px;
+}
+
+.a-property {
+  font-size: 90%;
+  @include display(flex);
+  @include justify-content(space-between);
+}
+
+.a-property__title {
+  color: rgba(#000, .8);
+}
+
+.a-property__value {
+  font-weight: bold;
+}
+
+.small-flag {
+  width: 25px;
+}
+
+.link-next {
+  width: 250px;
+}
+
+.a-switch {
+  &:hover {
+    .a-switch__default {
+      display: none;
+    }
+
+    .a-switch__content {
+      display: inherit;
+    }    
+  }
+}
+
+.a-switch__default {
+  display: inherit;
+}
+
+.a-switch__content {
+  display: none;
+}
+
+.profile-wrapper {
+  background: #e8edee;
+}
+
+.world-cup-logo {
+  width: 70px;
 }

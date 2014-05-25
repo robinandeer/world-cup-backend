@@ -4,7 +4,7 @@ from datetime import datetime
 
 from flask import abort, Blueprint, flash, redirect, request, session, url_for
 from flask.ext.login import login_required, confirm_login, logout_user, \
-  login_user
+  login_user, current_user
 
 from .models import User
 from ..decorators import templated
@@ -23,6 +23,21 @@ def get_google_token():
 @frontend.route('/')
 @templated('index.html')
 def index():
+  if current_user.is_authenticated():
+    return dict()
+  else:
+    return redirect(url_for('frontend.connect'))
+
+
+@frontend.route('/connect')
+@templated('login.html')
+def connect():
+  return dict()
+
+
+@frontend.route('/unsupported')
+@templated('errors/unsupported_browser.html')
+def unsupported_browser():
   return dict()
 
 

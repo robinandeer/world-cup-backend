@@ -1,1 +1,41 @@
-{{outlet}}
+<div class="a-layout--vertical fill-up">
+  <div class="a-layout__panel a-toolbar">
+    <div class="a-toolbar__group">
+
+      {{#link-to "index" classNames="a-toolbar__group__item--clickable loose br"}}
+        <div class="a-icon">&#8962;</div>
+        <div>Home</div>
+      {{/link-to}}
+
+      {{#link-to "groups" classNames="a-toolbar__group__item--clickable loose br"}}
+        <div class="a-icon">&#128200;</div>
+        <div>Predict</div>
+      {{/link-to}}
+      
+      {{#link-to "consensus" classNames="a-toolbar__group__item--clickable loose br"}}
+        <div class="a-icon">&#128362;</div>
+        <div>Consensus</div>
+      {{/link-to}}
+
+    </div>
+
+    <div class="a-toolbar__group bl">
+      {{#link-to "profile" model classNames="user-panel a-toolbar__group__item loose br"}}
+        {{#if name}}
+          {{name}}
+        {{else}}
+          unknown
+        {{/if}}
+      {{/link-to}}
+
+      <a href="/logout" class="a-toolbar__group__item--clickable loose">
+        <div class="a-icon">&#59201;</div>
+        <div>Logout</div>
+      </a>
+    </div>
+  </div>
+  
+  <div class="a-layout__panel--full fill-up">
+    {{outlet}}
+  </div>
+</div>

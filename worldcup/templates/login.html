@@ -1,0 +1,34 @@
+{% extends 'layouts/base.html' %}
+
+{% set page_title = 'Login' %}
+
+{% block body %}
+  <div class="fill-up a-backdrop"
+       style="background-image: url({{ url_for('static', filename='img/wallpaper-2826873.jpg') }})">
+
+    <div class="a-layout--vertical fill-up a-overlay">
+
+      <div class="a-layout__panel--full center__wrapper">
+        <div>
+          <h1>Share your prophesy</h1>
+
+          <a href="{{ url_for('frontend.login') }}"
+             class="signin-button a-button--google">
+            <div class="a-button__body full-width slim text-center">
+              Connect with Google
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="a-layout__panel a-bar--center animated bounceInUp">
+        <div class="scilifelab-logo text-center mb--big mr--big">
+          Sci<span class="scilifelab-logo__colored">Li<i>f</i>e</span>Lab
+        </div>
+
+        <img class="world-cup-logo" src="{{ url_for('static', filename='img/wc-logo.png') }}">
+      </div>
+
+    </div>
+  </div>
+{% endblock %}

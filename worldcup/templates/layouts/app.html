@@ -1,0 +1,19 @@
+{% extends 'layouts/base.html' %}
+
+{% set page_title = 'App' %}
+
+{% block js_btm %}
+
+  {% assets "js_all" %}
+    <script src="{{ ASSET_URL }}"></script>
+  {% endassets %}
+
+  {% assets "ember_templates" %}
+    <script src="{{ ASSET_URL }}"></script>
+  {% endassets %}
+
+  {% assets "js_app" %}
+    <script src="{{ ASSET_URL }}"></script>
+  {% endassets %}
+
+{% endblock %}

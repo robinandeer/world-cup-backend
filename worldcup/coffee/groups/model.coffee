@@ -3,17 +3,19 @@ App.Team = DS.Model.extend
   name: DS.attr('string')
   rank: DS.attr('number')
   points: DS.attr('number')
-  position: DS.attr('number')
+  fifaRank: DS.attr('number')
+  eloRank: DS.attr('number')
+  eloScore: DS.attr('number')
+  confederation: DS.attr('string')
+  betfair: DS.attr('number')
+  likelihoodToWin: DS.attr('number')
+  likelihoodToAdvance: DS.attr('number')
+
+  flagImage: (->
+    return "/static/img/flags/#{@get('name')}.png"
+  ).property 'name'
 
   group: DS.belongsTo('group')
-
-  isWinner: (->
-    return @get('position') is 1
-  ).property 'position'
-
-  isRunnerUp: (->
-    return @get('position') is 2
-  ).property 'position'
 
 App.Group = DS.Model.extend
   group_id: DS.attr('string')

@@ -29,9 +29,9 @@ google = oauth.remote_app('google', app_key='GOOGLE')
 # +--------------------------------------------------------------------+
 login_manager = LoginManager()
 
-login_manager.login_view = 'login'
+login_manager.login_view = 'frontend.login'
 login_manager.login_message = 'Please log in to access this page.'
-login_manager.refresh_view = 'reauth'
+login_manager.refresh_view = 'frontend.reauth'
 
 
 # +--------------------------------------------------------------------+

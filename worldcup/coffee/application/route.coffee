@@ -1,3 +1,4 @@
 App.ApplicationRoute = Ember.Route.extend
   model: ->
-    return @store.find('user', 'current')
+    # Get the logged-in user
+    return @store.find 'user', 'current'

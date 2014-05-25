@@ -1,41 +1,39 @@
 <div class="a-layout--vertical">
-  <div class="a-layout__panel--half a-bar--space-around bb">
-    {{#link-to "index" classNames="a-button"}}
-      <div class="a-button__icon a-icon">&#8962;</div>
-      <div class="a-button__body">Home</div>
-    {{/link-to}}
+  <div class="a-layout__panel--half a-bar--space-around">
 
     <div class="stage-header">{{currentPlayoff.name}}</div>
 
-    {{#if isReadyToMoveOn}}
-      <div {{action "moveOn"}} class="a-button">
-        <div class="a-button__icon a-icon">&#9873;</div>
-        <div class="a-button__body">{{nextPlayoff.name}}</div>
-      </div>
-    {{else}}
-      <div class="small">Place your bets</div>
-    {{/if}}
+    <div class="link-next center__wrapper">
+      {{#if readyToMoveOn}}
+        <div {{action "moveOn"}} class="a-button">
+          <div class="a-button__icon a-icon">&#9873;</div>
+          <div class="a-button__body">{{nextPlayoff.name}}</div>
+        </div>
+      {{else}}
+        <div class="small">Place your bets</div>
+      {{/if}}
+    </div>
+
   </div>
 
-  <div class="a-layout__panel--double a-layout__wrapper bb--listed">
+  <div class="a-layout__wrapper a-layout__panel--double">
     <div class="a-layout--vertical">
+
       {{#each part in matchupParts}}
-        <div class="a-layout__panel--full a-layout__wrapper bb--listed">
+        <div class="a-layout__wrapper a-layout__panel--full mb--big--listed">
           <div class="a-layout">
+
             {{#each match in part}}
-              <div class="a-layout__panel--full center__wrapper br--listed">
-                <div class="a-button__group">
-                  {{#each team in match.teams}}
-                    <div {{action "pickWinner" match team}} {{bind-attr class=":a-button team.isWinner"}}>
-                      <div class="a-button__body">{{team.name}}</div>
-                    </div>
-                  {{/each}}
-                </div>
-              </div>
+              {{a-matchup teams=match.teams
+                          winners=userStageWinners
+                          losers=userStageLosers
+                          classNames="a-layout__panel--full mr--big--listed br--listed bl--listed bt bb"}}
             {{/each}}
+
           </div>
         </div>
       {{/each}}
+
     </div>
   </div>
 </div>

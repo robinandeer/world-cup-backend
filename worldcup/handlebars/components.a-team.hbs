@@ -1,0 +1,58 @@
+<div {{bind-attr class=":regular isShowingDetails:bb"}}>
+  
+    <div class="a-bar mb dotdotdot">
+      {{#if isHovering}}
+        <div {{action "toggleProperty" "isShowingDetails"}} class="a-button stretch-self">
+          <div class="a-icon a-button__icon">&#59141;</div>
+        </div>
+
+      {{else}}
+
+        <img {{bind-attr src="model.flagImage"}} class="small-flag mr">
+      {{/if}}
+
+      {{!-- Always in view (name + rank) --}}
+      <div>
+        {{#if isStageWinner}}1. {{/if}}
+
+        {{#if isStageRunnerUp}}2. {{/if}}
+
+        {{model.name}}
+        {{#if model.rank}}<small>[{{model.rank}}]</small>{{/if}}
+      </div>
+    </div>
+
+    {{#unless isShowingDetails}}
+      <div class="a-button__group center__wrapper small">
+        <div {{action "wasClicked" 1}} class="a-button">
+          Winner
+        </div>
+
+        <div {{action "wasClicked" 2}} class="a-button">
+          Runner up
+        </div>
+      </div>
+    {{/unless}}
+
+</div>
+
+{{#if isShowingDetails}}
+  {{#each property in properties}}
+    <div class="a-property">
+      <div class="a-property__key">{{property.title}}</div>
+      <div class="a-property__value">{{property.value}}</div>
+    </div>
+  {{/each}}
+
+  <div {{action "toggleProperty" "isShowingDetails"}} class="a-button center__wrapper mt">
+    <div class="a-button__icon a-icon">&#10006;</div>
+    <div class="a-button__body">Close</div>
+  </div>
+
+{{else}}
+  
+  <div class="team-actions a-button__group center__wrapper">
+    
+  </div>
+
+{{/if}}
