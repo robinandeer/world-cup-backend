@@ -8,3 +8,4 @@ github3.py
 Flask-OAuthlib
 webassets
 gunicorn
+pyyaml

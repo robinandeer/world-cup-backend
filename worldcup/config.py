@@ -29,6 +29,20 @@ class DefaultConfig(BaseConfig):
 
   DEBUG = True
 
+  GOOGLE = dict(
+    consumer_key=os.environ.get('GOOGLE_CONSUMER_KEY'),
+    consumer_secret=os.environ.get('GOOGLE_CONSUMER_SECRET'),
+    # Prepend to all (non-absolute) request URLs
+    base_url='https://www.googleapis.com/oauth2/v1/',
+    authorize_url='https://accounts.google.com/o/oauth2/auth',
+    request_token_url=None,
+    request_token_params={
+      'scope': "https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email"
+    },
+    access_token_url='https://accounts.google.com/o/oauth2/token',
+    access_token_method='POST'
+  )
+
   # Flask-mail: http://pythonhosted.org/flask-mail/
   # https://bitbucket.org/danjac/flask-mail/issue/3/problem-with-gmails-smtp-server
   MAIL_DEBUG = DEBUG
@@ -38,10 +52,14 @@ class DefaultConfig(BaseConfig):
   MAIL_PORT = 587
   MAIL_USE_TLS = True
   MAIL_USE_SSL = False
-  # Put real MAIL_USERNAME and MAIL_PASSWORD under instance folder
-  MAIL_USERNAME = 'yourmail@gmail.com'
-  MAIL_PASSWORD = 'yourpass'
+
+  MAIL_USERNAME = os.environ.get('MAIL_USERNAME')
+  MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
   MAIL_DEFAULT_SENDER = MAIL_USERNAME
+
+  MONGO_URI = os.environ.get('MONGO_URI')
+
+  SECRET_KEY = os.environ.get('SECRET_KEY')
 
 
 class TestConfig(BaseConfig):

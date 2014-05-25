@@ -48,7 +48,7 @@ def configure_app(app, config=None):
   app.config.from_object(DefaultConfig)
 
   # http://flask.pocoo.org/docs/config/#instance-folders
-  app.config.from_pyfile('production.cfg', silent=True)
+  #app.config.from_pyfile('production.cfg', silent=True)
 
   if config:
     app.config.from_object(config)
