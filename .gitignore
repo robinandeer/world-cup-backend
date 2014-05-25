@@ -11,7 +11,7 @@ env/
 bin/
 build/
 develop-eggs/
-dist/
+./dist/
 eggs/
 lib/
 lib64/
@@ -54,5 +54,4 @@ coverage.xml
 docs/_build/
 
 # Bower
-worldcup/vendor/*
 worldcup/static/.webassets-cache
