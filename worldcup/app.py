@@ -8,7 +8,7 @@ import os
 
 from flask import Flask, render_template, session
 from flask.ext.assets import Environment
-import newrelic
+import newrelic.agent
 
 from .api import api
 from .config import DefaultConfig
