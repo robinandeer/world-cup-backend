@@ -10,3 +10,4 @@ Flask-OAuthlib
 webassets
 gunicorn
 pyyaml
+newrelic

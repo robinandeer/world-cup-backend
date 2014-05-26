@@ -8,6 +8,7 @@ import os
 
 from flask import Flask, render_template, session
 from flask.ext.assets import Environment
+import newrelic
 
 from .api import api
 from .config import DefaultConfig
@@ -112,6 +113,9 @@ def configure_extensions(app):
   assets.register('js_app', js_app)
   assets.register('ember_templates', ember_templates)
   assets.register('scss_all', scss)
+
+  # New Relic Python Agent
+  newrelic.agent.initialize('newrelic.ini')
 
 
 def configure_blueprints(app, blueprints):
