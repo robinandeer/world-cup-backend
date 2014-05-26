@@ -1,0 +1,32 @@
+Brazil,24.5,93.9,24.7,A
+Argentina,16.2,93.8,16.4,F
+Germany,12.9,85.4,13.0,G
+Spain,12.3,83.2,12.4,B
+Belgium,4.5,84.1,4.5,H
+France,3.8,81.0,3.8,E
+England,3.5,59.4,3.5,D
+Italy,3.5,69.4,3.5,D
+Portugal,2.9,63.7,2.9,G
+Uruguay,2.9,63.4,2.9,D
+Netherlands,2.7,58.9,2.7,B
+Colombia,2.4,74.9,2.4,C
+Chile,1.9,50.7,1.9,B
+Russia,0.7,65.0,0.7,H
+Switzerland,0.7,59.2,0.7,E
+Ivory Coast,0.7,49.7,0.7,C
+Mexico,0.5,44.8,0.5,A
+Ecuador,0.5,48.1,0.5,E
+Bosnia and Herzegovina,0.5,51.9,0.5,F
+USA,0.4,24.8,0.4,G
+Japan,0.4,44.7,0.4,C
+Croatia,0.4,43.9,0.4,A
+Ghana,0.3,26.1,0.3,G
+Nigeria,0.3,41.9,0.3,F
+Greece,0.2,30.6,0.2,C
+South Korea,0.2,36.0,0.2,H
+Cameroon,0.1,17.4,0.1,A
+Australia,0.1,7.2,0.1,B
+Costa Rica,0.1,7.9,0.1,D
+Honduras,0.1,11.7,0.1,E
+Iran,0.1,12.4,0.1,F
+Algeria,0.1,15.0,0.1,H

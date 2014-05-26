@@ -55,3 +55,16 @@ docs/_build/
 
 # Bower
 worldcup/static/.webassets-cache
+worldcup/vendor/animate.css/*
+worldcup/vendor/animate.css/!animate.css
+worldcup/vendor/ember-data/*
+worldcup/vendor/ember-data/!ember-data.js
+worldcup/vendor/ember/*
+worldcup/vendor/ember/!ember.js
+worldcup/vendor/handlebars/*
+worldcup/vendor/handlebars/!handlebars.runtime.js
+worldcup/vendor/jquery/*
+worldcup/vendor/jquery/dist/!jquery.js
+
+# Heroku
+.env

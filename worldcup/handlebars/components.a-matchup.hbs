@@ -10,7 +10,7 @@
   {{#each team in teams}}
     <div class="a-layout__panel--full center__wrapper a-switch bb--listed">
       {{#if team.isStageWinner}}
-        <div class="a-icon mr">&#9733;</div>
+        <div class="icon-star mr"></div>
       {{else}}
         <img {{bind-attr src="team.flagImage"}} class="small-flag mr">
       {{/if}}

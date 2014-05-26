@@ -3179,7 +3179,7 @@ body {
 }
 
 /* line 66 */
-.is-clickable, .a-button, .a-button--stretched, .a-button--naked, .a-button--google, .a-dropdown__item, .a-dropdown__footer {
+.is-clickable, .a-button, .a-button--stretched, .a-button--naked, .a-button--google {
   cursor: pointer;
 }
 
@@ -3423,7 +3423,7 @@ h2 {
 }
 
 /* line 1, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-bar.scss */
-.a-bar, .a-bar--end, .a-bar--center, .a-activity__divider, .a-notify, .a-notify--fake, .a-notify--bubble, .a-bar--space-between, .a-bar--space-between--with-borders, .a-toolbar, .a-toolbar--standalone, .a-toolbar--right, .a-progress__bar, .a-progress__bar--complete, .a-choice__wrapper, .a-bar--space-around, .a-checkbox__wrapper, .a-choice,
+.a-bar, .a-bar--end, .a-bar--center, .a-bar--space-between, .a-bar--space-between--with-borders, .a-toolbar, .a-toolbar--standalone, .a-toolbar--right, .a-choice__wrapper, .a-bar--space-around, .a-checkbox__wrapper, .a-choice,
 .a-bar--start {
   display: -webkit-flex;
   display: -moz-flex;
@@ -3448,14 +3448,14 @@ h2 {
 }
 
 /* line 19, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-bar.scss */
-.a-bar--center, .a-activity__divider, .a-notify, .a-notify--fake, .a-notify--bubble {
+.a-bar--center {
   -webkit-justify-content: center;
   -moz-justify-content: center;
   justify-content: center;
 }
 
 /* line 26, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-bar.scss */
-.a-bar--space-between, .a-bar--space-between--with-borders, .a-toolbar, .a-toolbar--standalone, .a-toolbar--right, .a-progress__bar, .a-progress__bar--complete, .a-choice__wrapper {
+.a-bar--space-between, .a-bar--space-between--with-borders, .a-toolbar, .a-toolbar--standalone, .a-toolbar--right, .a-choice__wrapper {
   -webkit-justify-content: space-between;
   -moz-justify-content: space-between;
   justify-content: space-between;
@@ -3676,7 +3676,7 @@ h2 {
   box-shadow: 0 0 0 #000;
 }
 /* line 66, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-button.scss */
-.a-button--naked:hover > .a-icon, .a-button--naked:hover > .a-icon--small, .a-button--naked:hover > .a-icon--big {
+.a-button--naked:hover > .a-icon {
   color: #b3b8c3;
 }
 
@@ -3710,317 +3710,6 @@ h2 {
 /* line 99, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-button.scss */
 .a-button__group > .a-button:last-of-type, .a-button__group > .a-button--stretched:last-of-type, .a-button__group > .a-button--naked:last-of-type, .a-button__group > .a-button--google:last-of-type {
   border-radius: 0 3px 3px 0;
-}
-
-/* line 1, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-icon.scss */
-.a-icon, .a-icon--small, .a-icon--big {
-  -webkit-font-smoothing: antialiased;
-  font-family: Entypo;
-  font-size: 35px;
-  line-height: 0;
-  color: #525f6b;
-}
-
-/* line 14, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-icon.scss */
-.a-icon--small {
-  font-size: 32px;
-}
-
-/* line 20, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-icon.scss */
-.a-icon--big {
-  font-size: 40px;
-}
-
-/* line 1, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-card.scss */
-.a-card {
-  border-radius: 0 0 5px 5px;
-  border: 1px solid #d8dae3;
-  background: #fff;
-}
-/* line 8, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-card.scss */
-.a-card.is-clickable:hover, .a-card.a-button:hover, .a-card.a-button--stretched:hover, .a-card.a-button--naked:hover, .a-card.a-button--google:hover, .a-card.a-dropdown__item:hover, .a-card.a-dropdown__footer:hover {
-  background: rgba(0, 0, 0, 0.03);
-}
-/* line 12, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-card.scss */
-.a-card.is-clickable:active, .a-card.a-button:active, .a-card.a-button--stretched:active, .a-card.a-button--naked:active, .a-card.a-button--google:active, .a-card.a-dropdown__item:active, .a-card.a-dropdown__footer:active, .a-card.is-clickable.active, .a-card.active.a-button, .a-card.active.a-button--stretched, .a-card.active.a-button--naked, .a-card.active.a-button--google, .a-card.active.a-dropdown__item, .a-card.active.a-dropdown__footer {
-  -webkit-transform: scale(0.993);
-  -moz-transform: scale(0.993);
-  -ms-transform: scale(0.993);
-  -o-transform: scale(0.993);
-  transform: scale(0.993);
-}
-
-/* line 3, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-activity.scss */
-.a-activity__feed {
-  position: relative;
-  max-width: 650px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* line 10, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-activity.scss */
-.a-activity__header {
-  margin-bottom: 10px;
-  text-transform: uppercase;
-  color: #979dac;
-}
-
-/* line 16, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-activity.scss */
-.a-activity__wrapper {
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: flex;
-}
-
-/* line 28, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-activity.scss */
-.a-activity, .a-activity--collapsed {
-  -webkit-flex-basis: 100%;
-  -moz-flex-basis: 100%;
-  flex-basis: 100%;
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: flex;
-  -webkit-align-items: flex-start;
-  -moz-align-items: flex-start;
-  align-items: flex-start;
-  position: relative;
-  padding: 10px 0;
-  border-top: 1px solid rgba(216, 218, 227, 0);
-  border-bottom: 1px solid rgba(216, 218, 227, 0);
-}
-@media screen and (min-width: 650px) {
-  /* line 28, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-activity.scss */
-  .a-activity, .a-activity--collapsed {
-    border-radius: 5px;
-    border: 1px solid rgba(216, 218, 227, 0);
-  }
-}
-
-/* line 43, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-activity.scss */
-.a-activity--collapsed {
-  -webkit-align-items: center;
-  -moz-align-items: center;
-  align-items: center;
-}
-@media screen and (min-width: 650px) {
-  /* line 43, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-activity.scss */
-  .a-activity--collapsed {
-    border-radius: 5px;
-    border: 1px solid rgba(216, 218, 227, 0);
-  }
-}
-/* line 52, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-activity.scss */
-.a-activity--collapsed.is-highlighted {
-  border-color: rgba(0, 0, 0, 0.1);
-  background: #fff9e0;
-  color: #f88f08;
-}
-/* line 57, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-activity.scss */
-.a-activity--collapsed.is-highlighted > .a-activity__icon {
-  box-shadow: 0 0 0 #000;
-  background: #f88f08;
-}
-
-/* line 64, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-activity.scss */
-.a-activity__icon {
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: flex;
-  -webkit-align-items: center;
-  -moz-align-items: center;
-  align-items: center;
-  -webkit-justify-content: center;
-  -moz-justify-content: center;
-  justify-content: center;
-  min-width: 30px;
-  min-height: 30px;
-  margin-right: 15px;
-  border-radius: 30px;
-  box-shadow: 0 0 0 3px #fff;
-  color: #fff;
-  background: #1eb18a;
-}
-
-/* line 77, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-activity.scss */
-.a-activity__divider {
-  position: relative;
-  border-bottom: 1px solid #d8dae3;
-  margin: 10px 0 15px;
-}
-
-/* line 84, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-activity.scss */
-.a-activity__caption {
-  font-size: 90%;
-  color: rgba(0, 0, 0, 0.6);
-}
-/* line 88, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-activity.scss */
-.a-activity__caption ~ .a-activity__body {
-  line-height: 1.5em;
-}
-
-/* line 93, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-activity.scss */
-.a-activity__divider__time {
-  font-size: 80%;
-  color: #979dac;
-  background: #fff;
-  padding: 0 10px;
-  margin-bottom: -8px;
-}
-
-/* line 1, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-progress.scss */
-.a-progress {
-  background: #fff;
-  border: 1px solid #babece;
-  min-width: 250px;
-  width: 100%;
-}
-
-/* line 10, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-progress.scss */
-.a-progress__bar, .a-progress__bar--complete {
-  background: #d7f9d5;
-  text-align: right;
-  padding: 5px;
-  border-right: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-/* line 19, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-progress.scss */
-.a-progress__bar--complete {
-  border: 0;
-  background: #b9f5b6;
-  color: rgba(0, 0, 0, 0.3);
-}
-
-/* line 1, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-dropdown.scss */
-.a-dropdown__wrapper {
-  position: relative;
-  outline: none;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-}
-/* line 9, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-dropdown.scss */
-.a-dropdown__wrapper:hover {
-  box-shadow: 0 0 0 #000;
-}
-
-/* line 14, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-dropdown.scss */
-.a-dropdown {
-  position: absolute;
-  top: 24px;
-  left: 0px;
-  width: 150px;
-  z-index: 10;
-  padding: 5px 0;
-  border-radius: 0 5px 5px 5px;
-  border: 1px solid #babece;
-  background-clip: padding-box;
-  box-shadow: 0 1px 3px -1px #c9ccd8;
-}
-
-/* line 28, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-dropdown.scss */
-.expand-right {
-  right: 0px;
-  left: auto;
-  border-radius: 5px 0 5px 5px;
-}
-
-/* line 34, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-dropdown.scss */
-.a-dropdown__item, .a-dropdown__footer {
-  padding: 5px 10px;
-}
-/* line 38, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-dropdown.scss */
-.a-dropdown__item:hover, .a-dropdown__footer:hover {
-  color: #fff;
-  background: #2b84d3;
-}
-
-/* line 44, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-dropdown.scss */
-.a-dropdown__footer {
-  text-align: center;
-  padding: 10px;
-}
-/* line 50, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-dropdown.scss */
-.a-dropdown__footer:hover {
-  background: none;
-  color: #979dac;
-}
-
-/* line 56, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-dropdown.scss */
-.a-dropdown__divider {
-  margin: 5px auto;
-  border-bottom: 1px solid #c9ccd8;
-}
-
-/* line 4, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-notify.scss */
-.a-notify, .a-notify--fake, .a-notify--bubble {
-  background: #abb0c3;
-  color: #fff;
-  border-radius: 20px;
-  font-size: 75%;
-  padding: 1px 5px 1px 4px;
-  text-decoration: none;
-  width: 20px;
-}
-
-/* line 15, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-notify.scss */
-.a-notify--fake {
-  background: none;
-}
-
-/* line 20, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-notify.scss */
-.a-notify--bubble {
-  color: transparent;
-  width: 10px;
-  height: 10px;
-  cursor: pointer;
-}
-/* line 29, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-notify.scss */
-.a-notify--bubble.is-positive {
-  background-color: #1eb18a;
-  box-shadow: 0px 0px 5px #1eb18a;
-}
-/* line 34, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-notify.scss */
-.a-notify--bubble.is-negative {
-  background-color: #e0332d;
-  box-shadow: 0px 0px 5px #e0332d;
-}
-/* line 39, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-notify.scss */
-.a-notify--bubble.is-passive {
-  box-shadow: inset 0 0 0 2px #babece;
-  background-color: transparent;
-}
-
-/* line 2, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-table.scss */
-.a-table {
-  width: 100%;
-  border: 1px solid #d8dae3;
-}
-
-/* line 13, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-table.scss */
-.a-table__body > .a-table__row:nth-of-type(even) {
-  background: #f9f9fa;
-}
-/* line 17, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-table.scss */
-.a-table__body > .a-table__row:hover {
-  background: #e7e8ee;
-}
-
-/* line 23, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-table.scss */
-.a-table__row {
-  border: 1px solid #d8dae3;
-}
-
-/* line 27, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-table.scss */
-.a-table__cell, .a-table__cell--header {
-  padding: 3px 6px;
-  border: 1px solid #d8dae3;
-}
-
-/* line 32, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-table.scss */
-.a-table__cell--header {
-  padding: 5px;
-  font-weight: normal;
-  vertical-align: middle;
-  text-align: left;
 }
 
 /* line 1, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-form.scss */
@@ -4110,23 +3799,6 @@ h2 {
   border-color: #e0332d;
 }
 
-/* line 2, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-popover.scss */
-.a-popover {
-  position: absolute;
-  top: 0;
-  background: white;
-  z-index: 9999;
-  border: 1px solid #babece;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-  border-radius: 3px;
-}
-
-/* line 12, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-popover.scss */
-.a-popover__wrapper {
-  position: relative;
-  overflow: visible;
-}
-
 /* line 1, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_scilifelab-logo.scss */
 .scilifelab-logo {
   font-family: Baskerville, Georgia, serif;
@@ -4152,19 +3824,19 @@ h2 {
   color: #86BE42;
 }
 
-/* line 266 */
+/* line 258 */
 .is-notifying {
   color: #2b84d3;
 }
 
-/* line 270 */
+/* line 262 */
 html,
 body {
   overflow: hidden;
   font-family: Lato;
 }
 
-/* line 277 */
+/* line 269 */
 .a-well {
   background: rgba(0, 0, 0, 0.05);
   border: 1px solid #c9ccd8;
@@ -4172,26 +3844,26 @@ body {
   border-radius: 5px;
 }
 
-/* line 285 */
-.header-style, .a-table__head {
+/* line 277 */
+.header-style {
   background: #f6f6f8;
 }
 
-/* line 289 */
+/* line 281 */
 .stretch-self {
   -webkit-align-self: stretch;
   -moz-align-self: stretch;
   align-self: stretch;
 }
 
-/* line 293 */
+/* line 285 */
 .is-fixed {
   -webkit-flex-shrink: 0;
   -moz-flex-shrink: 0;
   flex-shrink: 0;
 }
 
-/* line 298 */
+/* line 290 */
 .a-team.expanded {
   width: 250px;
   padding: 15px;
@@ -4200,37 +3872,37 @@ body {
   border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
-/* line 307 */
+/* line 299 */
 .team {
   position: relative;
   color: black;
 }
-/* line 311 */
+/* line 303 */
 .team.is-winner, .team.is-group-winner {
   background: rgba(255, 255, 0, 0.05);
 }
-/* line 315 */
+/* line 307 */
 .team.is-runner-up {
   background: rgba(255, 165, 0, 0.05);
 }
 
-/* line 320 */
+/* line 312 */
 .stage-header {
   font-size: 50px;
   color: #1eb18a;
 }
 
-/* line 326 */
+/* line 318 */
 .a-button.is-winner, .is-winner.a-button--stretched, .is-winner.a-button--naked, .is-winner.a-button--google {
   background: #1eb18a;
 }
 
-/* line 331 */
+/* line 323 */
 .a-backdrop {
   background-size: cover;
 }
 
-/* line 335 */
+/* line 327 */
 h1 {
   font-family: Lato;
   -webkit-font-smoothing: antialiased;
@@ -4239,19 +3911,19 @@ h1 {
   font-weight: 200;
 }
 
-/* line 343 */
+/* line 335 */
 .a-overlay {
   background: rgba(0, 0, 0, 0.5);
 }
 
-/* line 347 */
+/* line 339 */
 .signin-button {
   max-width: 300px;
   margin-left: auto;
   margin-right: auto;
 }
 
-/* line 353 */
+/* line 345 */
 .a-button--google {
   -webkit-font-smoothing: antialiased;
   font-weight: bold;
@@ -4259,27 +3931,27 @@ h1 {
   color: #fff;
   border: 0;
 }
-/* line 365 */
+/* line 357 */
 .a-button--google:hover {
   box-shadow: none;
   background: #d71b1a;
 }
 
-/* line 372 */
+/* line 364 */
 .a-toolbar__group__item.active, .active.a-toolbar__group__item--clickable {
   background: rgba(0, 0, 0, 0.03);
 }
 
-/* line 377 */
+/* line 369 */
 .a-toolbar__group__item--clickable {
   cursor: pointer;
 }
-/* line 381 */
+/* line 373 */
 .a-toolbar__group__item--clickable:hover {
   background: rgba(0, 0, 0, 0.03);
 }
 
-/* line 386 */
+/* line 378 */
 .flashes {
   position: fixed;
   bottom: 40px;
@@ -4289,7 +3961,7 @@ h1 {
   -webkit-font-smoothing: antialiased;
 }
 
-/* line 395 */
+/* line 387 */
 .wc-logo {
   width: 150px;
   margin-left: auto;
@@ -4297,12 +3969,12 @@ h1 {
   display: table-cell;
 }
 
-/* line 402 */
-.a-icon, .a-icon--small, .a-icon--big {
+/* line 394 */
+.a-icon {
   margin-right: 5px;
 }
 
-/* line 406 */
+/* line 398 */
 .a-property {
   font-size: 90%;
   display: -webkit-flex;
@@ -4313,72 +3985,80 @@ h1 {
   justify-content: space-between;
 }
 
-/* line 412 */
+/* line 404 */
 .a-property__title {
   color: rgba(0, 0, 0, 0.8);
 }
 
-/* line 416 */
+/* line 408 */
 .a-property__value {
   font-weight: bold;
 }
 
-/* line 420 */
+/* line 412 */
 .small-flag {
   width: 25px;
 }
 
-/* line 424 */
+/* line 416 */
 .big-flag {
   width: 70px;
 }
 
-/* line 428 */
+/* line 420 */
 .link-next {
   width: 250px;
 }
 
-/* line 434 */
+/* line 426 */
 .a-switch:hover .a-switch__default {
   display: none;
 }
-/* line 438 */
+/* line 430 */
 .a-switch:hover .a-switch__content {
   display: inherit;
 }
 
-/* line 444 */
+/* line 436 */
 .a-switch__default {
   display: inherit;
 }
 
-/* line 448 */
+/* line 440 */
 .a-switch__content {
   display: none;
 }
 
-/* line 452 */
+/* line 444 */
 .profile-wrapper {
   max-width: 960px;
   margin-left: auto;
   margin-right: auto;
 }
 
-/* line 458 */
+/* line 450 */
 .world-cup-logo {
   width: 70px;
 }
 
-/* line 462 */
+/* line 454 */
 .a-playoff-tree {
   height: 200px;
 }
 
-/* line 466 */
+/* line 458 */
 .form-inline {
   display: inline-block;
 }
-/* line 469 */
+/* line 461 */
 .form-inline > input {
   width: 200px;
+}
+
+/* line 466 */
+[class^="icon-"], [class*=" icon-"] {
+  text-align: inherit;
+  width: auto;
+  font-size: 20px;
+  color: #525f6b;
 }

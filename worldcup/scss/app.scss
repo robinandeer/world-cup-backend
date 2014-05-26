@@ -252,15 +252,7 @@ h2 {
 @import 'components/a-layout';
 @import 'components/a-toolbar';
 @import 'components/a-button';
-@import 'components/a-icon';
-@import 'components/a-card';
-@import 'components/a-activity';
-@import 'components/a-progress';
-@import 'components/a-dropdown';
-@import 'components/a-notify';
-@import 'components/a-table';
 @import 'components/a-form';
-@import 'components/a-popover';
 @import 'components/scilifelab-logo';
 
 .is-notifying {
@@ -469,4 +461,11 @@ h1 {
   > input {
     width: 200px;
   }
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  text-align: inherit;
+  width: auto;
+  font-size: 20px;
+  color: #525f6b;
 }

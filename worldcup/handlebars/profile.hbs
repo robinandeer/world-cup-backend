@@ -6,9 +6,13 @@
         {{name}} a.k.a
 
         {{#if nickname}}
-          <i {{action "unsetNickname" on="doubleClick"}}>
-            {{nickname}}
-          </i>
+          {{#if isYourProfile}}
+            <i {{action "unsetNickname" on="doubleClick"}}>
+              {{nickname}}
+            </i>
+          {{else}}
+            <i>{{nickname}}</i>
+          {{/if}}
         {{else}}
           <form {{action "setNickname" on="submit"}} class="form-inline">
             {{input id="nickname"

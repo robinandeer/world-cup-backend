@@ -1,20 +1,20 @@
 <div class="a-layout--vertical">
   <div class="a-layout__panel--half a-bar--space-around bb">
     <div class="stage-header">
-      <span class="a-icon">&#127942;</span>
+      <span class="icon-trophy mr--slim"></span>
       <img {{bind-attr src="user.finalWinner.flagImage"}} class="small-flag mr">
 
-      <span class="a-icon">&#9733;</span>
+      <span class="icon-star mr--slim"></span>
       <img {{bind-attr src="runnerUp.flagImage"}} class="small-flag mr">
 
-      <span class="a-icon">&#9734;</span>
+      <span class="icon-star-empty mr--slim"></span>
       <img {{bind-attr src="user.thirdPlaceWinner.flagImage"}} class="small-flag">
     </div>
 
     <div class="link-next center__wrapper">
       {{#if readyToMoveOn}}
         <div {{action "moveOn"}} class="a-button">
-          <div class="a-button__icon a-icon">&#9873;</div>
+          <div class="a-button__icon icon-flag"></div>
           <div class="a-button__body">Complete</div>
         </div>
       {{else}}
