@@ -23,10 +23,10 @@ App.AMatchupComponent = Ember.Component.extend
 
   loser: (->
     teams = @get 'teams'
-    winner = @get 'winner'
+    winnerId = @get 'winner.id'
 
     for team in teams
-      if team.get('id') is not winner.get('id')
+      if team.get('id') isnt winnerId
         break
 
     return team

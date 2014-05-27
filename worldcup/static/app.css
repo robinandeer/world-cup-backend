@@ -3162,7 +3162,7 @@ a {
   text-decoration: none;
 }
 
-/* line 54 */
+/* line 55 */
 *,
 *:before,
 *:after {
@@ -3171,25 +3171,25 @@ a {
   box-sizing: border-box;
 }
 
-/* line 60 */
+/* line 61 */
 .fill-up, .a-layout, .a-layout--vertical, html,
 body {
   height: 100%;
   width: 100%;
 }
 
-/* line 66 */
+/* line 67 */
 .is-clickable, .a-button, .a-button--stretched, .a-button--naked, .a-button--google {
   cursor: pointer;
 }
 
-/* line 70 */
+/* line 71 */
 .is-scrollable, .a-list, .a-list--horizontal {
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
 }
 
-/* line 75 */
+/* line 76 */
 .is-non-selectable, .a-button, .a-button--stretched, .a-button--naked, .a-button--google {
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -3197,150 +3197,150 @@ body {
   user-select: none;
 }
 
-/* line 79 */
+/* line 80 */
 .is-fixed-size {
   -webkit-flex-shrink: 0;
   -moz-flex-shrink: 0;
   flex-shrink: 0;
 }
 
-/* line 83 */
+/* line 84 */
 .is-highlighted {
   background: rgba(237, 187, 15, 0.1) !important;
 }
 
-/* line 90 */
+/* line 91 */
 .slim, .slim--stretched {
   padding: 5px;
 }
 
-/* line 94 */
+/* line 95 */
 .slim--stretched {
   padding-top: 3px;
   padding-bottom: 3px;
 }
 
-/* line 100 */
+/* line 101 */
 .slim--right {
   padding-right: 5px;
 }
 
-/* line 104 */
+/* line 105 */
 .slim--squashed {
   padding: 0 5px;
 }
 
-/* line 108 */
+/* line 109 */
 .regular {
   padding: 10px;
 }
 
-/* line 112 */
+/* line 113 */
 .loose {
   padding: 15px;
 }
 
-/* line 116 */
+/* line 117 */
 .mt {
   margin-top: 15px;
 }
 
-/* line 120 */
+/* line 121 */
 .mb {
   margin-bottom: 15px;
 }
 
-/* line 125 */
+/* line 126 */
 .mb--listed:not(:last-of-type) {
   margin-bottom: 15px;
 }
 
-/* line 130 */
+/* line 131 */
 .mb--big {
   margin-bottom: 50px;
 }
 
-/* line 135 */
+/* line 136 */
 .mb--big--listed:not(:last-of-type) {
   margin-bottom: 35px;
 }
 
-/* line 141 */
+/* line 142 */
 .mr--big--listed:not(:last-of-type) {
   margin-right: 35px;
 }
 
-/* line 146 */
+/* line 147 */
 .mr {
   margin-right: 15px;
 }
 
-/* line 150 */
+/* line 151 */
 .mr--big {
   margin-right: 35px;
 }
 
-/* line 154 */
+/* line 155 */
 .mr--slim {
   margin-right: 5px;
 }
 
-/* line 159 */
+/* line 160 */
 .mr--listed:not(:last-of-type) {
   margin-right: 15px;
 }
 
-/* line 167 */
+/* line 168 */
 .b {
   border: 1px solid #d8dae3;
 }
 
-/* line 171 */
+/* line 172 */
 .bb {
   border-bottom: 1px solid #d8dae3;
 }
 
-/* line 176 */
+/* line 177 */
 .bb--listed:not(:last-of-type) {
   border-bottom: 1px solid #d8dae3;
 }
 
-/* line 181 */
+/* line 182 */
 .bt {
   border-top: 1px solid #d8dae3;
 }
 
-/* line 185 */
+/* line 186 */
 .br {
   border-right: 1px solid #d8dae3;
 }
 
-/* line 190 */
+/* line 191 */
 .br--listed:not(:last-of-type) {
   border-right: 1px solid #d8dae3;
 }
 
-/* line 195 */
+/* line 196 */
 .bl {
   border-left: 1px solid #d8dae3;
 }
 
-/* line 200 */
+/* line 201 */
 .bl--listed:not(:first-of-type) {
   border-left: 1px solid #d8dae3;
 }
 
-/* line 208 */
+/* line 209 */
 .text-center {
   text-align: center;
 }
 
-/* line 212 */
+/* line 213 */
 .text-right {
   text-align: right;
 }
 
-/* line 216 */
+/* line 217 */
 .dotdotdot {
   white-space: nowrap;
   max-width: 100%;
@@ -3348,23 +3348,23 @@ body {
   text-overflow: ellipsis;
 }
 
-/* line 220 */
+/* line 221 */
 h2 {
   font-weight: normal;
 }
 
-/* line 226 */
+/* line 227 */
 .small,
 .small-font {
   font-size: 80%;
 }
 
-/* line 231 */
+/* line 232 */
 .big-font {
   font-size: 120%;
 }
 
-/* line 236 */
+/* line 237 */
 .center__wrapper {
   display: -webkit-flex;
   display: -moz-flex;
@@ -3377,12 +3377,12 @@ h2 {
   align-items: center;
 }
 
-/* line 242 */
+/* line 243 */
 .full-width {
   width: 100%;
 }
 
-/* line 246 */
+/* line 247 */
 .full-height {
   height: 100%;
 }
@@ -3420,6 +3420,9 @@ h2 {
   -moz-flex-shrink: 0;
   flex-shrink: 0;
   border-bottom: 0;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: flex;
 }
 
 /* line 1, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-bar.scss */
@@ -3824,19 +3827,19 @@ h2 {
   color: #86BE42;
 }
 
-/* line 258 */
+/* line 259 */
 .is-notifying {
   color: #2b84d3;
 }
 
-/* line 262 */
+/* line 263 */
 html,
 body {
   overflow: hidden;
   font-family: Lato;
 }
 
-/* line 269 */
+/* line 270 */
 .a-well {
   background: rgba(0, 0, 0, 0.05);
   border: 1px solid #c9ccd8;
@@ -3844,26 +3847,26 @@ body {
   border-radius: 5px;
 }
 
-/* line 277 */
+/* line 278 */
 .header-style {
   background: #f6f6f8;
 }
 
-/* line 281 */
+/* line 282 */
 .stretch-self {
   -webkit-align-self: stretch;
   -moz-align-self: stretch;
   align-self: stretch;
 }
 
-/* line 285 */
+/* line 286 */
 .is-fixed {
   -webkit-flex-shrink: 0;
   -moz-flex-shrink: 0;
   flex-shrink: 0;
 }
 
-/* line 290 */
+/* line 291 */
 .a-team.expanded {
   width: 250px;
   padding: 15px;
@@ -3872,37 +3875,37 @@ body {
   border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
-/* line 299 */
+/* line 300 */
 .team {
   position: relative;
   color: black;
 }
-/* line 303 */
+/* line 304 */
 .team.is-winner, .team.is-group-winner {
   background: rgba(255, 255, 0, 0.05);
 }
-/* line 307 */
+/* line 308 */
 .team.is-runner-up {
   background: rgba(255, 165, 0, 0.05);
 }
 
-/* line 312 */
+/* line 313 */
 .stage-header {
   font-size: 50px;
   color: #1eb18a;
 }
 
-/* line 318 */
+/* line 319 */
 .a-button.is-winner, .is-winner.a-button--stretched, .is-winner.a-button--naked, .is-winner.a-button--google {
   background: #1eb18a;
 }
 
-/* line 323 */
+/* line 324 */
 .a-backdrop {
   background-size: cover;
 }
 
-/* line 327 */
+/* line 328 */
 h1 {
   font-family: Lato;
   -webkit-font-smoothing: antialiased;
@@ -3911,19 +3914,19 @@ h1 {
   font-weight: 200;
 }
 
-/* line 335 */
+/* line 336 */
 .a-overlay {
   background: rgba(0, 0, 0, 0.5);
 }
 
-/* line 339 */
+/* line 340 */
 .signin-button {
   max-width: 300px;
   margin-left: auto;
   margin-right: auto;
 }
 
-/* line 345 */
+/* line 346 */
 .a-button--google {
   -webkit-font-smoothing: antialiased;
   font-weight: bold;
@@ -3931,27 +3934,27 @@ h1 {
   color: #fff;
   border: 0;
 }
-/* line 357 */
+/* line 358 */
 .a-button--google:hover {
   box-shadow: none;
   background: #d71b1a;
 }
 
-/* line 364 */
+/* line 365 */
 .a-toolbar__group__item.active, .active.a-toolbar__group__item--clickable {
   background: rgba(0, 0, 0, 0.03);
 }
 
-/* line 369 */
+/* line 370 */
 .a-toolbar__group__item--clickable {
   cursor: pointer;
 }
-/* line 373 */
+/* line 374 */
 .a-toolbar__group__item--clickable:hover {
   background: rgba(0, 0, 0, 0.03);
 }
 
-/* line 378 */
+/* line 379 */
 .flashes {
   position: fixed;
   bottom: 40px;
@@ -3961,7 +3964,7 @@ h1 {
   -webkit-font-smoothing: antialiased;
 }
 
-/* line 387 */
+/* line 388 */
 .wc-logo {
   width: 150px;
   margin-left: auto;
@@ -3969,12 +3972,12 @@ h1 {
   display: table-cell;
 }
 
-/* line 394 */
+/* line 395 */
 .a-icon {
   margin-right: 5px;
 }
 
-/* line 398 */
+/* line 399 */
 .a-property {
   font-size: 90%;
   display: -webkit-flex;
@@ -3985,80 +3988,103 @@ h1 {
   justify-content: space-between;
 }
 
-/* line 404 */
+/* line 405 */
 .a-property__title {
   color: rgba(0, 0, 0, 0.8);
 }
 
-/* line 408 */
+/* line 409 */
 .a-property__value {
   font-weight: bold;
 }
 
-/* line 412 */
+/* line 413 */
 .small-flag {
   width: 25px;
 }
 
-/* line 416 */
+/* line 417 */
 .big-flag {
   width: 70px;
 }
 
-/* line 420 */
+/* line 421 */
 .link-next {
   width: 250px;
 }
 
-/* line 426 */
+/* line 427 */
 .a-switch:hover .a-switch__default {
   display: none;
 }
-/* line 430 */
+/* line 431 */
 .a-switch:hover .a-switch__content {
   display: inherit;
 }
 
-/* line 436 */
+/* line 437 */
 .a-switch__default {
   display: inherit;
 }
 
-/* line 440 */
+/* line 441 */
 .a-switch__content {
   display: none;
 }
 
-/* line 444 */
+/* line 445 */
 .profile-wrapper {
   max-width: 960px;
   margin-left: auto;
   margin-right: auto;
 }
 
-/* line 450 */
+/* line 451 */
 .world-cup-logo {
   width: 70px;
 }
 
-/* line 454 */
+/* line 455 */
 .a-playoff-tree {
   height: 200px;
 }
 
-/* line 458 */
+/* line 459 */
 .form-inline {
   display: inline-block;
 }
-/* line 461 */
+/* line 462 */
 .form-inline > input {
   width: 200px;
 }
 
-/* line 466 */
+/* line 467 */
 [class^="icon-"], [class*=" icon-"] {
   text-align: inherit;
   width: auto;
   font-size: 20px;
   color: #525f6b;
+}
+
+/* line 474 */
+.a-userbox {
+  width: 150px;
+}
+
+/* line 479 */
+.a-list__item:hover, .a-list__item--header:hover, .a-list__item.active, .active.a-list__item--header {
+  background: rgba(0, 0, 0, 0.03);
+}
+
+/* line 484 */
+.text-box {
+  max-width: 650px;
+  padding: 50px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* line 491 */
+h3 {
+  margin-top: 35px;
 }

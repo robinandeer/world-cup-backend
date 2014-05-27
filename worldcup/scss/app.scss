@@ -47,6 +47,7 @@ $border-color: #d8dae3;
   text-overflow: ellipsis;
 }
 
+
 // +-------------------------------------------------------------------+
 // | Basics - stuff needed for every project
 // +-------------------------------------------------------------------+
@@ -468,4 +469,25 @@ h1 {
   width: auto;
   font-size: 20px;
   color: #525f6b;
+}
+
+.a-userbox {
+  width: 150px;
+}
+
+.a-list__item {
+  &:hover, &.active {
+    background: rgba(#000, .03);
+  }
+}
+
+.text-box {
+  max-width: 650px;
+  padding: 50px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+h3 {
+  margin-top: 35px;
 }

@@ -189,12 +189,29 @@ def activities(document_id=None):
   return jsonify_mongo(document)
 
 
+def extract_user_team_ids(user):
+  """Extracts team ids as ``ObjectId`` from a user JSON object."""
+  team_categories = ['groupWinners', 'groupRunnerUps', 'round1Winners',
+                     'round2Winners', 'round3Winners', 'round3Losers']
+
+  for category in team_categories:
+    for team_id in user.get(category, []):
+      yield ObjectId(team_id)
+
+  finalTeams = (user.get('finalWinner'), user.get('thirdPlaceWinner'))
+  for team_id in finalTeams:
+    if team_id:
+      yield ObjectId(team_id)
+
+
 @api.route('/users', methods=HTTP_METHODS[:3])
 @api.route('/users/<user_id>', methods=HTTP_METHODS)
 @login_required
 def users(user_id=None):
   data = (request.json or {}).get('user', {})
-  teams = []
+  payload = {
+    'teams': []
+  }
 
   if user_id:
     if user_id == 'current':
@@ -208,22 +225,28 @@ def users(user_id=None):
 
     if doc is None:
       return abort(404)
+    else:
+      payload['user'] = doc
+      docs = (doc,)
 
-    if request.method == 'GET':
-      team_categories = ['groupWinners', 'groupRunnerUps', 'round1Winners',
-                         'round2Winners', 'round3Winners', 'round3Losers']
+  elif request.method == 'GET':
+    # Request is to get all users
+    payload['users'] = docs = list(mongo.db.user.find())
 
-      team_ids = []
-      for category in team_categories:
-        for team_id in doc.get(category, []):
-          team_ids.append(ObjectId(team_id))
+  if request.method == 'GET':
 
-      finalTeams = (doc.get('finalWinner'), doc.get('thirdPlaceWinner'))
-      for team_id in finalTeams:
-        if team_id:
-          team_ids.append(ObjectId(team_id))
+    # Find out which teams to sideload
+    team_ids = set()
+    for doc in docs:
+      for team_id in extract_user_team_ids(doc):
+        team_ids.add(team_id)
 
-      teams = list(mongo.db.team.find({'_id': { '$in': team_ids }}))
+    payload['teams'] = list(
+      mongo.db.team.find({
+        '_id': {
+          '$in': list(team_ids)
+        }
+      }))
 
   if request.method == 'PUT':
     # Update a specific document
@@ -237,4 +260,4 @@ def users(user_id=None):
     mongo.db.user.save(doc)
 
   # Return json object for the logged in user
-  return jsonify_mongo(user=doc, teams=teams)
+  return jsonify_mongo(**payload)

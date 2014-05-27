@@ -1,5 +1,5 @@
 <div class="a-layout--vertical fill-up">
-  <div class="a-layout__panel a-toolbar">
+  <div class="a-layout__panel is-fixed a-toolbar">
     <div class="a-toolbar__group">
 
       {{#link-to "index" classNames="a-toolbar__group__item--clickable loose br"}}
@@ -15,6 +15,16 @@
       {{#link-to "consensus" classNames="a-toolbar__group__item--clickable loose br"}}
         <div class="icon-flow-tree mr--slim"></div>
         <div>Consensus</div>
+      {{/link-to}}
+
+      {{#link-to "profiles" classNames="a-toolbar__group__item--clickable loose br"}}
+        <div class="icon-users mr--slim"></div>
+        <div>Prophets</div>
+      {{/link-to}}
+
+      {{#link-to "rules" classNames="a-toolbar__group__item--clickable loose br"}}
+        <div class="icon-graduation-cap mr--slim"></div>
+        <div>Rules</div>
       {{/link-to}}
 
     </div>
@@ -35,7 +45,7 @@
     </div>
   </div>
   
-  <div class="a-layout__panel--full fill-up">
+  <div class="a-layout__wrapper a-layout__panel--full fill-up">
     {{outlet}}
   </div>
 </div>

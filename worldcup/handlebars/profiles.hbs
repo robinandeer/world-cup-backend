@@ -1,1 +1,23 @@
-{{outlet}}
+<div class="a-layout--vertical">
+    
+  <div class="a-layout__panel is-fixed a-list--horizontal bb">
+    {{#each user in users}}
+      {{#link-to "profile" user classNames="a-list__item center__wrapper br--listed loose"}}
+        <div class="icon-user"></div>
+
+        <div class="a-userbox text-center">
+          <div class="dotdotdot">
+            {{user.name}}
+          </div>
+
+          <div>{{#if user.nickname}}<small>[{{user.nickname}}]</small>{{/if}}</div>
+        </div>
+      {{/link-to}}
+    {{/each}}
+  </div>
+
+  <div class="a-layout__wrapper a-layout__panel--double">
+    {{outlet}}
+  </div>
+
+</div>

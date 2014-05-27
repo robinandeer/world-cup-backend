@@ -28,5 +28,6 @@
 	> .a-list__item {
 		@include flex-shrink(0);  // Needs futher testing
 		border-bottom: 0;
+		@include display(flex);
 	}
 }

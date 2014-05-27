@@ -29,11 +29,12 @@ App.Router.map(function() {
   });
   this.resource('finals');
   this.resource('consensus');
-  return this.resource('profiles', function() {
+  this.resource('profiles', function() {
     return this.resource('profile', {
       path: '/:user_id'
     });
   });
+  return this.resource('rules');
 });
 
 App.ApplicationController = Ember.ObjectController.extend({
@@ -192,12 +193,12 @@ App.AMatchupComponent = Ember.Component.extend({
     return winner;
   }).property('winners.@each', 'teams.@each'),
   loser: (function() {
-    var team, teams, winner, _i, _len;
+    var team, teams, winnerId, _i, _len;
     teams = this.get('teams');
-    winner = this.get('winner');
+    winnerId = this.get('winner.id');
     for (_i = 0, _len = teams.length; _i < _len; _i++) {
       team = teams[_i];
-      if (team.get('id') === !winner.get('id')) {
+      if (team.get('id') !== winnerId) {
         break;
       }
     }
@@ -456,5 +457,17 @@ App.ProfileController = Ember.ObjectController.extend({
 App.ProfileRoute = Ember.Route.extend({
   model: function(params) {
     return this.store.find('user', params.user_id);
+  }
+});
+
+App.ProfilesController = Ember.ArrayController.extend({
+  users: (function() {
+    return this.get('model').slice(1);
+  }).property('model.@each')
+});
+
+App.ProfilesRoute = Ember.Route.extend({
+  model: function(params) {
+    return this.store.find('user');
   }
 });

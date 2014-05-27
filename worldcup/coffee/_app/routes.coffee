@@ -5,3 +5,4 @@ App.Router.map ->
   @resource 'consensus'
   @resource 'profiles', ->
     @resource 'profile', { path: '/:user_id' }
+  @resource 'rules'
