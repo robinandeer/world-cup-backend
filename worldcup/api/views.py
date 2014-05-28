@@ -231,7 +231,7 @@ def users(user_id=None):
 
   elif request.method == 'GET':
     # Request is to get all users
-    payload['users'] = docs = list(mongo.db.user.find())
+    payload['users'] = docs = list(mongo.db.user.find().limit(20))
 
   if request.method == 'GET':
 

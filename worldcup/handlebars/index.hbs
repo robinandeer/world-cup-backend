@@ -1,31 +1,41 @@
-<div class="a-layout__wrapper a-bar--space-around fill-up">
-  <div>
-    <p>Get down and dirty</p>
+<div class="a-layout__wrapper fill-up">
 
-    {{#link-to "groups" classNames="a-button"}}
-      <div class="a-button__icon icon-chart-line"></div>
-      <div class="a-button__body regular">Start speculating</div>
-    {{/link-to}}
+  <div class="a-layout--vertical">
+    <div class="a-layout__panel--double a-bar--space-around">
+      <div>
+        <p>Get down and dirty</p>
+
+        {{#link-to "groups" classNames="a-button"}}
+          <div class="a-button__icon icon-chart-line"></div>
+          <div class="a-button__body regular">Start speculating</div>
+        {{/link-to}}
+      </div>
+
+      <div><i>or</i></div>
+
+      <div>
+        <p>Go back to school</p>
+
+        {{#link-to "rules" classNames="a-button"}}
+          <div class="a-button__icon icon-graduation-cap"></div>
+          <div class="a-button__body regular">Read the rules</div>
+        {{/link-to}}
+      </div>  
+
+      <div><i>or</i></div>
+
+      <form {{action "peekFriend" on="submit"}} class="form-inline">
+        <p>Cheat by peeking at a friend</p>
+        {{#link-to "profiles" classNames="a-button"}}
+          <div class="a-button__icon icon-users"></div>
+          <div class="a-button__body regular">The Prophets</div>
+        {{/link-to}}
+      </form>
+    </div>
+
+    <div class="a-layout__panel--half center__wrapper">
+      <p>Brought to you with optimism by Måns Magnusson & <a href="http://www.robinandeer.com">Robin Andeer</a>.</p>
+    </div>
   </div>
 
-  <div><i>or</i></div>
-
-  <div>
-    <p>Go back to school</p>
-
-    {{#link-to "rules" classNames="a-button"}}
-      <div class="a-button__icon icon-graduation-cap"></div>
-      <div class="a-button__body regular">Read the rules</div>
-    {{/link-to}}
-  </div>  
-
-  <div><i>or</i></div>
-
-  <form {{action "peekFriend" on="submit"}} class="form-inline">
-    <p>Cheat by peeking at a friend</p>
-    {{#link-to "profiles" classNames="a-button"}}
-      <div class="a-button__icon icon-users"></div>
-      <div class="a-button__body regular">The Prophets</div>
-    {{/link-to}}
-  </form>
 </div>

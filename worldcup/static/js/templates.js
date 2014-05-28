@@ -708,22 +708,22 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
 function program1(depth0,data) {
   
   
-  data.buffer.push("\n      <div class=\"a-button__icon icon-chart-line\"></div>\n      <div class=\"a-button__body regular\">Start speculating</div>\n    ");
+  data.buffer.push("\n          <div class=\"a-button__icon icon-chart-line\"></div>\n          <div class=\"a-button__body regular\">Start speculating</div>\n        ");
   }
 
 function program3(depth0,data) {
   
   
-  data.buffer.push("\n      <div class=\"a-button__icon icon-graduation-cap\"></div>\n      <div class=\"a-button__body regular\">Read the rules</div>\n    ");
+  data.buffer.push("\n          <div class=\"a-button__icon icon-graduation-cap\"></div>\n          <div class=\"a-button__body regular\">Read the rules</div>\n        ");
   }
 
 function program5(depth0,data) {
   
   
-  data.buffer.push("\n      <div class=\"a-button__icon icon-users\"></div>\n      <div class=\"a-button__body regular\">The Prophets</div>\n    ");
+  data.buffer.push("\n          <div class=\"a-button__icon icon-users\"></div>\n          <div class=\"a-button__body regular\">The Prophets</div>\n        ");
   }
 
-  data.buffer.push("<div class=\"a-layout__wrapper a-bar--space-around fill-up\">\n  <div>\n    <p>Get down and dirty</p>\n\n    ");
+  data.buffer.push("<div class=\"a-layout__wrapper fill-up\">\n\n  <div class=\"a-layout--vertical\">\n    <div class=\"a-layout__panel--double a-bar--space-around\">\n      <div>\n        <p>Get down and dirty</p>\n\n        ");
   hashContexts = {'classNames': depth0};
   hashTypes = {'classNames': "STRING"};
   options = {hash:{
@@ -731,7 +731,7 @@ function program5(depth0,data) {
   },inverse:self.noop,fn:self.program(1, program1, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   stack2 = ((stack1 = helpers['link-to'] || (depth0 && depth0['link-to'])),stack1 ? stack1.call(depth0, "groups", options) : helperMissing.call(depth0, "link-to", "groups", options));
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
-  data.buffer.push("\n  </div>\n\n  <div><i>or</i></div>\n\n  <div>\n    <p>Go back to school</p>\n\n    ");
+  data.buffer.push("\n      </div>\n\n      <div><i>or</i></div>\n\n      <div>\n        <p>Go back to school</p>\n\n        ");
   hashContexts = {'classNames': depth0};
   hashTypes = {'classNames': "STRING"};
   options = {hash:{
@@ -739,13 +739,13 @@ function program5(depth0,data) {
   },inverse:self.noop,fn:self.program(3, program3, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   stack2 = ((stack1 = helpers['link-to'] || (depth0 && depth0['link-to'])),stack1 ? stack1.call(depth0, "rules", options) : helperMissing.call(depth0, "link-to", "rules", options));
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
-  data.buffer.push("\n  </div>  \n\n  <div><i>or</i></div>\n\n  <form ");
+  data.buffer.push("\n      </div>  \n\n      <div><i>or</i></div>\n\n      <form ");
   hashContexts = {'on': depth0};
   hashTypes = {'on': "STRING"};
   data.buffer.push(escapeExpression(helpers.action.call(depth0, "peekFriend", {hash:{
     'on': ("submit")
   },contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push(" class=\"form-inline\">\n    <p>Cheat by peeking at a friend</p>\n    ");
+  data.buffer.push(" class=\"form-inline\">\n        <p>Cheat by peeking at a friend</p>\n        ");
   hashContexts = {'classNames': depth0};
   hashTypes = {'classNames': "STRING"};
   options = {hash:{
@@ -753,7 +753,7 @@ function program5(depth0,data) {
   },inverse:self.noop,fn:self.program(5, program5, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   stack2 = ((stack1 = helpers['link-to'] || (depth0 && depth0['link-to'])),stack1 ? stack1.call(depth0, "profiles", options) : helperMissing.call(depth0, "link-to", "profiles", options));
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
-  data.buffer.push("\n  </form>\n</div>\n");
+  data.buffer.push("\n      </form>\n    </div>\n\n    <div class=\"a-layout__panel--half center__wrapper\">\n      <p>Brought to you with optimism by Måns Magnusson & <a href=\"http://www.robinandeer.com\">Robin Andeer</a>.</p>\n    </div>\n  </div>\n\n</div>\n");
   return buffer;
   
 });
