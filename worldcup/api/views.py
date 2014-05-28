@@ -231,7 +231,8 @@ def users(user_id=None):
 
   elif request.method == 'GET':
     # Request is to get all users
-    payload['users'] = docs = list(mongo.db.user.find().limit(20))
+    payload['users'] = docs = list(
+      mongo.db.user.find().sort('created_at', -1).limit(20))
 
   if request.method == 'GET':
 
