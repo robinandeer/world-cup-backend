@@ -2,7 +2,8 @@
 
 from datetime import datetime
 
-from flask import abort, Blueprint, flash, redirect, request, session, url_for
+from flask import abort, Blueprint, flash, redirect, request, session, \
+  url_for, current_app
 from flask.ext.login import login_required, confirm_login, logout_user, \
   login_user, current_user
 
@@ -86,7 +87,9 @@ def authorized(oauth_response):
   google_user = google.get('userinfo')
   google_data = google_user.data
 
-  if google_data.get('hd') != 'scilifelab.se':
+
+  trusted = google_data['email'] in current_app.config.get('EXTERNAL_USERS')
+  if (google_data.get('hd') != 'scilifelab.se') or trusted:
     flash("You tried to login with %s." % google_data['email'])
     flash("You need to login with a '@scilifelab.se' account.")
     return abort(403)

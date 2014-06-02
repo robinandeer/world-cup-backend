@@ -61,6 +61,8 @@ class DefaultConfig(BaseConfig):
 
   SECRET_KEY = os.environ.get('SECRET_KEY')
 
+  EXTERNAL_USERS = ['keyvan.elhami@gmail.com']
+
 
 class TestConfig(BaseConfig):
 
