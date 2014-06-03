@@ -79,7 +79,8 @@ def teams(document_id=None):
       return jsonify_mongo(teams=teams)
 
     if document_id is None:
-      return jsonify_mongo(teams=list(mongo.db.team.find(query_args)))
+      return jsonify_mongo(teams=list(mongo.db.team.find(
+        {'betfair': {'$exists': True}}).sort('name', 1)))
 
   elif request.method == 'PUT':
     return Response('Updating teams not supported'), 404
@@ -208,6 +209,11 @@ def extract_user_team_ids(user):
 @api.route('/users/<user_id>', methods=HTTP_METHODS)
 @login_required
 def users(user_id=None):
+  # Store the submitted query options
+  query_args = request.args.to_dict()
+  if query_args.get('finalWinner'):
+    query_args['finalWinner'] = ObjectId(query_args['finalWinner'])
+
   data = (request.json or {}).get('user', {})
   payload = {
     'teams': []
@@ -232,7 +238,7 @@ def users(user_id=None):
   elif request.method == 'GET':
     # Request is to get all users
     payload['users'] = docs = list(
-      mongo.db.user.find().sort('created_at', -1).limit(20))
+      mongo.db.user.find(query_args).sort('created_at', -1).limit(20))
 
   if request.method == 'GET':
 
@@ -256,9 +262,30 @@ def users(user_id=None):
       if isinstance(value, list):
         value = [ObjectId(document_id) for document_id in value]
 
+      if key in ('finalWinner', 'thirdPlaceWinner'):
+        value = ObjectId(value)
+
       doc[key] = value
 
     mongo.db.user.save(doc)
 
   # Return json object for the logged in user
   return jsonify_mongo(**payload)
+
+
+@api.route('/stats/<winner_id>', methods=HTTP_METHODS)
+@login_required
+def stats(winner_id=None):
+  winnerCount = None
+  if winner_id:
+    winnerCount = mongo.db.user.find({'finalWinner': winner_id}).count()
+
+  payload = {
+    '_id': 'space',
+    'userCount': mongo.db.user.count(),
+    'completeCount': mongo.db.user.find(
+      {'finalWinner': {'$exists': True}}).count(),
+    'winnerCount': winnerCount
+  }
+
+  return jsonify(stat=payload)

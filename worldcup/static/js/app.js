@@ -34,6 +34,11 @@ App.Router.map(function() {
       path: '/:user_id'
     });
   });
+  this.resource('teams', function() {
+    return this.resource('team', {
+      path: '/:team_id'
+    });
+  });
   return this.resource('rules');
 });
 
@@ -332,12 +337,32 @@ App.GroupsRoute = Ember.Route.extend({
   }
 });
 
-App.IndexController = Ember.Controller.extend({
+App.IndexController = Ember.ObjectController.extend({
+  needs: ['application'],
+  userBinding: 'controllers.application.model',
   actions: {
     peekFriend: function() {
       return this.transitionToRoute('profile', this.get('friendEmail'));
     }
-  }
+  },
+  stat: (function() {
+    return this.store.find('stat', this.get('user.finalWinner.id'));
+  }).property('user.finalWinner.id')
+});
+
+App.Stat = DS.Model.extend({
+  userCount: DS.attr('number'),
+  completeCount: DS.attr('number'),
+  winnerCount: DS.attr('number'),
+  completeRatio: (function() {
+    return this.get('completeCount') / 100;
+  }).property('completeCount'),
+  completeRatioCSS: (function() {
+    return "width: " + (this.get('completeRatio') * 100) + "%";
+  }).property('completeRatio'),
+  isComplete: (function() {
+    return this.get('completeCount') >= 100;
+  }).property('completeCount')
 });
 
 App.PlayoffsController = Ember.ArrayController.extend({
@@ -469,5 +494,29 @@ App.ProfilesController = Ember.ArrayController.extend({
 App.ProfilesRoute = Ember.Route.extend({
   model: function(params) {
     return this.store.find('user');
+  }
+});
+
+App.TeamController = Ember.ObjectController.extend({
+  needs: ['application'],
+  userBinding: 'controllers.application.model',
+  usersByWinner: (function() {
+    return this.store.find('user', {
+      finalWinner: this.get('id')
+    });
+  }).property('id')
+});
+
+App.TeamRoute = Ember.Route.extend({
+  model: function(params) {
+    return this.store.find('team', params.team_id);
+  }
+});
+
+App.TeamsController = Ember.ArrayController.extend();
+
+App.TeamsRoute = Ember.Route.extend({
+  model: function(params) {
+    return this.store.find('team');
   }
 });

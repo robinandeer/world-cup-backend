@@ -254,6 +254,7 @@ h2 {
 @import 'components/a-toolbar';
 @import 'components/a-button';
 @import 'components/a-form';
+@import 'components/a-progress';
 @import 'components/scilifelab-logo';
 
 .is-notifying {
@@ -490,4 +491,20 @@ h1 {
 
 h3 {
   margin-top: 35px;
+}
+
+.credits-panel {
+  height: 120px;
+}
+
+.progress-wrapper {
+  @include flex-basis(70%);
+  margin-top: -25px;
+}
+
+h4 {
+  font-size: 3em;
+  font-weight: 200;
+  margin: 0;
+  line-height: 1;
 }

@@ -1,0 +1,80 @@
+<div class="a-layout--vertical">
+
+  <div class="a-layout__panel--full center__wrapper bb">
+    <img {{bind-attr src="flagImage"}} class="small-flag mr">
+
+    <h2 class="text-center">
+      {{name}} <small>{{confederation}}</small>
+    </h2>
+  </div>
+
+  <div class="a-layout__wrapper a-layout__panel--double">
+    <div class="a-layout--vertical">
+
+      <div class="a-layout__wrapper a-layout__panel--full bb">
+        <div class="a-layout">
+
+          <div class="a-layout__panel--full center__wrapper br">
+            <div>
+              <h4>{{rank}}</h4>
+              <div><small>FIFA World Rankings</small></div>
+            </div>
+          </div>
+
+          <div class="a-layout__panel--full center__wrapper br">
+            <div>
+              <h4>{{eloRank}}</h4>
+              <div><small>World Football Elo Rankings</small></div>
+            </div>
+          </div>
+
+          <div class="a-layout__wrapper a-layout__panel--full">
+            <div class="a-layout--vertical">
+              <div class="a-layout__panel is-fixed header-style slim bb">
+                Predicted winner by:
+              </div>
+
+              <div class="a-layout__panel--full a-list">
+                {{#if usersByWinner.isFulfilled}}
+                  {{#each user in usersByWinner}}
+                    {{#link-to "profile" user classNames="a-list__item loose"}}
+                      {{user.name}}
+                    {{/link-to}}
+                  {{else}}
+                    <div class="loose">You could be the first!</div>
+                  {{/each}}
+                {{else}}
+                  <div class="loose">Loading...</div>
+                {{/if}}
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="a-layout__wrapper a-layout__panel--full">
+        <div class="a-layout">
+
+          <div class="a-layout__panel--full center__wrapper br">
+            <div>
+              <h4>{{likelihoodToAdvance}}%</h4>
+              <div><small>Chance to advance from group</small></div>
+            </div>
+          </div>
+
+          <div class="a-layout__panel--full center__wrapper br">
+            <div>
+              <h4>{{betfair}}%</h4>
+              <div><small>Official Betfair Odds</small></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>

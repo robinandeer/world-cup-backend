@@ -3426,7 +3426,7 @@ h2 {
 }
 
 /* line 1, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-bar.scss */
-.a-bar, .a-bar--end, .a-bar--center, .a-bar--space-between, .a-bar--space-between--with-borders, .a-toolbar, .a-toolbar--standalone, .a-toolbar--right, .a-choice__wrapper, .a-bar--space-around, .a-checkbox__wrapper, .a-choice,
+.a-bar, .a-bar--end, .a-bar--center, .a-bar--space-between, .a-bar--space-between--with-borders, .a-toolbar, .a-toolbar--standalone, .a-toolbar--right, .a-choice__wrapper, .a-progress__bar, .a-progress__bar--complete, .a-bar--space-around, .a-checkbox__wrapper, .a-choice,
 .a-bar--start {
   display: -webkit-flex;
   display: -moz-flex;
@@ -3458,7 +3458,7 @@ h2 {
 }
 
 /* line 26, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-bar.scss */
-.a-bar--space-between, .a-bar--space-between--with-borders, .a-toolbar, .a-toolbar--standalone, .a-toolbar--right, .a-choice__wrapper {
+.a-bar--space-between, .a-bar--space-between--with-borders, .a-toolbar, .a-toolbar--standalone, .a-toolbar--right, .a-choice__wrapper, .a-progress__bar, .a-progress__bar--complete {
   -webkit-justify-content: space-between;
   -moz-justify-content: space-between;
   justify-content: space-between;
@@ -3802,6 +3802,29 @@ h2 {
   border-color: #e0332d;
 }
 
+/* line 1, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-progress.scss */
+.a-progress {
+  background: #fff;
+  border: 1px solid #babece;
+  min-width: 250px;
+  width: 100%;
+}
+
+/* line 10, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-progress.scss */
+.a-progress__bar, .a-progress__bar--complete {
+  background: #d7f9d5;
+  text-align: right;
+  padding: 5px;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* line 19, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-progress.scss */
+.a-progress__bar--complete {
+  border: 0;
+  background: #b9f5b6;
+  color: rgba(0, 0, 0, 0.3);
+}
+
 /* line 1, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_scilifelab-logo.scss */
 .scilifelab-logo {
   font-family: Baskerville, Georgia, serif;
@@ -3827,19 +3850,19 @@ h2 {
   color: #86BE42;
 }
 
-/* line 259 */
+/* line 260 */
 .is-notifying {
   color: #2b84d3;
 }
 
-/* line 263 */
+/* line 264 */
 html,
 body {
   overflow: hidden;
   font-family: Lato;
 }
 
-/* line 270 */
+/* line 271 */
 .a-well {
   background: rgba(0, 0, 0, 0.05);
   border: 1px solid #c9ccd8;
@@ -3847,26 +3870,26 @@ body {
   border-radius: 5px;
 }
 
-/* line 278 */
+/* line 279 */
 .header-style {
   background: #f6f6f8;
 }
 
-/* line 282 */
+/* line 283 */
 .stretch-self {
   -webkit-align-self: stretch;
   -moz-align-self: stretch;
   align-self: stretch;
 }
 
-/* line 286 */
+/* line 287 */
 .is-fixed {
   -webkit-flex-shrink: 0;
   -moz-flex-shrink: 0;
   flex-shrink: 0;
 }
 
-/* line 291 */
+/* line 292 */
 .a-team.expanded {
   width: 250px;
   padding: 15px;
@@ -3875,37 +3898,37 @@ body {
   border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
-/* line 300 */
+/* line 301 */
 .team {
   position: relative;
   color: black;
 }
-/* line 304 */
+/* line 305 */
 .team.is-winner, .team.is-group-winner {
   background: rgba(255, 255, 0, 0.05);
 }
-/* line 308 */
+/* line 309 */
 .team.is-runner-up {
   background: rgba(255, 165, 0, 0.05);
 }
 
-/* line 313 */
+/* line 314 */
 .stage-header {
   font-size: 50px;
   color: #1eb18a;
 }
 
-/* line 319 */
+/* line 320 */
 .a-button.is-winner, .is-winner.a-button--stretched, .is-winner.a-button--naked, .is-winner.a-button--google {
   background: #1eb18a;
 }
 
-/* line 324 */
+/* line 325 */
 .a-backdrop {
   background-size: cover;
 }
 
-/* line 328 */
+/* line 329 */
 h1 {
   font-family: Lato;
   -webkit-font-smoothing: antialiased;
@@ -3914,19 +3937,19 @@ h1 {
   font-weight: 200;
 }
 
-/* line 336 */
+/* line 337 */
 .a-overlay {
   background: rgba(0, 0, 0, 0.5);
 }
 
-/* line 340 */
+/* line 341 */
 .signin-button {
   max-width: 300px;
   margin-left: auto;
   margin-right: auto;
 }
 
-/* line 346 */
+/* line 347 */
 .a-button--google {
   -webkit-font-smoothing: antialiased;
   font-weight: bold;
@@ -3934,27 +3957,27 @@ h1 {
   color: #fff;
   border: 0;
 }
-/* line 358 */
+/* line 359 */
 .a-button--google:hover {
   box-shadow: none;
   background: #d71b1a;
 }
 
-/* line 365 */
+/* line 366 */
 .a-toolbar__group__item.active, .active.a-toolbar__group__item--clickable {
   background: rgba(0, 0, 0, 0.03);
 }
 
-/* line 370 */
+/* line 371 */
 .a-toolbar__group__item--clickable {
   cursor: pointer;
 }
-/* line 374 */
+/* line 375 */
 .a-toolbar__group__item--clickable:hover {
   background: rgba(0, 0, 0, 0.03);
 }
 
-/* line 379 */
+/* line 380 */
 .flashes {
   position: fixed;
   bottom: 40px;
@@ -3964,7 +3987,7 @@ h1 {
   -webkit-font-smoothing: antialiased;
 }
 
-/* line 388 */
+/* line 389 */
 .wc-logo {
   width: 150px;
   margin-left: auto;
@@ -3972,12 +3995,12 @@ h1 {
   display: table-cell;
 }
 
-/* line 395 */
+/* line 396 */
 .a-icon {
   margin-right: 5px;
 }
 
-/* line 399 */
+/* line 400 */
 .a-property {
   font-size: 90%;
   display: -webkit-flex;
@@ -3988,77 +4011,77 @@ h1 {
   justify-content: space-between;
 }
 
-/* line 405 */
+/* line 406 */
 .a-property__title {
   color: rgba(0, 0, 0, 0.8);
 }
 
-/* line 409 */
+/* line 410 */
 .a-property__value {
   font-weight: bold;
 }
 
-/* line 413 */
+/* line 414 */
 .small-flag {
   width: 25px;
 }
 
-/* line 417 */
+/* line 418 */
 .big-flag {
   width: 70px;
 }
 
-/* line 421 */
+/* line 422 */
 .link-next {
   width: 250px;
 }
 
-/* line 427 */
+/* line 428 */
 .a-switch:hover .a-switch__default {
   display: none;
 }
-/* line 431 */
+/* line 432 */
 .a-switch:hover .a-switch__content {
   display: inherit;
 }
 
-/* line 437 */
+/* line 438 */
 .a-switch__default {
   display: inherit;
 }
 
-/* line 441 */
+/* line 442 */
 .a-switch__content {
   display: none;
 }
 
-/* line 445 */
+/* line 446 */
 .profile-wrapper {
   max-width: 960px;
   margin-left: auto;
   margin-right: auto;
 }
 
-/* line 451 */
+/* line 452 */
 .world-cup-logo {
   width: 70px;
 }
 
-/* line 455 */
+/* line 456 */
 .a-playoff-tree {
   height: 200px;
 }
 
-/* line 459 */
+/* line 460 */
 .form-inline {
   display: inline-block;
 }
-/* line 462 */
+/* line 463 */
 .form-inline > input {
   width: 200px;
 }
 
-/* line 467 */
+/* line 468 */
 [class^="icon-"], [class*=" icon-"] {
   text-align: inherit;
   width: auto;
@@ -4066,17 +4089,17 @@ h1 {
   color: #525f6b;
 }
 
-/* line 474 */
+/* line 475 */
 .a-userbox {
   width: 150px;
 }
 
-/* line 479 */
+/* line 480 */
 .a-list__item:hover, .a-list__item--header:hover, .a-list__item.active, .active.a-list__item--header {
   background: rgba(0, 0, 0, 0.03);
 }
 
-/* line 484 */
+/* line 485 */
 .text-box {
   max-width: 650px;
   padding: 50px;
@@ -4084,7 +4107,28 @@ h1 {
   margin-left: auto;
 }
 
-/* line 491 */
+/* line 492 */
 h3 {
   margin-top: 35px;
+}
+
+/* line 496 */
+.credits-panel {
+  height: 120px;
+}
+
+/* line 500 */
+.progress-wrapper {
+  -webkit-flex-basis: 70%;
+  -moz-flex-basis: 70%;
+  flex-basis: 70%;
+  margin-top: -25px;
+}
+
+/* line 505 */
+h4 {
+  font-size: 3em;
+  font-weight: 200;
+  margin: 0;
+  line-height: 1;
 }

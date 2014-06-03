@@ -1,7 +1,7 @@
 <div class="a-layout__wrapper fill-up">
 
   <div class="a-layout--vertical">
-    <div class="a-layout__panel--double a-bar--space-around">
+    <div class="a-layout__panel--double a-bar--space-around bb">
       <div>
         <p>Get down and dirty</p>
 
@@ -33,8 +33,20 @@
       </form>
     </div>
 
-    <div class="a-layout__panel--half center__wrapper">
-      <p>Brought to you with optimism by Måns Magnusson & <a href="http://www.robinandeer.com">Robin Andeer</a>.</p>
+    <div class="a-layout__panel--full center__wrapper">
+      <div class="progress-wrapper">
+        <p>Let's get to 100 users with complete predictions!</p>
+        <div class="a-progress">
+          <div {{bind-attr style="stat.completeRatioCSS" class="stat.isComplete:a-progress__bar--complete:a-progress__bar"}}>
+            <div class="icon-users"></div>
+            <div>#{{stat.completeCount}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="credits-panel is-fixed">
+      <p class="text-center">Brought to you with optimism by Måns Magnusson & <a href="http://www.robinandeer.com">Robin Andeer</a>.</p>
     </div>
   </div>
 

@@ -1,0 +1,21 @@
+<div class="a-layout--vertical">
+
+  <div class="a-layout__panel is-fixed a-list--horizontal bb">
+    {{#each team in controller}}
+      {{#link-to "team" team classNames="a-list__item center__wrapper br--listed loose"}}
+        <img {{bind-attr src="team.flagImage"}} class="small-flag">
+
+        <div class="a-userbox text-center">
+          <div class="dotdotdot">
+            {{team.name}}
+          </div>
+
+          <div>{{#if team.confederation}}<small>[{{team.confederation}}]</small>{{/if}}</div>
+        </div>
+      {{/link-to}}
+    {{/each}}
+  </div>
+
+  <div class="a-layout__wrapper a-layout__panel--double">{{outlet}}</div>
+
+</div>
