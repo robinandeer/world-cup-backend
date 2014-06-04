@@ -1,3 +1,132 @@
-<div class="fill-up center__wrapper">
-  <h2>Check back soon...</h2>
-</div>
+{{#if model.isLoaded}}
+  <div class="a-layout--vertical">
+
+    <div class="a-layout__panel--full center__wrapper bb">
+      <div>
+        <h2 class="text-center">
+          The SciLifeLab Consensus Prediction
+          <small>(naively determined, expect a few oddities)</small>
+        </h2>
+      </div>
+    </div>
+
+    <div class="a-playoff-tree a-layout__wrapper a-layout__panel--double">
+      <div class="a-layout">
+        
+        {{!-- Groups --}}
+        <div class="a-layout__wrapper a-layout__panel--full br">
+          <div class="a-layout">
+
+            {{!-- Group Winners --}}
+            <div class="a-layout__wrapper a-layout__panel--full">
+              <div class="a-layout--vertical">
+                
+                {{#each team in groupWinners}}
+                  <div class="a-layout__panel--full center__wrapper">
+                    <img {{bind-attr src="team.flagImage"}} class="small-flag">
+                  </div>
+                {{/each}}
+
+              </div>
+            </div>
+            
+            {{!-- Group Runner Ups --}}
+            <div class="a-layout__wrapper a-layout__panel--full">
+              <div class="a-layout--vertical">
+                
+                {{#each team in groupRunnerUps}}
+                  <div class="a-layout__panel--full center__wrapper">
+                    <img {{bind-attr src="team.flagImage"}} class="small-flag">
+                  </div>
+                {{/each}}
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+        
+        {{!-- Round of 16 Winners --}}
+        <div class="a-layout__wrapper a-layout__panel--full br">
+          <div class="a-layout--vertical">
+            
+            <div class="a-layout__panel is-fixed bb slim text-center">
+              Quarter Final Winners
+            </div>
+            
+            {{#each team in round1Winners}}
+              <div class="a-layout__panel--full center__wrapper">
+                <img {{bind-attr src="team.flagImage"}} class="small-flag">
+              </div>
+            {{/each}}
+
+          </div>
+        </div>
+
+        {{!-- Quarter Final Winners --}}
+        <div class="a-layout__wrapper a-layout__panel--full br">
+          <div class="a-layout--vertical">
+
+            <div class="a-layout__panel is-fixed bb slim text-center">
+              Semi Final Winners
+            </div>
+            
+            {{#each team in round2Winners}}
+              <div class="a-layout__panel--full center__wrapper">
+                <img {{bind-attr src="team.flagImage"}} class="small-flag">
+              </div>
+            {{/each}}
+
+          </div>
+        </div>
+
+        {{!-- Semi Final Winners --}}
+        <div class="a-layout__wrapper a-layout__panel--full br">
+          <div class="a-layout--vertical">
+
+            <div class="a-layout__panel is-fixed bb slim text-center">
+              Final
+            </div>
+
+            {{#each team in round3Winners}}
+              <div class="a-layout__panel--full center__wrapper">
+                <img {{bind-attr src="team.flagImage"}} class="small-flag">
+              </div>
+            {{/each}}
+
+          </div>
+        </div>
+
+        {{!-- Final --}}
+        <div class="a-layout__wrapper a-layout__panel--full">
+          <div class="a-layout--vertical">
+
+            <div class="a-layout__panel is-fixed bb slim text-center">
+              World Champion
+            </div>
+
+            <div class="a-layout__panel--full center__wrapper">
+              <img {{bind-attr src="finalWinner.flagImage"}} class="big-flag">
+            </div>
+
+            <div class="a-layout__panel is-fixed bb bt slim text-center">
+              Bronze medalist
+            </div>
+
+            <div class="a-layout__panel--half center__wrapper">
+              <img {{bind-attr src="thirdPlaceWinner.flagImage"}} class="small-flag">
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+{{else}}
+
+  <div class="fill-up center__wrapper">
+    Loading...
+  </div>
+{{/if}}

@@ -5,6 +5,7 @@ from itertools import chain
 import urllib
 
 from bson import ObjectId
+from bson.son import SON
 from flask import Blueprint, Response, request, jsonify, abort
 from flask.ext.login import current_user, login_required
 from pymongo.errors import DuplicateKeyError
@@ -289,3 +290,42 @@ def stats(winner_id=None):
   }
 
   return jsonify(stat=payload)
+
+
+@api.route('/trees/<user_id>', methods=['GET'])
+@login_required
+def trees(user_id):
+  # Define all stages for which there are 
+  stages = [('groupWinners', 8), ('groupRunnerUps', 8), ('round1Winners', 8),
+            ('round2Winners', 4), ('round3Winners', 2)]
+
+  team_ids = set()
+  consensus = {'_id': user_id}
+  for stage, count in stages:
+    query = mongo.db.user.aggregate([
+      {'$unwind': '$%s' % stage},
+      {'$group': {'_id': '$%s' % stage, 'count': {'$sum': 1}}},
+      {'$sort': SON([('count', -1), ('_id', -1)])}
+    ])
+
+    consensus[stage] = [team['_id'] for team in query['result'][:count]]
+
+    team_ids.update(consensus[stage])
+
+  for medalist in ['thirdPlaceWinner', 'finalWinner']:
+    query = mongo.db.user.aggregate([
+      {'$group': {'_id': '$%s' % medalist, 'count': {'$sum': 1}}},
+      {'$sort': SON([('count', -1), ('_id', -1)])}
+    ])
+
+    top_id = query['result'][0]['_id']
+    if top_id is None:
+      top_id = query['result'][1]['_id']
+
+    consensus[medalist] = top_id
+
+    team_ids.add(top_id)
+
+  teams = list(mongo.db.team.find({'_id': { '$in': list(team_ids) }}))
+
+  return jsonify_mongo(tree=consensus, teams=teams)

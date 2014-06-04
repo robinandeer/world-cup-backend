@@ -230,6 +230,25 @@ App.AMatchupComponent = Ember.Component.extend({
   }
 });
 
+App.ConsensusController = Ember.ObjectController.extend();
+
+App.Tree = DS.Model.extend({
+  groupWinners: DS.hasMany('team'),
+  groupRunnerUps: DS.hasMany('team'),
+  round1Winners: DS.hasMany('team'),
+  round2Winners: DS.hasMany('team'),
+  round3Winners: DS.hasMany('team'),
+  round3Losers: DS.hasMany('team'),
+  finalWinner: DS.belongsTo('team'),
+  thirdPlaceWinner: DS.belongsTo('team')
+});
+
+App.ConsensusRoute = Ember.Route.extend({
+  model: function() {
+    return this.store.find('tree', 'whatever');
+  }
+});
+
 App.FinalsController = Ember.ArrayController.extend({
   needs: ['application'],
   userBinding: 'controllers.application.model',

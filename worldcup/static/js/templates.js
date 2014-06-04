@@ -514,10 +514,93 @@ function program16(depth0,data) {
 Ember.TEMPLATES["consensus"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
 this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
+  var buffer = '', stack1, hashTypes, hashContexts, helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression, self=this;
+
+function program1(depth0,data) {
   
+  var buffer = '', stack1, hashTypes, hashContexts, options;
+  data.buffer.push("\n  <div class=\"a-layout--vertical\">\n\n    <div class=\"a-layout__panel--full center__wrapper bb\">\n      <div>\n        <h2 class=\"text-center\">\n          The SciLifeLab Consensus Prediction\n          <small>(naively determined, expect a few oddities)</small>\n        </h2>\n      </div>\n    </div>\n\n    <div class=\"a-playoff-tree a-layout__wrapper a-layout__panel--double\">\n      <div class=\"a-layout\">\n        \n        \n        <div class=\"a-layout__wrapper a-layout__panel--full br\">\n          <div class=\"a-layout\">\n\n            \n            <div class=\"a-layout__wrapper a-layout__panel--full\">\n              <div class=\"a-layout--vertical\">\n                \n                ");
+  hashTypes = {};
+  hashContexts = {};
+  stack1 = helpers.each.call(depth0, "team", "in", "groupWinners", {hash:{},inverse:self.noop,fn:self.program(2, program2, data),contexts:[depth0,depth0,depth0],types:["ID","ID","ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("\n\n              </div>\n            </div>\n            \n            \n            <div class=\"a-layout__wrapper a-layout__panel--full\">\n              <div class=\"a-layout--vertical\">\n                \n                ");
+  hashTypes = {};
+  hashContexts = {};
+  stack1 = helpers.each.call(depth0, "team", "in", "groupRunnerUps", {hash:{},inverse:self.noop,fn:self.program(2, program2, data),contexts:[depth0,depth0,depth0],types:["ID","ID","ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("\n\n              </div>\n            </div>\n\n          </div>\n        </div>\n        \n        \n        <div class=\"a-layout__wrapper a-layout__panel--full br\">\n          <div class=\"a-layout--vertical\">\n            \n            <div class=\"a-layout__panel is-fixed bb slim text-center\">\n              Quarter Final Winners\n            </div>\n            \n            ");
+  hashTypes = {};
+  hashContexts = {};
+  stack1 = helpers.each.call(depth0, "team", "in", "round1Winners", {hash:{},inverse:self.noop,fn:self.program(4, program4, data),contexts:[depth0,depth0,depth0],types:["ID","ID","ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("\n\n          </div>\n        </div>\n\n        \n        <div class=\"a-layout__wrapper a-layout__panel--full br\">\n          <div class=\"a-layout--vertical\">\n\n            <div class=\"a-layout__panel is-fixed bb slim text-center\">\n              Semi Final Winners\n            </div>\n            \n            ");
+  hashTypes = {};
+  hashContexts = {};
+  stack1 = helpers.each.call(depth0, "team", "in", "round2Winners", {hash:{},inverse:self.noop,fn:self.program(4, program4, data),contexts:[depth0,depth0,depth0],types:["ID","ID","ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("\n\n          </div>\n        </div>\n\n        \n        <div class=\"a-layout__wrapper a-layout__panel--full br\">\n          <div class=\"a-layout--vertical\">\n\n            <div class=\"a-layout__panel is-fixed bb slim text-center\">\n              Final\n            </div>\n\n            ");
+  hashTypes = {};
+  hashContexts = {};
+  stack1 = helpers.each.call(depth0, "team", "in", "round3Winners", {hash:{},inverse:self.noop,fn:self.program(4, program4, data),contexts:[depth0,depth0,depth0],types:["ID","ID","ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("\n\n          </div>\n        </div>\n\n        \n        <div class=\"a-layout__wrapper a-layout__panel--full\">\n          <div class=\"a-layout--vertical\">\n\n            <div class=\"a-layout__panel is-fixed bb slim text-center\">\n              World Champion\n            </div>\n\n            <div class=\"a-layout__panel--full center__wrapper\">\n              <img ");
+  hashContexts = {'src': depth0};
+  hashTypes = {'src': "STRING"};
+  options = {hash:{
+    'src': ("finalWinner.flagImage")
+  },contexts:[],types:[],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
+  data.buffer.push(escapeExpression(((stack1 = helpers['bind-attr'] || (depth0 && depth0['bind-attr'])),stack1 ? stack1.call(depth0, options) : helperMissing.call(depth0, "bind-attr", options))));
+  data.buffer.push(" class=\"big-flag\">\n            </div>\n\n            <div class=\"a-layout__panel is-fixed bb bt slim text-center\">\n              Bronze medalist\n            </div>\n\n            <div class=\"a-layout__panel--half center__wrapper\">\n              <img ");
+  hashContexts = {'src': depth0};
+  hashTypes = {'src': "STRING"};
+  options = {hash:{
+    'src': ("thirdPlaceWinner.flagImage")
+  },contexts:[],types:[],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
+  data.buffer.push(escapeExpression(((stack1 = helpers['bind-attr'] || (depth0 && depth0['bind-attr'])),stack1 ? stack1.call(depth0, options) : helperMissing.call(depth0, "bind-attr", options))));
+  data.buffer.push(" class=\"small-flag\">\n            </div>\n\n          </div>\n        </div>\n\n      </div>\n    </div>\n\n  </div>\n");
+  return buffer;
+  }
+function program2(depth0,data) {
+  
+  var buffer = '', stack1, hashContexts, hashTypes, options;
+  data.buffer.push("\n                  <div class=\"a-layout__panel--full center__wrapper\">\n                    <img ");
+  hashContexts = {'src': depth0};
+  hashTypes = {'src': "STRING"};
+  options = {hash:{
+    'src': ("team.flagImage")
+  },contexts:[],types:[],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
+  data.buffer.push(escapeExpression(((stack1 = helpers['bind-attr'] || (depth0 && depth0['bind-attr'])),stack1 ? stack1.call(depth0, options) : helperMissing.call(depth0, "bind-attr", options))));
+  data.buffer.push(" class=\"small-flag\">\n                  </div>\n                ");
+  return buffer;
+  }
 
+function program4(depth0,data) {
+  
+  var buffer = '', stack1, hashContexts, hashTypes, options;
+  data.buffer.push("\n              <div class=\"a-layout__panel--full center__wrapper\">\n                <img ");
+  hashContexts = {'src': depth0};
+  hashTypes = {'src': "STRING"};
+  options = {hash:{
+    'src': ("team.flagImage")
+  },contexts:[],types:[],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
+  data.buffer.push(escapeExpression(((stack1 = helpers['bind-attr'] || (depth0 && depth0['bind-attr'])),stack1 ? stack1.call(depth0, options) : helperMissing.call(depth0, "bind-attr", options))));
+  data.buffer.push(" class=\"small-flag\">\n              </div>\n            ");
+  return buffer;
+  }
 
-  data.buffer.push("<div class=\"fill-up center__wrapper\">\n  <h2>Check back soon...</h2>\n</div>\n");
+function program6(depth0,data) {
+  
+  
+  data.buffer.push("\n\n  <div class=\"fill-up center__wrapper\">\n    Loading...\n  </div>\n");
+  }
+
+  hashTypes = {};
+  hashContexts = {};
+  stack1 = helpers['if'].call(depth0, "model.isLoaded", {hash:{},inverse:self.program(6, program6, data),fn:self.program(1, program1, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("\n");
+  return buffer;
   
 });
 
@@ -977,12 +1060,12 @@ function program10(depth0,data) {
   hashContexts = {};
   stack1 = helpers.each.call(depth0, "team", "in", "groupRunnerUps", {hash:{},inverse:self.noop,fn:self.program(8, program8, data),contexts:[depth0,depth0,depth0],types:["ID","ID","ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("\n\n            </div>\n          </div>\n\n        </div>\n      </div>\n      \n      \n      <div class=\"a-layout__wrapper a-layout__panel--full br\">\n        <div class=\"a-layout--vertical\">\n          \n          <div class=\"a-layout__panel is-fixed bb slim text-center\">\n            Quarter Finals\n          </div>\n          \n          ");
+  data.buffer.push("\n\n            </div>\n          </div>\n\n        </div>\n      </div>\n      \n      \n      <div class=\"a-layout__wrapper a-layout__panel--full br\">\n        <div class=\"a-layout--vertical\">\n          \n          <div class=\"a-layout__panel is-fixed bb slim text-center\">\n            Quarter Final Winners\n          </div>\n          \n          ");
   hashTypes = {};
   hashContexts = {};
   stack1 = helpers.each.call(depth0, "team", "in", "round1Winners", {hash:{},inverse:self.noop,fn:self.program(10, program10, data),contexts:[depth0,depth0,depth0],types:["ID","ID","ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("\n\n        </div>\n      </div>\n\n      \n      <div class=\"a-layout__wrapper a-layout__panel--full br\">\n        <div class=\"a-layout--vertical\">\n\n          <div class=\"a-layout__panel is-fixed bb slim text-center\">\n            Semi Finals\n          </div>\n          \n          ");
+  data.buffer.push("\n\n        </div>\n      </div>\n\n      \n      <div class=\"a-layout__wrapper a-layout__panel--full br\">\n        <div class=\"a-layout--vertical\">\n\n          <div class=\"a-layout__panel is-fixed bb slim text-center\">\n            Semi Final Winners\n          </div>\n          \n          ");
   hashTypes = {};
   hashContexts = {};
   stack1 = helpers.each.call(depth0, "team", "in", "round2Winners", {hash:{},inverse:self.noop,fn:self.program(10, program10, data),contexts:[depth0,depth0,depth0],types:["ID","ID","ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
@@ -1179,7 +1262,7 @@ function program7(depth0,data) {
   hashTypes = {};
   hashContexts = {};
   data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "betfair", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push("%</h4>\n              <div><small>Official Betfair Odds</small></div>\n            </div>\n          </div>\n\n        </div>\n      </div>\n\n    </div>\n  </div>\n\n</div>\n");
+  data.buffer.push("%</h4>\n              <div><small>Chance to win the cup (Betfair)</small></div>\n            </div>\n          </div>\n\n        </div>\n      </div>\n\n    </div>\n  </div>\n\n</div>\n");
   return buffer;
   
 });
