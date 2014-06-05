@@ -365,7 +365,9 @@ App.IndexController = Ember.ObjectController.extend({
     }
   },
   stat: (function() {
-    return this.store.find('stat', this.get('user.finalWinner.id'));
+    if (this.get('user.finalWinner.id')) {
+      return this.store.find('stat', this.get('user.finalWinner.id'));
+    }
   }).property('user.finalWinner.id')
 });
 
