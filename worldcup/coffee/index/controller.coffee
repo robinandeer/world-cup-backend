@@ -8,6 +8,5 @@ App.IndexController = Ember.ObjectController.extend
       @transitionToRoute 'profile', @get('friendEmail')
 
   stat: (->
-    if @get 'user.finalWinner.id'
-      return @store.find 'stat', @get 'user.finalWinner.id'
+    return @store.find 'stat', (@get('user.finalWinner.id') or 'unknown')
   ).property 'user.finalWinner.id'

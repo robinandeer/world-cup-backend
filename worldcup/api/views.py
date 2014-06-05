@@ -278,7 +278,7 @@ def users(user_id=None):
 @login_required
 def stats(winner_id=None):
   winnerCount = None
-  if winner_id:
+  if winner_id != 'unknown':
     winnerCount = mongo.db.user.find({'finalWinner': winner_id}).count()
 
   payload = {
