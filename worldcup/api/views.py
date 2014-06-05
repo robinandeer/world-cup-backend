@@ -23,6 +23,7 @@ api = Blueprint('api', __name__, url_prefix='/api/v1')
 def groups(document_id=None):
   # Store the submitted query options
   payload = {}
+  team_ids = []
 
   if document_id:
     # Well, at least we know we should try to fetch a document
@@ -38,7 +39,7 @@ def groups(document_id=None):
 
   elif request.method == 'GET':
     if document_id is None:
-      payload['groups'] = list(mongo.db.group.find())
+      payload['groups'] = list(mongo.db.group.find().sort('group_id', 1))
       team_ids = chain.from_iterable(
         [group.get('teams', []) for group in payload['groups']])
 
