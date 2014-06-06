@@ -16,6 +16,41 @@ from ..utils import HTTP_METHODS, get_current_time, jsonify_mongo, get_matchups
 
 api = Blueprint('api', __name__, url_prefix='/api/v1')
 
+TEAMS = {
+  'ENG': 'D',
+  'COL': 'C',
+  'CMR': 'A',
+  'ITA': 'D',
+  'GHA': 'G',
+  'USA': 'G',
+  'ESP': 'B',
+  'CHL': 'B',
+  'BIH': 'F',
+  'GRC': 'C',
+  'KOR': 'H',
+  'ARG': 'F',
+  'IRN': 'F',
+  'CIV': 'C',
+  'HRV': 'A',
+  'HND': 'E',
+  'JPN': 'C',
+  'BRA': 'A',
+  'MEX': 'A',
+  'CRI': 'D',
+  'FRA': 'E',
+  'NLD': 'B',
+  'PRT': 'G',
+  'DZA': 'H',
+  'BEL': 'H',
+  'RUS': 'H',
+  'AUS': 'B',
+  'NGA': 'F',
+  'CHE': 'E',
+  'URY': 'D',
+  'DEU': 'G',
+  'ECU': 'E'
+}
+
 
 @api.route('/groups', methods=HTTP_METHODS[:3])
 @api.route('/groups/<document_id>', methods=HTTP_METHODS)
@@ -116,6 +151,10 @@ def matchups():
   round_id = int(request.args.get('round', '-1'))
   winners = request.args.get('winners', '').split(',')
   runner_ups = request.args.get('runner_ups', '').split(',')
+
+  # Sort in the correct group-wise order
+  winners.sort(key=lambda team_code: TEAMS[team_code])
+  runner_ups.sort(key=lambda team_code: TEAMS[team_code])
 
   matchups = get_matchups(round_id, winners, runner_ups)
 
