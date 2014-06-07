@@ -529,17 +529,17 @@ function program1(depth0,data) {
   hashContexts = {};
   stack1 = helpers.each.call(depth0, "team", "in", "groupRunnerUps", {hash:{},inverse:self.noop,fn:self.program(2, program2, data),contexts:[depth0,depth0,depth0],types:["ID","ID","ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("\n\n              </div>\n            </div>\n\n          </div>\n        </div>\n        \n        \n        <div class=\"a-layout__wrapper a-layout__panel--full br\">\n          <div class=\"a-layout--vertical\">\n            \n            <div class=\"a-layout__panel is-fixed bb slim text-center\">\n              Quarter Final Winners\n            </div>\n            \n            ");
+  data.buffer.push("\n\n              </div>\n            </div>\n\n          </div>\n        </div>\n        \n        \n        <div class=\"a-layout__wrapper a-layout__panel--full br\">\n          <div class=\"a-layout--vertical\">\n            \n            <div class=\"a-layout__panel is-fixed bb slim text-center\">\n              Round of 16 Winners\n            </div>\n            \n            ");
   hashTypes = {};
   hashContexts = {};
   stack1 = helpers.each.call(depth0, "team", "in", "round1Winners", {hash:{},inverse:self.noop,fn:self.program(4, program4, data),contexts:[depth0,depth0,depth0],types:["ID","ID","ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("\n\n          </div>\n        </div>\n\n        \n        <div class=\"a-layout__wrapper a-layout__panel--full br\">\n          <div class=\"a-layout--vertical\">\n\n            <div class=\"a-layout__panel is-fixed bb slim text-center\">\n              Semi Final Winners\n            </div>\n            \n            ");
+  data.buffer.push("\n\n          </div>\n        </div>\n\n        \n        <div class=\"a-layout__wrapper a-layout__panel--full br\">\n          <div class=\"a-layout--vertical\">\n\n            <div class=\"a-layout__panel is-fixed bb slim text-center\">\n              Quarter Final Winners\n            </div>\n            \n            ");
   hashTypes = {};
   hashContexts = {};
   stack1 = helpers.each.call(depth0, "team", "in", "round2Winners", {hash:{},inverse:self.noop,fn:self.program(4, program4, data),contexts:[depth0,depth0,depth0],types:["ID","ID","ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("\n\n          </div>\n        </div>\n\n        \n        <div class=\"a-layout__wrapper a-layout__panel--full br\">\n          <div class=\"a-layout--vertical\">\n\n            <div class=\"a-layout__panel is-fixed bb slim text-center\">\n              Final\n            </div>\n\n            ");
+  data.buffer.push("\n\n          </div>\n        </div>\n\n        \n        <div class=\"a-layout__wrapper a-layout__panel--full br\">\n          <div class=\"a-layout--vertical\">\n\n            <div class=\"a-layout__panel is-fixed bb slim text-center\">\n              Semi Final Winners\n            </div>\n\n            ");
   hashTypes = {};
   hashContexts = {};
   stack1 = helpers.each.call(depth0, "team", "in", "round3Winners", {hash:{},inverse:self.noop,fn:self.program(4, program4, data),contexts:[depth0,depth0,depth0],types:["ID","ID","ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
@@ -1060,17 +1060,17 @@ function program10(depth0,data) {
   hashContexts = {};
   stack1 = helpers.each.call(depth0, "team", "in", "groupRunnerUps", {hash:{},inverse:self.noop,fn:self.program(8, program8, data),contexts:[depth0,depth0,depth0],types:["ID","ID","ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("\n\n            </div>\n          </div>\n\n        </div>\n      </div>\n      \n      \n      <div class=\"a-layout__wrapper a-layout__panel--full br\">\n        <div class=\"a-layout--vertical\">\n          \n          <div class=\"a-layout__panel is-fixed bb slim text-center\">\n            Quarter Final Winners\n          </div>\n          \n          ");
+  data.buffer.push("\n\n            </div>\n          </div>\n\n        </div>\n      </div>\n      \n      \n      <div class=\"a-layout__wrapper a-layout__panel--full br\">\n        <div class=\"a-layout--vertical\">\n          \n          <div class=\"a-layout__panel is-fixed bb slim text-center\">\n            Round of 16 Winners\n          </div>\n          \n          ");
   hashTypes = {};
   hashContexts = {};
   stack1 = helpers.each.call(depth0, "team", "in", "round1Winners", {hash:{},inverse:self.noop,fn:self.program(10, program10, data),contexts:[depth0,depth0,depth0],types:["ID","ID","ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("\n\n        </div>\n      </div>\n\n      \n      <div class=\"a-layout__wrapper a-layout__panel--full br\">\n        <div class=\"a-layout--vertical\">\n\n          <div class=\"a-layout__panel is-fixed bb slim text-center\">\n            Semi Final Winners\n          </div>\n          \n          ");
+  data.buffer.push("\n\n        </div>\n      </div>\n\n      \n      <div class=\"a-layout__wrapper a-layout__panel--full br\">\n        <div class=\"a-layout--vertical\">\n\n          <div class=\"a-layout__panel is-fixed bb slim text-center\">\n            Quarter Final Winners\n          </div>\n          \n          ");
   hashTypes = {};
   hashContexts = {};
   stack1 = helpers.each.call(depth0, "team", "in", "round2Winners", {hash:{},inverse:self.noop,fn:self.program(10, program10, data),contexts:[depth0,depth0,depth0],types:["ID","ID","ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("\n\n        </div>\n      </div>\n\n      \n      <div class=\"a-layout__wrapper a-layout__panel--full br\">\n        <div class=\"a-layout--vertical\">\n\n          <div class=\"a-layout__panel is-fixed bb slim text-center\">\n            Final\n          </div>\n\n          ");
+  data.buffer.push("\n\n        </div>\n      </div>\n\n      \n      <div class=\"a-layout__wrapper a-layout__panel--full br\">\n        <div class=\"a-layout--vertical\">\n\n          <div class=\"a-layout__panel is-fixed bb slim text-center\">\n            Semi Final Winners\n          </div>\n\n          ");
   hashTypes = {};
   hashContexts = {};
   stack1 = helpers.each.call(depth0, "team", "in", "round3Winners", {hash:{},inverse:self.noop,fn:self.program(10, program10, data),contexts:[depth0,depth0,depth0],types:["ID","ID","ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});

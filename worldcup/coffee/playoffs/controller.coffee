@@ -62,3 +62,7 @@ App.PlayoffsController = Ember.ArrayController.extend
     # User has selected one winner from each matchup
     return @get('userStageWinners.length') == @get('model.length')
   ).property 'userStageWinners.length', 'model.length'
+
+  userStageWinnersObserver: (->
+    console.log @get('userStageWinners.length')
+  ).observes 'userStageWinners.@each'

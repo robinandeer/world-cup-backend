@@ -433,7 +433,10 @@ App.PlayoffsController = Ember.ArrayController.extend({
   }).property('model.@each.teams.@each'),
   readyToMoveOn: (function() {
     return this.get('userStageWinners.length') === this.get('model.length');
-  }).property('userStageWinners.length', 'model.length')
+  }).property('userStageWinners.length', 'model.length'),
+  userStageWinnersObserver: (function() {
+    return console.log(this.get('userStageWinners.length'));
+  }).observes('userStageWinners.@each')
 });
 
 App.Matchup = DS.Model.extend({
