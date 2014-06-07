@@ -16,9 +16,7 @@ App.AMatchupComponent = Ember.Component.extend
     for team in teams
       winner = winners.findBy 'id', team.get('id')
       if winner
-        break
-
-    return winner
+        return winner
   ).property 'winners.@each', 'teams.@each'
 
   loser: (->
@@ -27,9 +25,7 @@ App.AMatchupComponent = Ember.Component.extend
 
     for team in teams
       if team.get('id') isnt winnerId
-        break
-
-    return team
+        return team
   ).property 'teams.@each', 'winner'
 
   winnerObserver: (->

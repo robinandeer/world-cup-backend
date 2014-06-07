@@ -130,10 +130,9 @@ App.AGroupComponent = Ember.Component.extend({
       team = _ref[_i];
       winner = winners.findBy('id', team.get('id'));
       if (winner) {
-        break;
+        return winner;
       }
     }
-    return winner;
   }).property('winners.@each', 'teams.@each'),
   runnerUp: (function() {
     var runnerUp, runnerUps, team, teams, _i, _len, _ref;
@@ -144,10 +143,9 @@ App.AGroupComponent = Ember.Component.extend({
       team = _ref[_i];
       runnerUp = runnerUps.findBy('id', team.get('id'));
       if (runnerUp) {
-        break;
+        return runnerUp;
       }
     }
-    return runnerUp;
   }).property('runnerUps.@each', 'teams.@each'),
   winnerObserver: (function() {
     var winner;
@@ -192,10 +190,9 @@ App.AMatchupComponent = Ember.Component.extend({
       team = teams[_i];
       winner = winners.findBy('id', team.get('id'));
       if (winner) {
-        break;
+        return winner;
       }
     }
-    return winner;
   }).property('winners.@each', 'teams.@each'),
   loser: (function() {
     var team, teams, winnerId, _i, _len;
@@ -204,10 +201,9 @@ App.AMatchupComponent = Ember.Component.extend({
     for (_i = 0, _len = teams.length; _i < _len; _i++) {
       team = teams[_i];
       if (team.get('id') !== winnerId) {
-        break;
+        return team;
       }
     }
-    return team;
   }).property('teams.@each', 'winner'),
   winnerObserver: (function() {
     var winner;
@@ -306,7 +302,16 @@ App.GroupsController = Ember.ArrayController.extend({
   userBinding: 'controllers.application.model',
   actions: {
     goToPlayoffs: function(group) {
+      var roundId, roundWinners, _i;
       if (this.get('readyToMoveOn')) {
+        for (roundId = _i = 1; _i <= 3; roundId = ++_i) {
+          roundWinners = this.get("user.round" + roundId + "Winners");
+          if (roundWinners) {
+            roundWinners.clear();
+          }
+        }
+        this.set('user.finalWinner');
+        this.set('user.thirdPlaceWinner');
         this.get('user').save();
         return this.transitionToRoute('playoffs', 1);
       }
@@ -388,7 +393,6 @@ App.PlayoffsController = Ember.ArrayController.extend({
   needs: ['application'],
   userBinding: 'controllers.application.model',
   playoffsBinding: 'controllers.application.playoffs',
-  roundId: 4,
   actions: {
     moveOn: function() {
       var nextPlayoffId;
@@ -433,10 +437,7 @@ App.PlayoffsController = Ember.ArrayController.extend({
   }).property('model.@each.teams.@each'),
   readyToMoveOn: (function() {
     return this.get('userStageWinners.length') === this.get('model.length');
-  }).property('userStageWinners.length', 'model.length'),
-  userStageWinnersObserver: (function() {
-    return console.log(this.get('userStageWinners.length'));
-  }).observes('userStageWinners.@each')
+  }).property('userStageWinners.length', 'model.length')
 });
 
 App.Matchup = DS.Model.extend({
@@ -457,13 +458,11 @@ App.PlayoffsRoute = Ember.Route.extend({
     }
     userWinners = user.get("round" + params.round_id + "Winners");
     userLosers = user.get("round" + params.round_id + "Losers");
-    userWinners.clear();
-    userLosers.clear();
     this.controllerFor('playoffs').setProperties({
-      roundId: params.round_id,
       userStageWinners: userWinners,
       userStageLosers: userLosers
     });
+    this.controllerFor('playoffs').set('roundId', params.round_id);
     if (params.round_id === '1') {
       winners = user.get('groupWinners').getEach('code').join(',');
       runnerUps = user.get('groupRunnerUps').getEach('code').join(',');

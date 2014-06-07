@@ -10,12 +10,11 @@ App.PlayoffsRoute = Ember.Route.extend
     # And to add winners to the correct list
     userWinners = user.get("round#{params.round_id}Winners")
     userLosers = user.get("round#{params.round_id}Losers")
-    userWinners.clear()
-    userLosers.clear()
     @controllerFor('playoffs').setProperties
-      roundId: params.round_id
       userStageWinners: userWinners
       userStageLosers: userLosers
+
+    @controllerFor('playoffs').set 'roundId', params.round_id
 
     if params.round_id is '1'
       # Directly after group stage

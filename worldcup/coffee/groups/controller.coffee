@@ -5,6 +5,16 @@ App.GroupsController = Ember.ArrayController.extend
   actions:
     goToPlayoffs: (group) ->
       if @get('readyToMoveOn')
+
+        # Clear all (round) winners on restart
+        for roundId in [1..3]
+          roundWinners = @get("user.round#{roundId}Winners")
+          if roundWinners
+            roundWinners.clear()
+
+        @set('user.finalWinner')
+        @set('user.thirdPlaceWinner')
+
         @get('user').save()
         @transitionToRoute 'playoffs', 1
 

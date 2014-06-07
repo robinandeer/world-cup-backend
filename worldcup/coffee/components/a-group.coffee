@@ -31,9 +31,7 @@ App.AGroupComponent = Ember.Component.extend
     for team in teams.get('content')
       winner = winners.findBy 'id', team.get('id')
       if winner
-        break
-
-    return winner
+        return winner
   ).property 'winners.@each', 'teams.@each'
 
   # Team selected as runner up
@@ -44,9 +42,7 @@ App.AGroupComponent = Ember.Component.extend
     for team in teams.get('content')
       runnerUp = runnerUps.findBy 'id', team.get('id')
       if runnerUp
-        break
-
-    return runnerUp
+        return runnerUp
   ).property 'runnerUps.@each', 'teams.@each'
 
   winnerObserver: (->

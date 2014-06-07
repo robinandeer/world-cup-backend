@@ -126,18 +126,22 @@
           <div class="a-layout__panel is-fixed bb slim text-center">
             World Champion
           </div>
-
-          <div class="a-layout__panel--full center__wrapper">
-            <img {{bind-attr src="finalWinner.flagImage"}} class="big-flag">
-          </div>
+          
+          {{#if finalWinner}}
+            <div class="a-layout__panel--full center__wrapper">
+              <img {{bind-attr src="finalWinner.flagImage"}} class="big-flag">
+            </div>
+          {{/if}}
 
           <div class="a-layout__panel is-fixed bb bt slim text-center">
             Bronze medalist
           </div>
-
-          <div class="a-layout__panel--half center__wrapper">
-            <img {{bind-attr src="thirdPlaceWinner.flagImage"}} class="small-flag">
-          </div>
+          
+          {{#if thirdPlaceWinner}}
+            <div class="a-layout__panel--half center__wrapper">
+              <img {{bind-attr src="thirdPlaceWinner.flagImage"}} class="small-flag">
+            </div>
+          {{/if}}
 
         </div>
       </div>
