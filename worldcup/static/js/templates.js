@@ -908,10 +908,11 @@ function program6(depth0,data) {
   
   var buffer = '', stack1, hashContexts, hashTypes, options;
   data.buffer.push("\n              ");
-  hashContexts = {'teams': depth0,'winners': depth0,'losers': depth0,'classNames': depth0};
-  hashTypes = {'teams': "ID",'winners': "ID",'losers': "ID",'classNames': "STRING"};
+  hashContexts = {'teams': depth0,'order': depth0,'winners': depth0,'losers': depth0,'classNames': depth0};
+  hashTypes = {'teams': "ID",'order': "ID",'winners': "ID",'losers': "ID",'classNames': "STRING"};
   options = {hash:{
     'teams': ("match.teams"),
+    'order': ("match.order"),
     'winners': ("userStageWinners"),
     'losers': ("userStageLosers"),
     'classNames': ("a-layout__panel--full mr--big--listed br--listed bl--listed bt bb")

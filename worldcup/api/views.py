@@ -152,9 +152,10 @@ def matchups():
   winners = request.args.get('winners', '').split(',')
   runner_ups = request.args.get('runner_ups', '').split(',')
 
-  # Sort in the correct group-wise order
-  winners.sort(key=lambda team_code: TEAMS[team_code])
-  runner_ups.sort(key=lambda team_code: TEAMS[team_code])
+  if round_id == 1:
+    # Sort in group-wise order after group stage
+    winners.sort(key=lambda team_code: TEAMS[team_code])
+    runner_ups.sort(key=lambda team_code: TEAMS[team_code])
 
   matchups = get_matchups(round_id, winners, runner_ups)
 
@@ -167,10 +168,10 @@ def matchups():
     mapper[team['code']] = team['_id']
 
   payload = [{
-    '_id': '%s-%s' % (home_team, away_team),
+    '_id': '%d|%s-%s' % (count, home_team, away_team),
     'homeTeam': mapper[home_team],
     'awayTeam': mapper[away_team]
-  } for home_team, away_team in matchups]
+  } for count, (home_team, away_team) in enumerate(matchups)]
 
   return jsonify_mongo(
     matchups=payload,

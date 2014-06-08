@@ -1,6 +1,8 @@
 App.AMatchupComponent = Ember.Component.extend
   classNames: ['a-matchup', 'a-layout__wrapper']
 
+  order: null
+
   # All teams in the matchup
   teams: Em.A()
 
@@ -26,14 +28,16 @@ App.AMatchupComponent = Ember.Component.extend
     for team in teams
       if team.get('id') isnt winnerId
         return team
-  ).property 'teams.@each', 'winner'
+  ).property 'teams.@each', 'winner.id'
 
   winnerObserver: (->
     @get('teams').setEach 'isStageWinner', no
     winner = @get('winner')
     if winner
-      winner.set 'isStageWinner', yes
-  ).observes 'winner', 'teams.@each'
+      winner.setProperties
+        isStageWinner: yes
+        stageOrder: @get('order')
+  ).observes 'winner', 'teams.@each', 'order'
 
   actions:
     advanceTeam: (team) ->

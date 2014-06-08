@@ -8,6 +8,16 @@ App.PlayoffsController = Ember.ArrayController.extend
     moveOn: ->
 
       if @get('readyToMoveOn')
+        # Sort winners by matchup order
+        roundLosers = @get('userStageLosers')
+        sortedLosers = roundLosers.sortBy('stageOrder')
+        roundWinners = @get('userStageWinners')
+        sortedWinners = roundWinners.sortBy('stageOrder')
+        roundLosers.clear()
+        roundLosers.pushObjects sortedLosers
+        roundWinners.clear()
+        roundWinners.pushObjects sortedWinners
+
         @get('user').save()
 
         nextPlayoffId = @get('nextPlayoff.id')

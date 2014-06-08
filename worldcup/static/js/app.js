@@ -179,6 +179,7 @@ App.AGroupComponent = Ember.Component.extend({
 
 App.AMatchupComponent = Ember.Component.extend({
   classNames: ['a-matchup', 'a-layout__wrapper'],
+  order: null,
   teams: Em.A(),
   winners: Em.A(),
   losers: Em.A(),
@@ -204,15 +205,18 @@ App.AMatchupComponent = Ember.Component.extend({
         return team;
       }
     }
-  }).property('teams.@each', 'winner'),
+  }).property('teams.@each', 'winner.id'),
   winnerObserver: (function() {
     var winner;
     this.get('teams').setEach('isStageWinner', false);
     winner = this.get('winner');
     if (winner) {
-      return winner.set('isStageWinner', true);
+      return winner.setProperties({
+        isStageWinner: true,
+        stageOrder: this.get('order')
+      });
     }
-  }).observes('winner', 'teams.@each'),
+  }).observes('winner', 'teams.@each', 'order'),
   actions: {
     advanceTeam: function(team) {
       var losers, winners;
@@ -302,12 +306,16 @@ App.GroupsController = Ember.ArrayController.extend({
   userBinding: 'controllers.application.model',
   actions: {
     goToPlayoffs: function(group) {
-      var roundId, roundWinners, _i;
+      var roundId, roundLosers, roundWinners, _i;
       if (this.get('readyToMoveOn')) {
         for (roundId = _i = 1; _i <= 3; roundId = ++_i) {
           roundWinners = this.get("user.round" + roundId + "Winners");
+          roundLosers = this.get("user.round" + roundId + "Winners");
           if (roundWinners) {
             roundWinners.clear();
+          }
+          if (roundLosers) {
+            roundLosers.clear();
           }
         }
         this.set('user.finalWinner');
@@ -395,8 +403,16 @@ App.PlayoffsController = Ember.ArrayController.extend({
   playoffsBinding: 'controllers.application.playoffs',
   actions: {
     moveOn: function() {
-      var nextPlayoffId;
+      var nextPlayoffId, roundLosers, roundWinners, sortedLosers, sortedWinners;
       if (this.get('readyToMoveOn')) {
+        roundLosers = this.get('userStageLosers');
+        sortedLosers = roundLosers.sortBy('stageOrder');
+        roundWinners = this.get('userStageWinners');
+        sortedWinners = roundWinners.sortBy('stageOrder');
+        roundLosers.clear();
+        roundLosers.pushObjects(sortedLosers);
+        roundWinners.clear();
+        roundWinners.pushObjects(sortedWinners);
         this.get('user').save();
         nextPlayoffId = this.get('nextPlayoff.id');
         if (nextPlayoffId === 4) {
@@ -445,7 +461,10 @@ App.Matchup = DS.Model.extend({
   awayTeam: DS.belongsTo('team'),
   teams: (function() {
     return Em.A([this.get('homeTeam'), this.get('awayTeam')]);
-  }).property('homeTeam', 'awayTeam')
+  }).property('homeTeam', 'awayTeam'),
+  order: (function() {
+    return parseInt(this.get('id').split('|')[0]);
+  }).property('id')
 });
 
 App.PlayoffsRoute = Ember.Route.extend({
@@ -455,6 +474,8 @@ App.PlayoffsRoute = Ember.Route.extend({
     losers = user.get("round" + params.round_id + "Losers");
     if (!losers) {
       user.set("round" + params.round_id + "Losers", Em.A());
+    } else {
+      losers.clear();
     }
     userWinners = user.get("round" + params.round_id + "Winners");
     userLosers = user.get("round" + params.round_id + "Losers");

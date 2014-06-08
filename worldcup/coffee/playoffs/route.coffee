@@ -5,6 +5,8 @@ App.PlayoffsRoute = Ember.Route.extend
     losers = user.get "round#{params.round_id}Losers"
     if not losers
       user.set "round#{params.round_id}Losers", Em.A()
+    else
+      losers.clear()
 
     # Used to forsee next and previous rounds
     # And to add winners to the correct list

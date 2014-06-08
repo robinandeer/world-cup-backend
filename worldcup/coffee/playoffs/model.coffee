@@ -5,3 +5,7 @@ App.Matchup = DS.Model.extend
   teams: (->
     return Em.A([@get('homeTeam'), @get('awayTeam')])
   ).property 'homeTeam', 'awayTeam'
+
+  order: (->
+    return parseInt(@get('id').split('|')[0])
+  ).property 'id'

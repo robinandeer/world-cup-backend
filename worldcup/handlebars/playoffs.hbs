@@ -25,6 +25,7 @@
 
             {{#each match in part}}
               {{a-matchup teams=match.teams
+                          order=match.order
                           winners=userStageWinners
                           losers=userStageLosers
                           classNames="a-layout__panel--full mr--big--listed br--listed bl--listed bt bb"}}
