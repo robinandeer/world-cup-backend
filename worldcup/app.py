@@ -58,7 +58,7 @@ def configure_app(app, config=None):
   # The session will be lost after 30 days with no interaction form
   # the user.
   # +INFO: http://flask.pocoo.org/docs/api/#flask.Flask.permanent_session_lifetime
-  app.permanent_session_lifetime = timedelta(days=1)
+  app.permanent_session_lifetime = timedelta(days=30)
 
 
 def configure_extensions(app):
