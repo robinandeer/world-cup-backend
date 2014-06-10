@@ -89,7 +89,7 @@ def authorized(oauth_response):
 
 
   trusted = google_data['email'] in current_app.config.get('EXTERNAL_USERS')
-  if (google_data.get('hd') != 'scilifelab.se') or trusted:
+  if (google_data.get('hd') != 'scilifelab.se') and (not trusted):
     flash("You tried to login with %s." % google_data['email'])
     flash("You need to login with a '@scilifelab.se' account.")
     return abort(403)
