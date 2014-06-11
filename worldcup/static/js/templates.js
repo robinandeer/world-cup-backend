@@ -743,7 +743,7 @@ function program1(depth0,data) {
   hashTypes = {};
   hashContexts = {};
   data.buffer.push(escapeExpression(helpers.action.call(depth0, "goToPlayoffs", {hash:{},contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push(" class=\"a-button\">\n          <div class=\"a-button__icon icon-trophy\"></div>\n          <div class=\"a-button__body\">To playoffs</div>\n        </div>\n      ");
+  data.buffer.push(" class=\"a-button\">\n          <div class=\"a-button__icon icon-trophy\"></div>\n          <div class=\"a-button__body\">To playoffs</div>\n        </div>\n\n        <div class=\"mt small\">Will reset your predictions!</div>\n      ");
   return buffer;
   }
 
@@ -1175,6 +1175,16 @@ function program3(depth0,data) {
   data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "outlet", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
   data.buffer.push("\n  </div>\n\n</div>\n");
   return buffer;
+  
+});
+
+Ember.TEMPLATES["profiles/index"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
+this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
+  
+
+
+  data.buffer.push("<div class=\"a-layout center__wrapper\">\n  <div class=\"big-font loose text-center\">\n    Click a name above or type in any given email address in the url like so: <br>\n    <code class=\"small\">worldcup.scilifelab.se/#/profiles/anders.andersson@scilifelab.se</code>\n  </div>\n</div>");
   
 });
 

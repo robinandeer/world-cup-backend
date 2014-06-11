@@ -421,6 +421,7 @@ h1 {
 
 .link-next {
   width: 250px;
+  @include flex-direction(column);
 }
 
 .a-switch {
