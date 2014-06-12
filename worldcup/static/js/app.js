@@ -310,7 +310,7 @@ App.GroupsController = Ember.ArrayController.extend({
       if (this.get('readyToMoveOn')) {
         for (roundId = _i = 1; _i <= 3; roundId = ++_i) {
           roundWinners = this.get("user.round" + roundId + "Winners");
-          roundLosers = this.get("user.round" + roundId + "Winners");
+          roundLosers = this.get("user.round" + roundId + "Losers");
           if (roundWinners) {
             roundWinners.clear();
           }

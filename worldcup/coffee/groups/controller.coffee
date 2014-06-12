@@ -9,7 +9,7 @@ App.GroupsController = Ember.ArrayController.extend
         # Clear all (round) winners on restart
         for roundId in [1..3]
           roundWinners = @get("user.round#{roundId}Winners")
-          roundLosers = @get("user.round#{roundId}Winners")
+          roundLosers = @get("user.round#{roundId}Losers")
           if roundWinners
             roundWinners.clear()
           if roundLosers
