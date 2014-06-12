@@ -2,42 +2,37 @@
 
   <div class="a-layout--vertical">
     <div class="a-layout__panel--double a-bar--space-around bb">
-      <div>
-        <p>Get down and dirty</p>
+      <div class="index-box">
+        <h2 class="text-center big-font">Bets are up!</h2>
+        <p>Step - away - from the keyboard. The World Cup is officially under way and you will soon be able to track the progress in the <i>High Score List</i>.</p>
+        
+        <p>SciLifeLab has also concluded it's hottest candidates for the top three spots:</p>
 
-        {{#link-to "groups" classNames="a-button"}}
-          <div class="a-button__icon icon-chart-line"></div>
-          <div class="a-button__body regular">Start speculating</div>
-        {{/link-to}}
+        <ol>
+          <li>
+            {{#link-to "team" "537736c3f747f10de13b0d55"}}Brazil{{/link-to}}
+          </li>
+          <li>
+            {{#link-to "team" "537736c6f747f10de13b0d70"}}Germany{{/link-to}}
+          </li>
+          <li>
+            <i>and</i> {{#link-to "team" "537736c6f747f10de13b0d70"}}Germany{{/link-to}}
+          </li>
+        </ol>
+
+        <p><small>I guess "we" <i>really</i> believe Germany is going to be up there.</small></p>
+
+        <p>Finally, we also want to send a <strong>BIG thanks</strong> to the <span class="big-font">{{stat.completeCount}}</span> people that decided to participate even after the decidedly rocky start.</p>
+
+        <p class="text-center"><strong>Good Luck!</strong></p>
       </div>
-
-      <div><i>or</i></div>
-
-      <div>
-        <p>Go back to school</p>
-
-        {{#link-to "rules" classNames="a-button"}}
-          <div class="a-button__icon icon-graduation-cap"></div>
-          <div class="a-button__body regular">Read the rules</div>
-        {{/link-to}}
-      </div>  
-
-      <div><i>or</i></div>
-
-      <form {{action "peekFriend" on="submit"}} class="form-inline">
-        <p>Cheat by peeking at a friend</p>
-        {{#link-to "profiles" classNames="a-button"}}
-          <div class="a-button__icon icon-users"></div>
-          <div class="a-button__body regular">The Prophets</div>
-        {{/link-to}}
-      </form>
     </div>
 
     <div class="a-layout__panel--full center__wrapper">
       <div class="progress-wrapper">
-        <p>Let's get to 100 users with complete predictions!</p>
+        <p>We reached 100 users with complete predictions - Woho!</p>
         <div class="a-progress">
-          <div {{bind-attr style="stat.completeRatioCSS" class="stat.isComplete:a-progress__bar--complete:a-progress__bar"}}>
+          <div style="width: 100%" {{bind-attr class="stat.isComplete:a-progress__bar--complete:a-progress__bar"}}>
             <div class="icon-users"></div>
             <div>#{{stat.completeCount}}</div>
           </div>

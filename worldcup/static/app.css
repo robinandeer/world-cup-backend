@@ -4135,3 +4135,8 @@ h4 {
   margin: 0;
   line-height: 1;
 }
+
+/* line 513 */
+.index-box {
+  max-width: 500px;
+}
