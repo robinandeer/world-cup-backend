@@ -7,6 +7,7 @@ App.User = DS.Model.extend
   family_name: DS.attr('string')
   given_name: DS.attr('string')
   nickname: DS.attr('string')
+  points: DS.attr('number')
 
   groupWinners: DS.hasMany('team')
   groupRunnerUps: DS.hasMany('team')

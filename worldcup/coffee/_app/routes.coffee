@@ -5,3 +5,4 @@ App.Router.map ->
   @resource 'teams', ->
     @resource 'team', { path: '/:team_id' }
   @resource 'rules'
+  @resource 'highscore'

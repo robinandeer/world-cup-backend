@@ -7,7 +7,12 @@
         <div class="icon-home mr--slim"></div>
         <div>Home</div>
       {{/link-to}}
-      
+
+      {{#link-to "highscore" classNames="a-toolbar__group__item--clickable loose highscore-header br"}}
+        <div class="icon-trophy highscore-icon mr--slim"></div>
+        <div>High score</div>
+      {{/link-to}}
+
       {{#link-to "consensus" classNames="a-toolbar__group__item--clickable loose br"}}
         <div class="icon-flow-tree mr--slim"></div>
         <div>Consensus</div>

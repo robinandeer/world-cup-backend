@@ -280,7 +280,8 @@ def users(user_id=None):
   elif request.method == 'GET':
     # Request is to get all users
     payload['users'] = docs = list(
-      mongo.db.user.find(query_args).sort('created_at', -1).limit(20))
+      mongo.db.user.find(
+        {'finalWinner': {'$exists': True}}).sort('created_at', -1).limit(20))
 
   if request.method == 'GET':
 
@@ -370,3 +371,16 @@ def trees(user_id):
   teams = list(mongo.db.team.find({'_id': { '$in': list(team_ids) }}))
 
   return jsonify_mongo(tree=consensus, teams=teams)
+
+
+@api.route('/highscores', methods=['GET'])
+@login_required
+def highscores():
+  users = list(
+    mongo.db.user.find(
+      {'points': {'$exists': True}},
+      {'name': True, 'nickname': True, 'points': True}
+    ).sort('points', -1)
+  )
+
+  return jsonify_mongo(highscores=users)

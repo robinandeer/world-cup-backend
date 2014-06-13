@@ -4140,3 +4140,37 @@ h4 {
 .index-box {
   max-width: 500px;
 }
+
+/* line 517 */
+.highscore-header {
+  background-color: #148d2c;
+  color: #fedb09;
+  -webkit-font-smoothing: antialiased;
+}
+/* line 522 */
+.highscore-header.a-toolbar__group__item:hover, .highscore-header.a-toolbar__group__item--clickable:hover {
+  background-color: #1aba3a;
+}
+/* line 526 */
+.highscore-header.active {
+  color: #414c58;
+}
+
+/* line 531 */
+.highscore-icon {
+  color: currentColor;
+  font-size: 120%;
+}
+
+/* line 537 */
+.highscore-list > .a-list__item:first-of-type, .highscore-list > .a-list__item--header:first-of-type {
+  font-size: 150%;
+}
+/* line 541 */
+.highscore-list > .a-list__item:nth-of-type(2), .highscore-list > .a-list__item--header:nth-of-type(2) {
+  font-size: 120%;
+}
+/* line 545 */
+.highscore-list > .a-list__item:nth-of-type(3), .highscore-list > .a-list__item--header:nth-of-type(3) {
+  font-size: 110%;
+}

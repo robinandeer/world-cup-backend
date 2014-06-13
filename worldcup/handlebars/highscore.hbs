@@ -1,0 +1,32 @@
+<div class="a-layout--vertical">
+
+  <div class="highscore-header a-layout__panel is-fixed text-center">
+    <h2>
+      <span class="highscore-icon icon-trophy"></span>
+      Overall Leaderboard - Ongoing
+    </h2>
+  </div>
+    
+  <div class="highscore-list a-layout__panel--full a-list">
+
+    {{#eachIndexed user in controller}}
+
+      <div class="a-list__item a-bar br--listed loose">
+
+        {{#link-to "profile" user.id classNames="highscore-panel a-bar__item"}}
+          {{index_1}}. {{user.name}}
+        {{/link-to}}
+
+        <div class="highscore-panel text-center a-bar__item">
+          <small>{{user.nickname}}</small>
+        </div>
+
+        <div class="highscore-panel text-right a-bar__item">{{user.points}}p</div>
+
+      </div>
+
+    {{/eachIndexed}}
+
+  </div>
+
+</div>

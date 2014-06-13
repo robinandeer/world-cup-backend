@@ -513,3 +513,36 @@ h4 {
 .index-box {
   max-width: 500px;
 }
+
+.highscore-header {
+  background-color: #148d2c;
+  color: #fedb09;
+  @include font-smoothing();
+
+  &.a-toolbar__group__item:hover {
+    background-color: lighten(#148d2c, 10%);
+  }
+
+  &.active {
+    color: #414c58;
+  }
+}
+
+.highscore-icon {
+  color: currentColor;
+  font-size: 120%;
+}
+
+.highscore-list {
+  > .a-list__item:first-of-type {
+    font-size: 150%;
+  }
+
+  > .a-list__item:nth-of-type(2) {
+    font-size: 120%;
+  }
+
+  > .a-list__item:nth-of-type(3) {
+    font-size: 110%;
+  }
+}

@@ -22,6 +22,48 @@ Array.prototype.clean = function(deleteValue) {
 };
 ;
 
+Ember.Handlebars.registerHelper('eachIndexed', function(path, options) {
+  var eachFn, fn, keywordName;
+  keywordName = 'item';
+  if (arguments.length === 4) {
+    keywordName = arguments[0];
+    options = arguments[3];
+    path = arguments[2];
+    options.hash.keyword = keywordName;
+    if (path === '') {
+      path = 'this';
+    }
+  }
+  if (arguments.length === 1) {
+    options = path;
+    path = 'this';
+  }
+  fn = options.fn;
+  eachFn = function() {
+    var index, keywords, len, list, view;
+    keywords = arguments[1].data.keywords;
+    view = arguments[1].data.view;
+    index = view.contentIndex;
+    list = view._parentView.get('content') || [];
+    len = list.length;
+    keywords['index'] = index;
+    keywords['index_1'] = index + 1;
+    keywords['first'] = index === 0;
+    keywords['last'] = index + 1 === len;
+    keywords['even'] = index % 2 === 0;
+    keywords['odd'] = !keywords['even'];
+    arguments[1].data.keywords = keywords;
+    return fn.apply(this, arguments);
+  };
+  options.fn = eachFn;
+  options.hash.dataSourceBinding = path;
+  if (options.data.insideGroup && !options.hash.groupedRows && !options.hash.itemViewClass) {
+    return new Ember.Handlebars.GroupedEach(this, path, options).render();
+  } else {
+    return Ember.Handlebars.helpers.collection.call(this, 'Ember.Handlebars.EachView', options);
+  }
+});
+
 App.Router.map(function() {
   this.resource('consensus');
   this.resource('profiles', function() {
@@ -34,7 +76,8 @@ App.Router.map(function() {
       path: '/:team_id'
     });
   });
-  return this.resource('rules');
+  this.resource('rules');
+  return this.resource('highscore');
 });
 
 App.ApplicationController = Ember.ObjectController.extend();
@@ -48,6 +91,7 @@ App.User = DS.Model.extend({
   family_name: DS.attr('string'),
   given_name: DS.attr('string'),
   nickname: DS.attr('string'),
+  points: DS.attr('number'),
   groupWinners: DS.hasMany('team'),
   groupRunnerUps: DS.hasMany('team'),
   round1Winners: DS.hasMany('team'),
@@ -108,6 +152,20 @@ App.Team = DS.Model.extend({
 App.Group = DS.Model.extend({
   group_id: DS.attr('string'),
   teams: DS.hasMany('team')
+});
+
+App.HighscoreController = Ember.ArrayController.extend();
+
+App.Highscore = DS.Model.extend({
+  name: DS.attr('string'),
+  nickname: DS.attr('string'),
+  points: DS.attr('number')
+});
+
+App.HighscoreRoute = Ember.Route.extend({
+  model: function() {
+    return this.store.find('highscore');
+  }
 });
 
 App.IndexController = Ember.ObjectController.extend({
