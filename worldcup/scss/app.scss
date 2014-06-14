@@ -534,6 +534,7 @@ h4 {
 }
 
 .highscore-list {
+
   > .a-list__item:first-of-type {
     font-size: 150%;
   }
@@ -545,4 +546,5 @@ h4 {
   > .a-list__item:nth-of-type(3) {
     font-size: 110%;
   }
+
 }

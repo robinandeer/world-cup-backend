@@ -28,6 +28,7 @@
 	margin: 0;
 	@include display(flex);
 	@include align-items(center);
+	@include align-self(stretch);
 }
 
 .a-toolbar__divider {

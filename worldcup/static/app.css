@@ -3603,9 +3603,12 @@ h2 {
   -webkit-align-items: center;
   -moz-align-items: center;
   align-items: center;
+  -webkit-align-self: stretch;
+  -moz-align-self: stretch;
+  align-self: stretch;
 }
 
-/* line 33, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-toolbar.scss */
+/* line 34, /Users/robinandeer/Projects/world-cup-backend/worldcup/scss/components/_a-toolbar.scss */
 .a-toolbar__divider {
   -webkit-align-self: stretch;
   -moz-align-self: stretch;
@@ -4162,15 +4165,15 @@ h4 {
   font-size: 120%;
 }
 
-/* line 537 */
+/* line 538 */
 .highscore-list > .a-list__item:first-of-type, .highscore-list > .a-list__item--header:first-of-type {
   font-size: 150%;
 }
-/* line 541 */
+/* line 542 */
 .highscore-list > .a-list__item:nth-of-type(2), .highscore-list > .a-list__item--header:nth-of-type(2) {
   font-size: 120%;
 }
-/* line 545 */
+/* line 546 */
 .highscore-list > .a-list__item:nth-of-type(3), .highscore-list > .a-list__item--header:nth-of-type(3) {
   font-size: 110%;
 }
