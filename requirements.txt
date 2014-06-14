@@ -11,3 +11,4 @@ webassets
 gunicorn
 pyyaml
 newrelic
+requests
