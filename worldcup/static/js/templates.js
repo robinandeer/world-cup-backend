@@ -286,31 +286,43 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
 function program1(depth0,data) {
   
   
-  data.buffer.push("Brazil");
+  data.buffer.push("High Score List");
   }
 
 function program3(depth0,data) {
   
   
+  data.buffer.push("Brazil");
+  }
+
+function program5(depth0,data) {
+  
+  
   data.buffer.push("Germany");
   }
 
-  data.buffer.push("<div class=\"a-layout__wrapper fill-up\">\n\n  <div class=\"a-layout--vertical\">\n    <div class=\"a-layout__panel--double a-bar--space-around bb\">\n      <div class=\"index-box\">\n        <h2 class=\"text-center big-font\">Bets are up!</h2>\n        <p>Step - away - from the keyboard. The World Cup is officially under way and you will soon be able to track the progress in the <i>High Score List</i>.</p>\n        \n        <p>SciLifeLab has also concluded it's hottest candidates for the top three spots:</p>\n\n        <ol>\n          <li>\n            ");
+  data.buffer.push("<div class=\"a-layout__wrapper fill-up\">\n\n  <div class=\"a-layout--vertical\">\n    <div class=\"a-layout__panel--double a-bar--space-around bb\">\n      <div class=\"index-box\">\n        <h2 class=\"text-center big-font\">Bets are up!</h2>\n        <p>Step - away - from the keyboard. The World Cup is <a href=\"https://www.youtube.com/watch?v=VGEfNcvntno\">officially under way</a> and you can now track all the player's progress in the ");
   hashTypes = {};
   hashContexts = {};
-  options = {hash:{},inverse:self.noop,fn:self.program(1, program1, data),contexts:[depth0,depth0],types:["STRING","STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
+  options = {hash:{},inverse:self.noop,fn:self.program(1, program1, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
+  stack2 = ((stack1 = helpers['link-to'] || (depth0 && depth0['link-to'])),stack1 ? stack1.call(depth0, "highscore", options) : helperMissing.call(depth0, "link-to", "highscore", options));
+  if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
+  data.buffer.push(".</p>\n\n        <p>SciLifeLab has also concluded it's hottest candidates for the top three spots:</p>\n\n        <ol>\n          <li>\n            ");
+  hashTypes = {};
+  hashContexts = {};
+  options = {hash:{},inverse:self.noop,fn:self.program(3, program3, data),contexts:[depth0,depth0],types:["STRING","STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   stack2 = ((stack1 = helpers['link-to'] || (depth0 && depth0['link-to'])),stack1 ? stack1.call(depth0, "team", "537736c3f747f10de13b0d55", options) : helperMissing.call(depth0, "link-to", "team", "537736c3f747f10de13b0d55", options));
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
   data.buffer.push("\n          </li>\n          <li>\n            ");
   hashTypes = {};
   hashContexts = {};
-  options = {hash:{},inverse:self.noop,fn:self.program(3, program3, data),contexts:[depth0,depth0],types:["STRING","STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
+  options = {hash:{},inverse:self.noop,fn:self.program(5, program5, data),contexts:[depth0,depth0],types:["STRING","STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   stack2 = ((stack1 = helpers['link-to'] || (depth0 && depth0['link-to'])),stack1 ? stack1.call(depth0, "team", "537736c6f747f10de13b0d70", options) : helperMissing.call(depth0, "link-to", "team", "537736c6f747f10de13b0d70", options));
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
   data.buffer.push("\n          </li>\n          <li>\n            <i>and</i> ");
   hashTypes = {};
   hashContexts = {};
-  options = {hash:{},inverse:self.noop,fn:self.program(3, program3, data),contexts:[depth0,depth0],types:["STRING","STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
+  options = {hash:{},inverse:self.noop,fn:self.program(5, program5, data),contexts:[depth0,depth0],types:["STRING","STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   stack2 = ((stack1 = helpers['link-to'] || (depth0 && depth0['link-to'])),stack1 ? stack1.call(depth0, "team", "537736c6f747f10de13b0d70", options) : helperMissing.call(depth0, "link-to", "team", "537736c6f747f10de13b0d70", options));
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
   data.buffer.push("\n          </li>\n        </ol>\n\n        <p><small>I guess \"we\" <i>really</i> believe Germany is going to be up there.</small></p>\n\n        <p>Finally, we also want to send a <strong>BIG thanks</strong> to the <span class=\"big-font\">");

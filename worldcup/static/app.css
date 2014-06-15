@@ -3162,7 +3162,16 @@ a {
   text-decoration: none;
 }
 
-/* line 55 */
+/* line 10 */
+p > a {
+  color: #2b84d3;
+}
+/* line 13 */
+p > a:visited {
+  color: currentColor;
+}
+
+/* line 63 */
 *,
 *:before,
 *:after {
@@ -3171,25 +3180,25 @@ a {
   box-sizing: border-box;
 }
 
-/* line 61 */
+/* line 69 */
 .fill-up, .a-layout, .a-layout--vertical, html,
 body {
   height: 100%;
   width: 100%;
 }
 
-/* line 67 */
+/* line 75 */
 .is-clickable, .a-button, .a-button--stretched, .a-button--naked, .a-button--google {
   cursor: pointer;
 }
 
-/* line 71 */
+/* line 79 */
 .is-scrollable, .a-list, .a-list--horizontal {
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
 }
 
-/* line 76 */
+/* line 84 */
 .is-non-selectable, .a-button, .a-button--stretched, .a-button--naked, .a-button--google {
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -3197,150 +3206,150 @@ body {
   user-select: none;
 }
 
-/* line 80 */
+/* line 88 */
 .is-fixed-size {
   -webkit-flex-shrink: 0;
   -moz-flex-shrink: 0;
   flex-shrink: 0;
 }
 
-/* line 84 */
+/* line 92 */
 .is-highlighted {
   background: rgba(237, 187, 15, 0.1) !important;
 }
 
-/* line 91 */
+/* line 99 */
 .slim, .slim--stretched {
   padding: 5px;
 }
 
-/* line 95 */
+/* line 103 */
 .slim--stretched {
   padding-top: 3px;
   padding-bottom: 3px;
 }
 
-/* line 101 */
+/* line 109 */
 .slim--right {
   padding-right: 5px;
 }
 
-/* line 105 */
+/* line 113 */
 .slim--squashed {
   padding: 0 5px;
 }
 
-/* line 109 */
+/* line 117 */
 .regular {
   padding: 10px;
 }
 
-/* line 113 */
+/* line 121 */
 .loose {
   padding: 15px;
 }
 
-/* line 117 */
+/* line 125 */
 .mt {
   margin-top: 15px;
 }
 
-/* line 121 */
+/* line 129 */
 .mb {
   margin-bottom: 15px;
 }
 
-/* line 126 */
+/* line 134 */
 .mb--listed:not(:last-of-type) {
   margin-bottom: 15px;
 }
 
-/* line 131 */
+/* line 139 */
 .mb--big {
   margin-bottom: 50px;
 }
 
-/* line 136 */
+/* line 144 */
 .mb--big--listed:not(:last-of-type) {
   margin-bottom: 35px;
 }
 
-/* line 142 */
+/* line 150 */
 .mr--big--listed:not(:last-of-type) {
   margin-right: 35px;
 }
 
-/* line 147 */
+/* line 155 */
 .mr {
   margin-right: 15px;
 }
 
-/* line 151 */
+/* line 159 */
 .mr--big {
   margin-right: 35px;
 }
 
-/* line 155 */
+/* line 163 */
 .mr--slim {
   margin-right: 5px;
 }
 
-/* line 160 */
+/* line 168 */
 .mr--listed:not(:last-of-type) {
   margin-right: 15px;
 }
 
-/* line 168 */
+/* line 176 */
 .b {
   border: 1px solid #d8dae3;
 }
 
-/* line 172 */
+/* line 180 */
 .bb {
   border-bottom: 1px solid #d8dae3;
 }
 
-/* line 177 */
+/* line 185 */
 .bb--listed:not(:last-of-type) {
   border-bottom: 1px solid #d8dae3;
 }
 
-/* line 182 */
+/* line 190 */
 .bt {
   border-top: 1px solid #d8dae3;
 }
 
-/* line 186 */
+/* line 194 */
 .br {
   border-right: 1px solid #d8dae3;
 }
 
-/* line 191 */
+/* line 199 */
 .br--listed:not(:last-of-type) {
   border-right: 1px solid #d8dae3;
 }
 
-/* line 196 */
+/* line 204 */
 .bl {
   border-left: 1px solid #d8dae3;
 }
 
-/* line 201 */
+/* line 209 */
 .bl--listed:not(:first-of-type) {
   border-left: 1px solid #d8dae3;
 }
 
-/* line 209 */
+/* line 217 */
 .text-center {
   text-align: center;
 }
 
-/* line 213 */
+/* line 221 */
 .text-right {
   text-align: right;
 }
 
-/* line 217 */
+/* line 225 */
 .dotdotdot {
   white-space: nowrap;
   max-width: 100%;
@@ -3348,23 +3357,23 @@ body {
   text-overflow: ellipsis;
 }
 
-/* line 221 */
+/* line 229 */
 h2 {
   font-weight: normal;
 }
 
-/* line 227 */
+/* line 235 */
 .small,
 .small-font {
   font-size: 80%;
 }
 
-/* line 232 */
+/* line 240 */
 .big-font {
   font-size: 120%;
 }
 
-/* line 237 */
+/* line 245 */
 .center__wrapper {
   display: -webkit-flex;
   display: -moz-flex;
@@ -3377,12 +3386,12 @@ h2 {
   align-items: center;
 }
 
-/* line 243 */
+/* line 251 */
 .full-width {
   width: 100%;
 }
 
-/* line 247 */
+/* line 255 */
 .full-height {
   height: 100%;
 }
@@ -3853,19 +3862,19 @@ h2 {
   color: #86BE42;
 }
 
-/* line 260 */
+/* line 268 */
 .is-notifying {
   color: #2b84d3;
 }
 
-/* line 264 */
+/* line 272 */
 html,
 body {
   overflow: hidden;
   font-family: Lato;
 }
 
-/* line 271 */
+/* line 279 */
 .a-well {
   background: rgba(0, 0, 0, 0.05);
   border: 1px solid #c9ccd8;
@@ -3873,26 +3882,26 @@ body {
   border-radius: 5px;
 }
 
-/* line 279 */
+/* line 287 */
 .header-style {
   background: #f6f6f8;
 }
 
-/* line 283 */
+/* line 291 */
 .stretch-self {
   -webkit-align-self: stretch;
   -moz-align-self: stretch;
   align-self: stretch;
 }
 
-/* line 287 */
+/* line 295 */
 .is-fixed {
   -webkit-flex-shrink: 0;
   -moz-flex-shrink: 0;
   flex-shrink: 0;
 }
 
-/* line 292 */
+/* line 300 */
 .a-team.expanded {
   width: 250px;
   padding: 15px;
@@ -3901,37 +3910,37 @@ body {
   border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
-/* line 301 */
+/* line 309 */
 .team {
   position: relative;
   color: black;
 }
-/* line 305 */
+/* line 313 */
 .team.is-winner, .team.is-group-winner {
   background: rgba(255, 255, 0, 0.05);
 }
-/* line 309 */
+/* line 317 */
 .team.is-runner-up {
   background: rgba(255, 165, 0, 0.05);
 }
 
-/* line 314 */
+/* line 322 */
 .stage-header {
   font-size: 50px;
   color: #1eb18a;
 }
 
-/* line 320 */
+/* line 328 */
 .a-button.is-winner, .is-winner.a-button--stretched, .is-winner.a-button--naked, .is-winner.a-button--google {
   background: #1eb18a;
 }
 
-/* line 325 */
+/* line 333 */
 .a-backdrop {
   background-size: cover;
 }
 
-/* line 329 */
+/* line 337 */
 h1 {
   font-family: Lato;
   -webkit-font-smoothing: antialiased;
@@ -3940,19 +3949,19 @@ h1 {
   font-weight: 200;
 }
 
-/* line 337 */
+/* line 345 */
 .a-overlay {
   background: rgba(0, 0, 0, 0.5);
 }
 
-/* line 341 */
+/* line 349 */
 .signin-button {
   max-width: 300px;
   margin-left: auto;
   margin-right: auto;
 }
 
-/* line 347 */
+/* line 355 */
 .a-button--google {
   -webkit-font-smoothing: antialiased;
   font-weight: bold;
@@ -3960,27 +3969,27 @@ h1 {
   color: #fff;
   border: 0;
 }
-/* line 359 */
+/* line 367 */
 .a-button--google:hover {
   box-shadow: none;
   background: #d71b1a;
 }
 
-/* line 366 */
+/* line 374 */
 .a-toolbar__group__item.active, .active.a-toolbar__group__item--clickable {
   background: rgba(0, 0, 0, 0.03);
 }
 
-/* line 371 */
+/* line 379 */
 .a-toolbar__group__item--clickable {
   cursor: pointer;
 }
-/* line 375 */
+/* line 383 */
 .a-toolbar__group__item--clickable:hover {
   background: rgba(0, 0, 0, 0.03);
 }
 
-/* line 380 */
+/* line 388 */
 .flashes {
   position: fixed;
   bottom: 40px;
@@ -3990,7 +3999,7 @@ h1 {
   -webkit-font-smoothing: antialiased;
 }
 
-/* line 389 */
+/* line 397 */
 .wc-logo {
   width: 150px;
   margin-left: auto;
@@ -3998,12 +4007,12 @@ h1 {
   display: table-cell;
 }
 
-/* line 396 */
+/* line 404 */
 .a-icon {
   margin-right: 5px;
 }
 
-/* line 400 */
+/* line 408 */
 .a-property {
   font-size: 90%;
   display: -webkit-flex;
@@ -4014,27 +4023,27 @@ h1 {
   justify-content: space-between;
 }
 
-/* line 406 */
+/* line 414 */
 .a-property__title {
   color: rgba(0, 0, 0, 0.8);
 }
 
-/* line 410 */
+/* line 418 */
 .a-property__value {
   font-weight: bold;
 }
 
-/* line 414 */
+/* line 422 */
 .small-flag {
   width: 25px;
 }
 
-/* line 418 */
+/* line 426 */
 .big-flag {
   width: 70px;
 }
 
-/* line 422 */
+/* line 430 */
 .link-next {
   width: 250px;
   -webkit-flex-direction: column;
@@ -4042,52 +4051,52 @@ h1 {
   flex-direction: column;
 }
 
-/* line 429 */
+/* line 437 */
 .a-switch:hover .a-switch__default {
   display: none;
 }
-/* line 433 */
+/* line 441 */
 .a-switch:hover .a-switch__content {
   display: inherit;
 }
 
-/* line 439 */
+/* line 447 */
 .a-switch__default {
   display: inherit;
 }
 
-/* line 443 */
+/* line 451 */
 .a-switch__content {
   display: none;
 }
 
-/* line 447 */
+/* line 455 */
 .profile-wrapper {
   max-width: 960px;
   margin-left: auto;
   margin-right: auto;
 }
 
-/* line 453 */
+/* line 461 */
 .world-cup-logo {
   width: 70px;
 }
 
-/* line 457 */
+/* line 465 */
 .a-playoff-tree {
   height: 200px;
 }
 
-/* line 461 */
+/* line 469 */
 .form-inline {
   display: inline-block;
 }
-/* line 464 */
+/* line 472 */
 .form-inline > input {
   width: 200px;
 }
 
-/* line 469 */
+/* line 477 */
 [class^="icon-"], [class*=" icon-"] {
   text-align: inherit;
   width: auto;
@@ -4095,17 +4104,17 @@ h1 {
   color: #525f6b;
 }
 
-/* line 476 */
+/* line 484 */
 .a-userbox {
   width: 150px;
 }
 
-/* line 481 */
+/* line 489 */
 .a-list__item:hover, .a-list__item--header:hover, .a-list__item.active, .active.a-list__item--header {
   background: rgba(0, 0, 0, 0.03);
 }
 
-/* line 486 */
+/* line 494 */
 .text-box {
   max-width: 650px;
   padding: 50px;
@@ -4113,17 +4122,17 @@ h1 {
   margin-left: auto;
 }
 
-/* line 493 */
+/* line 501 */
 h3 {
   margin-top: 35px;
 }
 
-/* line 497 */
+/* line 505 */
 .credits-panel {
   height: 120px;
 }
 
-/* line 501 */
+/* line 509 */
 .progress-wrapper {
   -webkit-flex-basis: 70%;
   -moz-flex-basis: 70%;
@@ -4131,7 +4140,7 @@ h3 {
   margin-top: -25px;
 }
 
-/* line 506 */
+/* line 514 */
 h4 {
   font-size: 3em;
   font-weight: 200;
@@ -4139,41 +4148,41 @@ h4 {
   line-height: 1;
 }
 
-/* line 513 */
+/* line 521 */
 .index-box {
   max-width: 500px;
 }
 
-/* line 517 */
+/* line 525 */
 .highscore-header {
   background-color: #148d2c;
   color: #fedb09;
   -webkit-font-smoothing: antialiased;
 }
-/* line 522 */
+/* line 530 */
 .highscore-header.a-toolbar__group__item:hover, .highscore-header.a-toolbar__group__item--clickable:hover {
   background-color: #1aba3a;
 }
-/* line 526 */
+/* line 534 */
 .highscore-header.active {
   color: #414c58;
 }
 
-/* line 531 */
+/* line 539 */
 .highscore-icon {
   color: currentColor;
   font-size: 120%;
 }
 
-/* line 538 */
+/* line 545 */
 .highscore-list > .a-list__item:first-of-type, .highscore-list > .a-list__item--header:first-of-type {
   font-size: 150%;
 }
-/* line 542 */
+/* line 549 */
 .highscore-list > .a-list__item:nth-of-type(2), .highscore-list > .a-list__item--header:nth-of-type(2) {
   font-size: 120%;
 }
-/* line 546 */
+/* line 553 */
 .highscore-list > .a-list__item:nth-of-type(3), .highscore-list > .a-list__item--header:nth-of-type(3) {
   font-size: 110%;
 }
