@@ -253,8 +253,6 @@ def extract_user_team_ids(user):
 def users(user_id=None):
   # Store the submitted query options
   query_args = request.args.to_dict()
-  if query_args.get('finalWinner'):
-    query_args['finalWinner'] = ObjectId(query_args['finalWinner'])
 
   data = (request.json or {}).get('user', {})
   payload = {
@@ -278,10 +276,16 @@ def users(user_id=None):
       docs = (doc,)
 
   elif request.method == 'GET':
+    if query_args.get('finalWinner'):
+      query = dict(
+        finalWinner=ObjectId(query_args['finalWinner'])
+      )
+    else:
+      query = {'finalWinner': {'$exists': True}}
+
     # Request is to get all users
     payload['users'] = docs = list(
-      mongo.db.user.find(
-        {'finalWinner': {'$exists': True}}).sort('created_at', -1).limit(20))
+      mongo.db.user.find(query).sort('created_at', -1).limit(30))
 
   if request.method == 'GET':
 
