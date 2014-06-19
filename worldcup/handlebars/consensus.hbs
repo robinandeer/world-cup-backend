@@ -23,7 +23,10 @@
                 
                 {{#each team in groupWinners}}
                   <div class="a-layout__panel--full center__wrapper">
-                    <img {{bind-attr src="team.flagImage"}} class="small-flag">
+                    <div>
+                      <img {{bind-attr src="team.flagImage"}} class="small-flag">
+                      <div class="small text-center">{{team.name}}</div>
+                    </div>
                   </div>
                 {{/each}}
 
@@ -36,7 +39,10 @@
                 
                 {{#each team in groupRunnerUps}}
                   <div class="a-layout__panel--full center__wrapper">
-                    <img {{bind-attr src="team.flagImage"}} class="small-flag">
+                    <div>
+                      <img {{bind-attr src="team.flagImage"}} class="small-flag">
+                      <div class="small text-center">{{team.name}}</div>
+                    </div>
                   </div>
                 {{/each}}
 
@@ -56,7 +62,10 @@
             
             {{#each team in round1Winners}}
               <div class="a-layout__panel--full center__wrapper">
-                <img {{bind-attr src="team.flagImage"}} class="small-flag">
+                <div>
+                  <img {{bind-attr src="team.flagImage"}} class="small-flag">
+                  <div class="small text-center">{{team.name}}</div>
+                </div>
               </div>
             {{/each}}
 
@@ -73,7 +82,10 @@
             
             {{#each team in round2Winners}}
               <div class="a-layout__panel--full center__wrapper">
-                <img {{bind-attr src="team.flagImage"}} class="small-flag">
+                <div>
+                  <img {{bind-attr src="team.flagImage"}} class="small-flag">
+                  <div class="small text-center">{{team.name}}</div>
+                </div>
               </div>
             {{/each}}
 
@@ -90,7 +102,10 @@
 
             {{#each team in round3Winners}}
               <div class="a-layout__panel--full center__wrapper">
-                <img {{bind-attr src="team.flagImage"}} class="small-flag">
+                <div>
+                  <img {{bind-attr src="team.flagImage"}} class="small-flag">
+                  <div class="small text-center">{{team.name}}</div>
+                </div>
               </div>
             {{/each}}
 
@@ -106,7 +121,10 @@
             </div>
 
             <div class="a-layout__panel--full center__wrapper">
-              <img {{bind-attr src="finalWinner.flagImage"}} class="big-flag">
+              <div>
+                <img {{bind-attr src="finalWinner.flagImage"}} class="big-flag">
+                <div class="small text-center">{{finalWinner.name}}</div>
+              </div>
             </div>
 
             <div class="a-layout__panel is-fixed bb bt slim text-center">
@@ -114,7 +132,10 @@
             </div>
 
             <div class="a-layout__panel--half center__wrapper">
-              <img {{bind-attr src="thirdPlaceWinner.flagImage"}} class="small-flag">
+              <div>
+                <img {{bind-attr src="thirdPlaceWinner.flagImage"}} class="small-flag">
+                <div class="small text-center">{{thirdPlaceWinner.name}}</div>
+              </div>
             </div>
 
           </div>

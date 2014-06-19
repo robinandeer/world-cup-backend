@@ -165,48 +165,64 @@ function program1(depth0,data) {
   hashContexts = {};
   stack1 = helpers.each.call(depth0, "team", "in", "round3Winners", {hash:{},inverse:self.noop,fn:self.program(4, program4, data),contexts:[depth0,depth0,depth0],types:["ID","ID","ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("\n\n          </div>\n        </div>\n\n        \n        <div class=\"a-layout__wrapper a-layout__panel--full\">\n          <div class=\"a-layout--vertical\">\n\n            <div class=\"a-layout__panel is-fixed bb slim text-center\">\n              World Champion\n            </div>\n\n            <div class=\"a-layout__panel--full center__wrapper\">\n              <img ");
+  data.buffer.push("\n\n          </div>\n        </div>\n\n        \n        <div class=\"a-layout__wrapper a-layout__panel--full\">\n          <div class=\"a-layout--vertical\">\n\n            <div class=\"a-layout__panel is-fixed bb slim text-center\">\n              World Champion\n            </div>\n\n            <div class=\"a-layout__panel--full center__wrapper\">\n              <div>\n                <img ");
   hashContexts = {'src': depth0};
   hashTypes = {'src': "STRING"};
   options = {hash:{
     'src': ("finalWinner.flagImage")
   },contexts:[],types:[],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   data.buffer.push(escapeExpression(((stack1 = helpers['bind-attr'] || (depth0 && depth0['bind-attr'])),stack1 ? stack1.call(depth0, options) : helperMissing.call(depth0, "bind-attr", options))));
-  data.buffer.push(" class=\"big-flag\">\n            </div>\n\n            <div class=\"a-layout__panel is-fixed bb bt slim text-center\">\n              Bronze medalist\n            </div>\n\n            <div class=\"a-layout__panel--half center__wrapper\">\n              <img ");
+  data.buffer.push(" class=\"big-flag\">\n                <div class=\"small text-center\">");
+  hashTypes = {};
+  hashContexts = {};
+  data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "finalWinner.name", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push("</div>\n              </div>\n            </div>\n\n            <div class=\"a-layout__panel is-fixed bb bt slim text-center\">\n              Bronze medalist\n            </div>\n\n            <div class=\"a-layout__panel--half center__wrapper\">\n              <div>\n                <img ");
   hashContexts = {'src': depth0};
   hashTypes = {'src': "STRING"};
   options = {hash:{
     'src': ("thirdPlaceWinner.flagImage")
   },contexts:[],types:[],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   data.buffer.push(escapeExpression(((stack1 = helpers['bind-attr'] || (depth0 && depth0['bind-attr'])),stack1 ? stack1.call(depth0, options) : helperMissing.call(depth0, "bind-attr", options))));
-  data.buffer.push(" class=\"small-flag\">\n            </div>\n\n          </div>\n        </div>\n\n      </div>\n    </div>\n\n  </div>\n");
+  data.buffer.push(" class=\"small-flag\">\n                <div class=\"small text-center\">");
+  hashTypes = {};
+  hashContexts = {};
+  data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "thirdPlaceWinner.name", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push("</div>\n              </div>\n            </div>\n\n          </div>\n        </div>\n\n      </div>\n    </div>\n\n  </div>\n");
   return buffer;
   }
 function program2(depth0,data) {
   
   var buffer = '', stack1, hashContexts, hashTypes, options;
-  data.buffer.push("\n                  <div class=\"a-layout__panel--full center__wrapper\">\n                    <img ");
+  data.buffer.push("\n                  <div class=\"a-layout__panel--full center__wrapper\">\n                    <div>\n                      <img ");
   hashContexts = {'src': depth0};
   hashTypes = {'src': "STRING"};
   options = {hash:{
     'src': ("team.flagImage")
   },contexts:[],types:[],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   data.buffer.push(escapeExpression(((stack1 = helpers['bind-attr'] || (depth0 && depth0['bind-attr'])),stack1 ? stack1.call(depth0, options) : helperMissing.call(depth0, "bind-attr", options))));
-  data.buffer.push(" class=\"small-flag\">\n                  </div>\n                ");
+  data.buffer.push(" class=\"small-flag\">\n                      <div class=\"small text-center\">");
+  hashTypes = {};
+  hashContexts = {};
+  data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "team.name", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push("</div>\n                    </div>\n                  </div>\n                ");
   return buffer;
   }
 
 function program4(depth0,data) {
   
   var buffer = '', stack1, hashContexts, hashTypes, options;
-  data.buffer.push("\n              <div class=\"a-layout__panel--full center__wrapper\">\n                <img ");
+  data.buffer.push("\n              <div class=\"a-layout__panel--full center__wrapper\">\n                <div>\n                  <img ");
   hashContexts = {'src': depth0};
   hashTypes = {'src': "STRING"};
   options = {hash:{
     'src': ("team.flagImage")
   },contexts:[],types:[],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   data.buffer.push(escapeExpression(((stack1 = helpers['bind-attr'] || (depth0 && depth0['bind-attr'])),stack1 ? stack1.call(depth0, options) : helperMissing.call(depth0, "bind-attr", options))));
-  data.buffer.push(" class=\"small-flag\">\n              </div>\n            ");
+  data.buffer.push(" class=\"small-flag\">\n                  <div class=\"small text-center\">");
+  hashTypes = {};
+  hashContexts = {};
+  data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "team.name", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push("</div>\n                </div>\n              </div>\n            ");
   return buffer;
   }
 
@@ -417,56 +433,72 @@ function program6(depth0,data) {
 function program8(depth0,data) {
   
   var buffer = '', stack1, hashContexts, hashTypes, options;
-  data.buffer.push("\n                <div class=\"a-layout__panel--full center__wrapper\">\n                  <img ");
+  data.buffer.push("\n                <div class=\"a-layout__panel--full center__wrapper\">\n                  <div>\n                    <img ");
   hashContexts = {'src': depth0};
   hashTypes = {'src': "STRING"};
   options = {hash:{
     'src': ("team.flagImage")
   },contexts:[],types:[],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   data.buffer.push(escapeExpression(((stack1 = helpers['bind-attr'] || (depth0 && depth0['bind-attr'])),stack1 ? stack1.call(depth0, options) : helperMissing.call(depth0, "bind-attr", options))));
-  data.buffer.push(" class=\"small-flag\">\n                </div>\n              ");
+  data.buffer.push(" class=\"small-flag\">\n                    <div class=\"small text-center\">");
+  hashTypes = {};
+  hashContexts = {};
+  data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "team.name", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push("</div>\n                  </div>\n                </div>\n              ");
   return buffer;
   }
 
 function program10(depth0,data) {
   
   var buffer = '', stack1, hashContexts, hashTypes, options;
-  data.buffer.push("\n            <div class=\"a-layout__panel--full center__wrapper\">\n              <img ");
+  data.buffer.push("\n            <div class=\"a-layout__panel--full center__wrapper\">\n              <div>\n                <img ");
   hashContexts = {'src': depth0};
   hashTypes = {'src': "STRING"};
   options = {hash:{
     'src': ("team.flagImage")
   },contexts:[],types:[],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   data.buffer.push(escapeExpression(((stack1 = helpers['bind-attr'] || (depth0 && depth0['bind-attr'])),stack1 ? stack1.call(depth0, options) : helperMissing.call(depth0, "bind-attr", options))));
-  data.buffer.push(" class=\"small-flag\">\n            </div>\n          ");
+  data.buffer.push(" class=\"small-flag\">\n                <div class=\"small text-center\">");
+  hashTypes = {};
+  hashContexts = {};
+  data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "team.name", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push("</div>\n              </div>\n            </div>\n          ");
   return buffer;
   }
 
 function program12(depth0,data) {
   
   var buffer = '', stack1, hashContexts, hashTypes, options;
-  data.buffer.push("\n            <div class=\"a-layout__panel--full center__wrapper\">\n              <img ");
+  data.buffer.push("\n            <div class=\"a-layout__panel--full center__wrapper\">\n              <div>\n                <img ");
   hashContexts = {'src': depth0};
   hashTypes = {'src': "STRING"};
   options = {hash:{
     'src': ("finalWinner.flagImage")
   },contexts:[],types:[],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   data.buffer.push(escapeExpression(((stack1 = helpers['bind-attr'] || (depth0 && depth0['bind-attr'])),stack1 ? stack1.call(depth0, options) : helperMissing.call(depth0, "bind-attr", options))));
-  data.buffer.push(" class=\"big-flag\">\n            </div>\n          ");
+  data.buffer.push(" class=\"big-flag\">\n                <div class=\"small text-center\">");
+  hashTypes = {};
+  hashContexts = {};
+  data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "finalWinner.name", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push("</div>\n              </div>\n            </div>\n          ");
   return buffer;
   }
 
 function program14(depth0,data) {
   
   var buffer = '', stack1, hashContexts, hashTypes, options;
-  data.buffer.push("\n            <div class=\"a-layout__panel--half center__wrapper\">\n              <img ");
+  data.buffer.push("\n            <div class=\"a-layout__panel--half center__wrapper\">\n              <div>\n                <img ");
   hashContexts = {'src': depth0};
   hashTypes = {'src': "STRING"};
   options = {hash:{
     'src': ("thirdPlaceWinner.flagImage")
   },contexts:[],types:[],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   data.buffer.push(escapeExpression(((stack1 = helpers['bind-attr'] || (depth0 && depth0['bind-attr'])),stack1 ? stack1.call(depth0, options) : helperMissing.call(depth0, "bind-attr", options))));
-  data.buffer.push(" class=\"small-flag\">\n            </div>\n          ");
+  data.buffer.push(" class=\"small-flag\">\n                <div class=\"small text-center\">");
+  hashTypes = {};
+  hashContexts = {};
+  data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "thirdPlaceWinner.name", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push("</div>\n              </div>\n            </div>\n          ");
   return buffer;
   }
 

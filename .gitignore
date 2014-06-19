@@ -68,3 +68,4 @@ worldcup/vendor/jquery/dist/!jquery.js
 
 # Heroku
 .env
+world-cup-emails.txt

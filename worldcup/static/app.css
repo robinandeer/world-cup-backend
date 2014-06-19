@@ -4036,14 +4036,18 @@ h1 {
 /* line 422 */
 .small-flag {
   width: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  display: table-cell;
+  margin-bottom: 5px;
 }
 
-/* line 426 */
+/* line 430 */
 .big-flag {
   width: 70px;
 }
 
-/* line 430 */
+/* line 434 */
 .link-next {
   width: 250px;
   -webkit-flex-direction: column;
@@ -4051,52 +4055,52 @@ h1 {
   flex-direction: column;
 }
 
-/* line 437 */
+/* line 441 */
 .a-switch:hover .a-switch__default {
   display: none;
 }
-/* line 441 */
+/* line 445 */
 .a-switch:hover .a-switch__content {
   display: inherit;
 }
 
-/* line 447 */
+/* line 451 */
 .a-switch__default {
   display: inherit;
 }
 
-/* line 451 */
+/* line 455 */
 .a-switch__content {
   display: none;
 }
 
-/* line 455 */
+/* line 459 */
 .profile-wrapper {
   max-width: 960px;
   margin-left: auto;
   margin-right: auto;
 }
 
-/* line 461 */
+/* line 465 */
 .world-cup-logo {
   width: 70px;
 }
 
-/* line 465 */
+/* line 469 */
 .a-playoff-tree {
   height: 200px;
 }
 
-/* line 469 */
+/* line 473 */
 .form-inline {
   display: inline-block;
 }
-/* line 472 */
+/* line 476 */
 .form-inline > input {
   width: 200px;
 }
 
-/* line 477 */
+/* line 481 */
 [class^="icon-"], [class*=" icon-"] {
   text-align: inherit;
   width: auto;
@@ -4104,17 +4108,17 @@ h1 {
   color: #525f6b;
 }
 
-/* line 484 */
+/* line 488 */
 .a-userbox {
   width: 150px;
 }
 
-/* line 489 */
+/* line 493 */
 .a-list__item:hover, .a-list__item--header:hover, .a-list__item.active, .active.a-list__item--header {
   background: rgba(0, 0, 0, 0.03);
 }
 
-/* line 494 */
+/* line 498 */
 .text-box {
   max-width: 650px;
   padding: 50px;
@@ -4122,17 +4126,17 @@ h1 {
   margin-left: auto;
 }
 
-/* line 501 */
+/* line 505 */
 h3 {
   margin-top: 35px;
 }
 
-/* line 505 */
+/* line 509 */
 .credits-panel {
   height: 120px;
 }
 
-/* line 509 */
+/* line 513 */
 .progress-wrapper {
   -webkit-flex-basis: 70%;
   -moz-flex-basis: 70%;
@@ -4140,7 +4144,7 @@ h3 {
   margin-top: -25px;
 }
 
-/* line 514 */
+/* line 518 */
 h4 {
   font-size: 3em;
   font-weight: 200;
@@ -4148,41 +4152,41 @@ h4 {
   line-height: 1;
 }
 
-/* line 521 */
+/* line 525 */
 .index-box {
   max-width: 500px;
 }
 
-/* line 525 */
+/* line 529 */
 .highscore-header {
   background-color: #148d2c;
   color: #fedb09;
   -webkit-font-smoothing: antialiased;
 }
-/* line 530 */
+/* line 534 */
 .highscore-header.a-toolbar__group__item:hover, .highscore-header.a-toolbar__group__item--clickable:hover {
   background-color: #1aba3a;
 }
-/* line 534 */
+/* line 538 */
 .highscore-header.active {
   color: #414c58;
 }
 
-/* line 539 */
+/* line 543 */
 .highscore-icon {
   color: currentColor;
   font-size: 120%;
 }
 
-/* line 545 */
+/* line 549 */
 .highscore-list > .a-list__item:first-of-type, .highscore-list > .a-list__item--header:first-of-type {
   font-size: 150%;
 }
-/* line 549 */
+/* line 553 */
 .highscore-list > .a-list__item:nth-of-type(2), .highscore-list > .a-list__item--header:nth-of-type(2) {
   font-size: 120%;
 }
-/* line 553 */
+/* line 557 */
 .highscore-list > .a-list__item:nth-of-type(3), .highscore-list > .a-list__item--header:nth-of-type(3) {
   font-size: 110%;
 }
