@@ -77,9 +77,9 @@ def main():
 
   for user in fetch_documents(db, 'user'):
     predict_teams = user_teams(user)
-    user['points'] = match_teams(advancing_teams, predict_teams)
+    user['groupScore'] = match_teams(advancing_teams, predict_teams)
 
-    print('Awarding points to %s: %d' % (user['name'], user['points']))
+    print('Awarding points to %s: %d' % (user['name'], user['groupScore']))
     db.user.save(user)
 
 
